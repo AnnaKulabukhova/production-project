@@ -14,15 +14,15 @@ export default (env: BuildEnv)=> {
     src: path.resolve(__dirname, 'src')
   } 
 
-const mode = env.mode || 'development'
-const isDev = mode === 'development' 
-const PORT = env.port || 3000
+  const mode = env.mode || 'development'
+  const isDev = mode === 'development' 
+  const PORT = env.port || 3000
 
-const config: webpack.Configuration = buildWebpackConfig({
-  mode,
-   paths,
-   isDev,
-   port: PORT
-})
+  const config: webpack.Configuration = buildWebpackConfig({
+    mode,
+    paths,
+    isDev,
+    port: PORT
+  })
   return config
 };
