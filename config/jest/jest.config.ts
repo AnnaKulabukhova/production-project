@@ -1,9 +1,5 @@
-/**
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
-import type {Config} from 'jest';
+import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
   clearMocks: true,
@@ -12,7 +8,8 @@ const config: Config = {
     "\\\\node_modules\\\\"
   ],
   moduleDirectories: [
-    "node_modules"
+    "node_modules",
+    'src'
   ],
   moduleFileExtensions: [
     "js",
@@ -25,12 +22,21 @@ const config: Config = {
     "node"
   ],
   testMatch: [
-    "**/__tests__/**/*.[jt]s?(x)",
-    "**/?(*.)+(spec|test).[tj]s?(x)"
-    //  '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    // "**/__tests__/**/*.[jt]s?(x)",
+    // "**/?(*.)+(spec|test).[tj]s?(x)"
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
+  // modulePaths: [
+  //   '<rootDir>src'
+  // ],
   rootDir: "../../",
-  
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+  },
+
+
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -42,7 +48,7 @@ const config: Config = {
   // cacheDirectory: "C:\\Users\\Anna\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  
+
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
@@ -53,7 +59,7 @@ const config: Config = {
   // coverageDirectory: undefined,
 
   // An array of regexp pattern strings used to skip coverage collection
-  
+
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -135,7 +141,7 @@ const config: Config = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
- 
+
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -158,7 +164,7 @@ const config: Config = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  
+
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},

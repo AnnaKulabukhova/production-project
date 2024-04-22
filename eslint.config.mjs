@@ -26,12 +26,20 @@ export default [
         },
     rules: {
         'react/jsx-indent-props': [2, "tab"],
+        'import/no-unresolved': 'off',
         'react/jsx-props-no-spreading': 'warn',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'no-unused-vars': 'warn',
-        "react/react-in-jsx-scope": "off",
+        'react/react-in-jsx-scope': 'off',
         "@typescript-eslint/no-unused-vars": "warn",
         "i18next/no-literal-string": ['error', {markupOnly: true}]
-  }}
+  },
+   overrides: {
+    files: ['**/src/**/*.test.{ts, tsx}'],
+    rules: {
+      'i18next/no-literal-string': off
+    }
+    }
+  },
 ];
