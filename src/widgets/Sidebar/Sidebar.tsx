@@ -1,11 +1,11 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import classes from './Sidebar.module.scss'
 import { classNames } from "shared/lib/classNames/classNames"
 import { ThemeSwitcher } from "shared/ui/ThemeSwitcher"
 import { LangSwitcher } from "shared/ui/LangSwitcher"
-import { useTranslation } from "react-i18next"
 
-interface SidebarProps {
+export interface SidebarProps {
   className?: string
 }
 
