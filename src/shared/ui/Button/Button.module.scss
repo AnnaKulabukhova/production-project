@@ -1,6 +1,11 @@
 .button {
   cursor: pointer;
+  // color: blue;
   color: var(--inverted-primary-color);
+}
+
+.primary {
+  padding: 20px 10px;
 }
 
 .clear {
