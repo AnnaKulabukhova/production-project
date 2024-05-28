@@ -5,8 +5,7 @@ import ThemeProvider from '../../../app/providers/ThemeProvider/ui/ThemeProvider
 
 
 export const ThemeDecorator: (theme: Theme) => Decorator = (theme) => (Story, context) => {
-  const defaultTheme = theme || context.globals.theme;
-
+  const defaultTheme = { theme } || { theme: context.globals.theme };
 
   return (
     <ThemeProvider >

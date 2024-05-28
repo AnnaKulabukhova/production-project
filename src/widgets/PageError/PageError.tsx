@@ -15,7 +15,7 @@ export const PageError = ({ className }: PageErrorProps) => {
   const { t } = useTranslation()
 
   return (
-    <div className={classNames(classes.pageError, {}, [className])} >
+    <div className={classNames(classes.pageError, {}, className ? [className] : [])} >
       <p>{t('Произошла непредвиденная ошибка')}</p>
       <Button onClick={reloadPage}>
         {t('Обновить страницу')}

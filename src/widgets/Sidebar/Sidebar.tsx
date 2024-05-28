@@ -20,7 +20,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <div
       data-testid="sidebar"
-      className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])} >
+      className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, className ? [className] : [])} >
 
       <button
         data-testid="sidebar-toggle"
