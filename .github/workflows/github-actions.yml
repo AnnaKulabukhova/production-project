@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        projectToken: <chpt_e54fe71d849a61e>
+        fetch-depth: 0
     - name: install modules
       run: npm install
     - name: build production project
@@ -27,3 +30,5 @@ jobs:
       run: npm run lint:scss
     - name: unit testing
       run: npm run unit
+    - name: snapshot testing
+      run: npm run chromatic

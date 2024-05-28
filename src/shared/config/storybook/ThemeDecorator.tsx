@@ -3,13 +3,12 @@ import { Theme, ThemeContext } from '../../../app/providers/ThemeProvider/lib/Th
 import '../../../app/styles/index.scss'
 import ThemeProvider from '../../../app/providers/ThemeProvider/ui/ThemeProvider';
 
-
 export const ThemeDecorator: (theme: Theme) => Decorator = (theme) => (Story, context) => {
-  const defaultTheme = { theme } || { theme: context.globals.theme };
+  const defaultTheme = theme || context.globals.theme;
 
   return (
     <ThemeProvider >
-      <ThemeContext.Provider value={defaultTheme}>
+      <ThemeContext.Provider value={{ theme: defaultTheme }}>
         <div className={`app ${defaultTheme}`}>
           <Story />
         </div>
