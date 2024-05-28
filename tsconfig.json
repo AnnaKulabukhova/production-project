@@ -12,6 +12,7 @@
       "allowJs": true,
       "moduleResolution": "node",
       "allowSyntheticDefaultImports": true,
+      "strict": true,
     "esModuleInterop": true
     },
     "ts-node": {
