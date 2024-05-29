@@ -12,23 +12,32 @@ jobs:
         node-version: [17.x]
 
   steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:  
+        fetch-depth: 0
+
     - name: Staring Node.js ${{matrix.node-version}}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-        projectToken: <chpt_e54fe71d849a61e>
-        fetch-depth: 0
+       
     - name: install modules
       run: npm install
+
     - name: build production project
       run: npm run build:prod
+
     - name: linting typescript
       run: npm run lint:ts
+
     - name: linting css
       run: npm run lint:scss
+
     - name: unit testing
       run: npm run unit
+
     - name: snapshot testing
-      run: npm run chromatic
+      env:
+          CHROMATIC_PROJECT_TOKEN: <chpt_e54fe71d849a61e>
+      run: npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
