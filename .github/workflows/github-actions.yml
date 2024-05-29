@@ -39,5 +39,5 @@ jobs:
 
     - name: snapshot testing
       env:
-          CHROMATIC_PROJECT_TOKEN: <chpt_e54fe71d849a61e>
-      run: npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
+        projectToken: <chpt_e54fe71d849a61e>
+      run: npm run chromatic
