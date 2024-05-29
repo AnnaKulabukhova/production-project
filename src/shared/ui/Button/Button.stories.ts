@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import classes from './Button.module.scss'
 
 const meta: Meta<typeof Button> = {
   title: 'Shared/Button',
@@ -16,28 +17,80 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: 'Text'
+    children: 'Text',
+    theme: ButtonTheme.Primary
   },
 
 };
 export const Clear: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.Clear
+    theme: ButtonTheme.Clear
   },
 
 };
 export const Outline: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.Outline
+    theme: ButtonTheme.Outline
   },
-
 };
+export const OutlineL: Story = {
+  args: {
+    children: 'Text',
+    size: ButtonSize.L,
+    theme: ButtonTheme.Outline
+  },
+};
+export const OutlineXl: Story = {
+  args: {
+    children: 'Text',
+    size: ButtonSize.Xl,
+    theme: ButtonTheme.Outline
+  },
+};
+
 export const OutlineDark: Story = {
   args: {
     children: 'Text',
-    theme: ThemeButton.Outline
+    theme: ButtonTheme.Outline
   },
   decorators: [ThemeDecorator(Theme.Dark)]
+};
+
+export const Background: Story = {
+  args: {
+    children: 'Text',
+    theme: ButtonTheme.Background
+  },
+};
+export const BackgroundInverted: Story = {
+  args: {
+    children: 'Text',
+    theme: ButtonTheme.BackgroundInverted
+  },
+};
+export const SquareSizeM: Story = {
+  args: {
+    children: '>',
+    square: true,
+    size: ButtonSize.M,
+    theme: ButtonTheme.BackgroundInverted
+  },
+};
+export const SquareSizeL: Story = {
+  args: {
+    children: '>',
+    square: true,
+    size: ButtonSize.L,
+    theme: ButtonTheme.BackgroundInverted
+  },
+};
+export const SquareSizeXl: Story = {
+  args: {
+    children: '>',
+    square: true,
+    size: ButtonSize.Xl,
+    theme: ButtonTheme.BackgroundInverted
+  },
 };
