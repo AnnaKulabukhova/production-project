@@ -14,10 +14,8 @@ jobs:
   steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:  
-        fetch-depth: 0
-       
-
+      with:
+          fetch-depth: 0
 
     - name: Staring Node.js ${{matrix.node-version}}
       uses: actions/setup-node@v1
@@ -40,7 +38,4 @@ jobs:
       run: npm run unit
 
     - name: snapshot testing
-      uses: chromaui/action@latest
-      with:
-       projectToken: <chpt_e54fe71d849a61e>
-      # run: npm run chromatic
+      run: npm run chromatic
