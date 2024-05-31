@@ -8,6 +8,7 @@ import { MemoryRouter } from "react-router-dom";
 export interface renderWithTranslationOption {
   route?: string
 }
+
 export function renderWithTranslation(component: ReactNode, options: renderWithTranslationOption = {}) {
   const { route = '/' } = options
   return render(

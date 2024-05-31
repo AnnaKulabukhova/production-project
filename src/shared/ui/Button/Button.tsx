@@ -6,6 +6,7 @@ import { Theme } from "app/providers/ThemeProvider/lib"
 export enum ButtonTheme {
   Primary = 'primary',
   Clear = 'clear',
+  ClearInverted = 'clearInverted',
   Outline = 'outline',
   Background = 'background',
   BackgroundInverted = 'backgroundInverted',
@@ -29,7 +30,8 @@ export const Button: FC<ButtonProps> = ({ className, size = ButtonSize.M, theme 
   const classNameProps = [
     className ?? '',
     classes[theme],
-    classes[size]]
+    classes[size]
+  ]
 
   const mods: Record<string, boolean | undefined> = {
     [classes.square]: square

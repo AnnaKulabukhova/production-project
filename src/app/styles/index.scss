@@ -3,10 +3,14 @@
 @import "variables/global";
 @import "reset";
 
-.app {
+.app,
+.app_modal {
   font: var(--font-m);
-  background-color: var(--bg-color);
   color: var(--primary-color);
+  background: var(--bg-color);
+}
+
+.app {
   min-height: 100vh;
 }
 
