@@ -8,11 +8,9 @@ export const ThemeDecorator: (theme: Theme) => Decorator = (theme) => (Story, co
 
   return (
     <ThemeProvider initialTheme={theme}>
-      {/* <ThemeContext.Provider value={{ theme: defaultTheme }}> */}
       <div className={`app ${defaultTheme}`}>
         <Story />
       </div>
-      {/* </ThemeContext.Provider> */}
     </ThemeProvider>
   );
 };
