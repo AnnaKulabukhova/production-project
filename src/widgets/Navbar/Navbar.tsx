@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Modal } from 'shared/ui/Modal';
 import { useCallback, useState } from 'react';
+import { LoginModal } from 'features/AuthByUsername';
 
 interface NavbarProps {
   className?: string;
@@ -13,22 +14,22 @@ export const Navbar = ({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false)
   const { t } = useTranslation()
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal(value => !value)
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false)
+  }, [])
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModal(true)
   }, [])
 
   return (
     <div className={classNames(classes.navbar, {}, [className ?? ''])}>
 
-      <Button className={classes.links} onClick={onToggleModal} theme={ButtonTheme.ClearInverted}>
+      <Button className={classes.links} onClick={onShowModal} theme={ButtonTheme.ClearInverted}>
         {t('login')}
       </Button>
 
-      <Modal onClose={onToggleModal} isOpen={isAuthModal}>
-        <div>
-          Чтобы обойти эту проблему, react-screenshot-test по умолчанию будет запущен Puppeteer (т. е. Chrome) внутри Docker, чтобы делать снимки экрана ваших компонентов. Это гарантирует, что создаваемые снимки экрана будут единообразными независимо от того, на какой платформе вы запускаете тесты.
-        </div>
-      </Modal>
+      <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
     </div>
   )
 }

@@ -11,5 +11,7 @@
     "Ошибка выброса": "Ошибка выброса",
     "pageNotFound": {
         "title" : "Страница не найдена"
-    }
+    },
+    "Enter your username": "Введите логин",
+  "Enter your password": "Введите пароль"
 }

@@ -9,5 +9,7 @@
     "Переключить": "Toggle",
     "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Update page",
-  "Ошибка выброса" : "throw error"
+  "Ошибка выброса" : "throw error",
+  "Enter your username": "Enter your username",
+  "Enter your password": "Enter your password"
 }
