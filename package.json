@@ -18,7 +18,8 @@
     "chromatic": "npx chromatic --project-token=chpt_e54fe71d849a61e",
     "chromatic:success": "npx chromatic --project-token=chpt_e54fe71d849a61e --exit-zero-on-changes --auto-accept-changes",
     "screenshot-test": "jest -c jest.screenshot.config.js -u",
-    "prepare": "husky"
+    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install"
+
   },
   "keywords": [],
   "author": "",
