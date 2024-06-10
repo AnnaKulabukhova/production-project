@@ -18,8 +18,7 @@
     "chromatic": "npx chromatic --project-token=chpt_e54fe71d849a61e",
     "chromatic:success": "npx chromatic --project-token=chpt_e54fe71d849a61e --exit-zero-on-changes --auto-accept-changes",
     "screenshot-test": "jest -c jest.screenshot.config.js -u",
-    "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install"
-
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -76,6 +75,7 @@
     "file-loader": "^6.2.0",
     "globals": "^15.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^9.0.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
