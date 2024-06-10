@@ -30,34 +30,3 @@ export function componentRender(component: ReactNode, options: componentRenderOp
   );
 }
 
-// export function componentRender(component: ReactNode, options: componentRenderOption = {}) {
-//   const { route = '/', initialState } = options
-
-
-//   const root = document.createElement('div');
-//   root.setAttribute('id', 'root');
-//   document.body.appendChild(root);
-
-//   const container = document.getElementById('root');
-//   if (!container) {
-//     throw new Error('Container root is non find')
-//   }
-
-//   const rootInstance = createRoot(container);
-//   rootInstance.render(
-//     <StoreProvider initialState={initialState as StateSchema}>
-//       <MemoryRouter initialEntries={[route]}>
-//         <I18nextProvider i18n={i18nForTests}>
-//           {component}
-//         </I18nextProvider>
-//       </MemoryRouter>
-//     </StoreProvider>
-//   );
-
-//   return () => {
-//     if (container) {
-//       unmountComponentAtNode(container);
-//       container.remove();
-//     }
-//   };
-// }

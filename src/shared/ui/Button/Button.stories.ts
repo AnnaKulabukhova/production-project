@@ -107,3 +107,11 @@ export const SquareSizeXl: Story = {
     theme: ButtonTheme.BackgroundInverted
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Text',
+    theme: ButtonTheme.Primary,
+    disabled: true
+  },
+};

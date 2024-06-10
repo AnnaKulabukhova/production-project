@@ -1,8 +1,12 @@
 import { Decorator } from "@storybook/react/*"
-import { StoreProvider } from "app/providers/StoreProvider"
+import { StateSchema, StoreProvider } from "app/providers/StoreProvider"
+import { DeepPartial } from "shared/types/general";
 
-export const StoreProviderDecorator: Decorator = (Story) => {
+
+export const StoreProviderDecorator: (state: DeepPartial<StateSchema>) => Decorator = (state) => (Story) => {
   return (
-    <StoreProvider ><Story /></StoreProvider>
-  )
-}
+    <StoreProvider initialState={state as StateSchema}>
+      <Story />
+    </StoreProvider>
+  );
+};

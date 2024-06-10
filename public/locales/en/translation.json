@@ -3,6 +3,7 @@
     "long": "English",
     "short": "En",
     "login": "Login",
+    "Logout": "Logout",
     "Главная страница": "Main Page",
     "Страница не найдена": "Page not found",
     "Загрузка": "Loading",
@@ -11,5 +12,7 @@
   "Обновить страницу": "Update page",
   "Ошибка выброса" : "throw error",
   "Enter your username": "Enter your username",
-  "Enter your password": "Enter your password"
+  "Enter your password": "Enter your password", 
+  "Authorization form": "Authorization form",
+  "Incorrect data for Authorization": "You have entered an incorrect username or password"
 }
