@@ -4,7 +4,6 @@ import { ThemeDecorator } from '../../shared/config/storybook/ThemeDecorator';
 import { Theme } from '../../app/providers/ThemeProvider/lib';
 import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 
-
 const meta: Meta<typeof Navbar> = {
   title: 'Widget/Navbar',
   component: Navbar,
