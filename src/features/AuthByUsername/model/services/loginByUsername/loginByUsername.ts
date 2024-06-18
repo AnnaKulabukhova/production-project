@@ -9,7 +9,7 @@ interface LoginByUsernameProps {
 }
 
 // Типы createAsyncThunk: 1) User - тип, который возвращается 2) тип аргументов, передаваемых в асинхр. функцию
-export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
+export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string }>(
   'login/loginByUsername',
   async ({ username, password }, thunkAPI) => {
     try {
