@@ -1,6 +1,6 @@
-import { DeepPartial } from "shared/types/general"
-import { getLoginUsername } from "./getLoginUsername"
-import { StateSchema } from "app/providers/StoreProvider"
+import type { DeepPartial } from 'shared/types/general'
+import { getLoginUsername } from './getLoginUsername'
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginUsername', () => {
   test('should return username', () => {

@@ -14,7 +14,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
     this.getState = jest.fn()
   }
 
-  async callThunk(arg: Arg) {
+  async callThunk(arg: Arg): Promise<any> {
     const action = this.actionCreator(arg)
     const result = await action(this.dispatch, this.getState, undefined)
     return result

@@ -1,6 +1,6 @@
-import { DeepPartial } from "shared/types/general"
-import { getLoginPassword } from "./getLoginPassword"
-import { StateSchema } from "app/providers/StoreProvider"
+import type { DeepPartial } from 'shared/types/general'
+import { getLoginPassword } from './getLoginPassword'
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginPassword', () => {
   test('should return password', () => {

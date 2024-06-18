@@ -1,7 +1,6 @@
-import { StateSchema } from "app/providers/StoreProvider"
-import { DeepPartial } from "shared/types/general"
-import { loginActions, loginReducer } from "./loginSlice"
-import { LoginSchema } from "../types/LoginSchema"
+import type { DeepPartial } from 'shared/types/general'
+import { loginActions, loginReducer } from './loginSlice'
+import type { LoginSchema } from '../types/LoginSchema'
 
 describe('loginSlice', () => {
   test('test set username', () => {

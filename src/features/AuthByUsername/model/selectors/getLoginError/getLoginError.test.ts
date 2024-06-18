@@ -1,6 +1,6 @@
-import { DeepPartial } from "shared/types/general"
-import { getLoginError } from "./getLoginError"
-import { StateSchema } from "app/providers/StoreProvider"
+import type { DeepPartial } from 'shared/types/general'
+import { getLoginError } from './getLoginError'
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginError', () => {
   test('should return error', () => {
