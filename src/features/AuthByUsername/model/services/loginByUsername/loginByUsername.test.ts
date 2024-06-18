@@ -17,7 +17,7 @@ describe('loginByUsername', () => {
     const result = await thunk.callThunk({ username: 'Admin', password: '123' })
     console.log(result)
 
-    expect(mockedAxios.post.bind(mockedAxios)).toHaveBeenCalled()
+    expect(mockedAxios.post).toHaveBeenCalled()
     expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue))
     expect(thunk.dispatch).toHaveBeenCalledTimes(3)
     expect(result.meta.requestStatus).toBe('fulfilled')
@@ -30,7 +30,7 @@ describe('loginByUsername', () => {
     const result = await thunk.callThunk({ username: 'Admin', password: '123' })
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
-    expect(mockedAxios.post.bind(mockedAxios)).toHaveBeenCalled()
+    expect(mockedAxios.post).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toBe('error')
   })

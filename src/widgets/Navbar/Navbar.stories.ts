@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Navbar>;
 
 export const Light: Story = {
   decorators: [
-    StoreProviderDecorator({ user: { authData: { username: 'dgg', id: 5 } } })
+    StoreProviderDecorator({ user: { authData: { username: 'dgg', id: '5' } } })
   ]
 };
 

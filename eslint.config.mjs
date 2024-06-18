@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import pluginJs from "@eslint/js";
+import jest from  'eslint-plugin-jest'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,7 +29,8 @@ export default [
    {
       plugins: {
           i18next:  i18next,
-          'react-hooks': reactHooks
+          'react-hooks': reactHooks,
+          'jest': jest
         },
     rules: {
         'react/jsx-indent-props': [2, "tab"],
@@ -45,7 +47,9 @@ export default [
   },
     files: ['**/src/**/*.test.{ts, tsx}'],
     rules: {
-       'i18next/no-literal-string': 'off'
+       'i18next/no-literal-string': 'off',
+       '@typescript-eslint/unbound-method': 'off',
+        'jest/unbound-method': 'error'
     }
   },
 ];
