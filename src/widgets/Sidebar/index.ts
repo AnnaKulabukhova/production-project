@@ -1,1 +1,1 @@
-export * from './Sidebar'
+export * from './ui/Sidebar/Sidebar'
