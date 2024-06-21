@@ -17,7 +17,7 @@ interface TextProps {
 
 export const Text = memo(({ className, text, title, theme = TextTheme.Primary }: TextProps) => {
   return (
-    <div className={classNames(classes.textWrapper, {}, [className ?? '', classes[theme]])} >
+    <div className={classNames(classes.textWrapper, {}, [className, classes[theme]])} >
       {title && <p className={classes.title}>{title}</p>}
       {text && <p className={classes.text}>{text}</p>}
     </div>

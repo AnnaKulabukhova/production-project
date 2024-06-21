@@ -1,5 +1,5 @@
 import classes from './Modal.module.scss'
-import { classNames } from "shared/lib/classNames/classNames"
+import { Mods, classNames } from "shared/lib/classNames/classNames"
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { Portal } from '../Portal'
 import { useTheme } from 'app/providers/ThemeProvider/lib'
@@ -60,7 +60,7 @@ export const Modal = ({ lazy, className, children, isOpen, onClose }: ModalProps
   }, [isOpen, onKeyDown])
 
 
-  const mods: Record<string, boolean | undefined> = {
+  const mods: Mods = {
     [classes.opened]: isOpen,
     [classes.isClosing]: isClosing
   }
@@ -72,7 +72,7 @@ export const Modal = ({ lazy, className, children, isOpen, onClose }: ModalProps
 
   return (
     <Portal >
-      <div className={classNames(classes.modal, mods, [className ?? '', theme, 'app_modal'])} >
+      <div className={classNames(classes.modal, mods, [className, theme, 'app_modal'])} >
         <div className={classes.overlay} onClick={closeHandler}>
           <div className={classes.content} onClick={onContentClick}>
             {children}

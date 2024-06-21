@@ -1,6 +1,5 @@
 import type { StateSchema } from 'app/providers/StoreProvider'
 import { getCounter } from './getCounter'
-import type { DeepPartial } from 'shared/types/general'
 
 describe('getCounter', () => {
   test('should return counter value', () => {

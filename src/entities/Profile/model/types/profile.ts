@@ -1,3 +1,4 @@
+import { SerializedError } from "@reduxjs/toolkit";
 import { COuntry, Currency } from "shared/const/common";
 
 export interface Profile {
@@ -14,6 +15,6 @@ export interface Profile {
 export interface ProfileSchema {
   data?: Profile
   isLoading: boolean
-  error?: string
+  error?: string | SerializedError
   readonly: boolean
 }

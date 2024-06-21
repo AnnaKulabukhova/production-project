@@ -10,7 +10,7 @@ interface PageLoaderProps {
 export const PageLoader = ({ className }: PageLoaderProps) => {
 	const { t } = useTranslation()
 	return (
-		<div className={classNames(classes.pageLoader, {}, className ? [className] : [])} >
+		<div className={classNames(classes.pageLoader, {}, [className])} >
 			<div className={classes.text}> {t('Загрузка')} </div>
 			<Loader />
 		</div>

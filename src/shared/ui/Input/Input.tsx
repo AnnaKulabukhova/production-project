@@ -18,7 +18,7 @@ export const Input = memo(({ className, placeholder, type = 'text', value, onCha
   }
 
   return (
-    <div className={classNames(classes.inputWrapper, {}, [className ?? ''])} >
+    <div className={classNames(classes.inputWrapper, {}, [className])} >
 
       {placeholder && (
         <div className={classes.placeholder}>

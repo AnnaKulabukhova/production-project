@@ -17,7 +17,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
     reduce: (state: StateSchema | undefined, action: UnknownAction): StateSchema => {
       if (keysToRemove.length > 0) {
         if (state) {
-          state = { ...state } as StateSchema
+          state = { ...state }
           for (let key of keysToRemove) {
             delete state[key]
           }

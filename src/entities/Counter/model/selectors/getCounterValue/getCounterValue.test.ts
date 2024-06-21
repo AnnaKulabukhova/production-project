@@ -1,6 +1,5 @@
 import type { StateSchema } from 'app/providers/StoreProvider'
 import { getCounterValue } from './getCounterValue'
-import type { DeepPartial } from 'shared/types/general'
 
 describe('getCounterValue', () => {
   test('test with only first param', () => {

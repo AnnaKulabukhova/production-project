@@ -1,4 +1,3 @@
-import type { DeepPartial } from 'shared/types/general'
 import { getLoginPassword } from './getLoginPassword'
 import type { StateSchema } from 'app/providers/StoreProvider'
 

@@ -1,4 +1,3 @@
-import type { DeepPartial } from 'shared/types/general'
 import { loginActions, loginReducer } from './loginSlice'
 import type { LoginSchema } from '../types/LoginSchema'
 

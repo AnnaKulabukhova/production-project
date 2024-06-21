@@ -10,7 +10,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // react-refresh-webpack-plugin - для обеспечения поддержки горячей перезагрузки компонентов React. предоставлять улучшенную поддержку HMR для React-компонентов. 
 // DefinePlugin - Заменяет переменные другими значениями или выражениями во время компиляции
 // BundleAnalyzerPlugin - показывает какие пакеты имеются и сколько они весят
-export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] => {
+export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] => {
   // [isDev && new ReactRefreshWebpackPlugin()].filter(Boolean)
   const plugins = [
     new HtmlWebpackPlugin({
@@ -21,7 +21,13 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
-    new webpack.DefinePlugin({ __IS_DEV__: JSON.stringify(isDev) }),
+
+    new webpack.DefinePlugin(
+      {
+        __IS_DEV__: JSON.stringify(isDev),
+        __API__: JSON.stringify(apiUrl)
+      }
+    ),
   ]
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin())
