@@ -3,18 +3,24 @@
   border: 2px solid var(--inverted-bg-color);
 }
 
-.header {
+.avatarWrapper {
   display: flex;
-}
-
-.editButton {
-  margin-left: auto;
-}
-
-.data {
-  margin-top: 30px;
+  justify-content: center;
+  width: 100%;
 }
 
 .input {
   margin-top: 10px;
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.editing {
+  border: 2px solid var(--primary-color);
 }

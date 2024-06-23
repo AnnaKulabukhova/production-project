@@ -2,6 +2,17 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Your first name": "Your first name",
-  "Your last name":  "Your last name"
+  "Your last name":  "Your last name",
+  "Try refreshing the page":  "Try refreshing the page",
+  "An error occurred while uploading the profile":  "An error occurred while uploading the profile",
+   "Cancel": "Cancel",
+   "Save": "Save",
+   "Your age": "Your age",
+   "Your city": "Your city",
+   "Your username": "Your username",
+   "Link to the avatar": "Link to the avatar",
+   "Selected currency": "Selected currency",
+   "Selected country": "Selected country"
+   
 }
   

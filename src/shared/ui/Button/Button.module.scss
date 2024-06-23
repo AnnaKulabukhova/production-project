@@ -26,6 +26,12 @@
   background-color: transparent;
 }
 
+.outlineRed {
+  border: 1px solid var(--red-light);
+  color: var(--red-light);
+  background-color: transparent;
+}
+
 .background {
   background: var(--bg-color);
   color: var(--inverted-bg-color);

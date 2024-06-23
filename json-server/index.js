@@ -1,8 +1,8 @@
+const fs = require('fs');
 const jsonServer = require('json-server')
 const path = require('path')
 const server = jsonServer.create()
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
-const fs = require('fs');
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
@@ -15,6 +15,7 @@ server.use(async (req, res, next) => {
 })
 
 server.post('/login', (req, res) => {
+   try {
   const {username, password} = req.body
   const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json')))
   const {users} = db
@@ -24,8 +25,12 @@ server.post('/login', (req, res) => {
   if (userFromBd) {
     return res.json(userFromBd)
   }
+return res.status(403).json({ message: 'User not found' });
+}catch(e) {
+console.log(e);
+  return res.status(500).json({ message: e.message });
+}
 
-  return res.status(403).json({massage: 'AUTH ERROR'})
 })
 server.use((req, res, next) => {
   if (!req.headers.authorization) {
@@ -35,7 +40,6 @@ server.use((req, res, next) => {
 })
 
 server.use(router)
-
 
 // Use default router
 server.listen(8000, () => {
