@@ -2,6 +2,14 @@ import { SerializedError } from "@reduxjs/toolkit";
 import { Country } from "entities/Country/model/types/countries";
 import { Currency } from "entities/Currency/model/types/currency";
 
+export enum ValidateProfileErrors {
+  'IncorrectUserData' = 'IncorrectUserData',
+  'IncorrectAge' = 'IncorrectAge',
+  'IncorrectCity' = 'IncorrectCity',
+  'NoData' = 'NoData',
+  'ServerError' = 'ServerError'
+}
+
 export interface Profile {
   first?: string,
   lastName?: string,
@@ -19,4 +27,5 @@ export interface ProfileSchema {
   isLoading: boolean
   error?: string | SerializedError
   readonly: boolean
+  validateErrors?: ValidateProfileErrors[]
 }

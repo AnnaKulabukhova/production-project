@@ -12,6 +12,12 @@
   "Your username": "Имя пользователя",
   "Link to the avatar": "Ссылка на аватар",
   "Selected currency": "Выбранная валюта",
-   "Selected country": "Выбранная страна"
+  "Selected country": "Выбранная страна",
+  "Server error": "Серверная ошибка при  сохранении",
+  "Incorrect Age": "Некорректный возраст",
+  "First and last name are required": "Имя и фамилия обязательны",
+  "Incorrect City": "Некорректный город",
+  "Data is not specified": "Данные не указаны"
+
 }
   

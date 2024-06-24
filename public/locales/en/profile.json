@@ -12,7 +12,12 @@
    "Your username": "Your username",
    "Link to the avatar": "Link to the avatar",
    "Selected currency": "Selected currency",
-   "Selected country": "Selected country"
+   "Selected country": "Selected country",
+   "Server error": "Server error when saving",
+   "Incorrect Age": "Incorrect Age",
+   "First and last name are required": "First and last name are required",
+   "Incorrect City": "Incorrect City",
+   "Data is not specified": "Data is not specified"
    
 }
   

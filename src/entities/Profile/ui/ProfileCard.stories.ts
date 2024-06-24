@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProfilePage from './ProfilePage';
+import { ProfileCard } from './ProfileCard';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib';
-import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import AvatarImg from 'shared/assets/tests/avatarForStorybook.jpg'
+
 
 const data = {
   first: 'Leanne',
@@ -18,21 +18,37 @@ const data = {
   avatar: AvatarImg
 }
 
-const meta: Meta<typeof ProfilePage> = {
-  title: 'Pages/ProfilePage',
-  component: ProfilePage,
+const meta: Meta<typeof ProfileCard> = {
+  title: 'Entities/ProfileCard',
+  component: ProfileCard,
   argTypes: {
     className: { control: 'color' },
   },
-  decorators: [StoreProviderDecorator({ profile: { form: data } })]
 };
 
 export default meta;
-type Story = StoryObj<typeof ProfilePage>;
+type Story = StoryObj<typeof ProfileCard>;
 
 
-export const Light: Story = {};
+export const Light: Story = {
+  args: {
+    data: data
+  }
+};
+export const Loading: Story = {
+  args: {
+    isLoading: true
+  }
+};
+export const Error: Story = {
+  args: {
+    error: 'Error'
+  }
+};
 
 export const Dark: Story = {
+  args: {
+    data: data
+  },
   decorators: [ThemeDecorator(Theme.Dark)]
 };
