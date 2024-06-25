@@ -6,6 +6,7 @@ import { SidebarItemType } from 'widgets/Sidebar/model/items'
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User'
+import { AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 
 
 interface SidebarItemProps {
@@ -23,6 +24,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
 
   return (
     <AppLink
+      theme={AppLinkTheme.Secondary}
       to={item.path}
       className={classNames(classes.item, { [classes.collapsed]: collapsed }, [])}
     >

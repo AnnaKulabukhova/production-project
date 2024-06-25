@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import classes from './ProfilePageHeader.module.scss'
 import { classNames } from "shared/lib/classNames/classNames"
-import { Text } from 'shared/ui/Text/Text'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { Button, ButtonTheme } from 'shared/ui/Button'
 import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
@@ -32,7 +32,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
   return (
     <div className={classNames(classes.profilePageHeader, {}, [className])} >
-      <Text title={t('Profile')} />
+      <Text title={t('Profile')} theme={TextTheme.Primary} />
       {readonly ? (
         <Button
           onClick={onEdit}

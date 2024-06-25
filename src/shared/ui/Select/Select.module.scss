@@ -9,13 +9,13 @@
 .select {
   background-color: none;
   outline: none;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   padding-right: 2px 10px 2px  2px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-color);
 }
 
 .option {
-  color: var(--inverted-primary-color);
+  color: var(--secondary-color);
   background-color: var(--inverted-bg-color);
 }
 

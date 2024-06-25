@@ -11,7 +11,6 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // DefinePlugin - Заменяет переменные другими значениями или выражениями во время компиляции
 // BundleAnalyzerPlugin - показывает какие пакеты имеются и сколько они весят
 export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] => {
-  // [isDev && new ReactRefreshWebpackPlugin()].filter(Boolean)
   const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html
@@ -31,6 +30,7 @@ export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): w
     ),
   ]
   if (isDev) {
+    plugins.push(new ReactRefreshWebpackPlugin())
     plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false,

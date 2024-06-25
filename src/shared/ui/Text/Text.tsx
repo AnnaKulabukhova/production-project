@@ -5,6 +5,7 @@ import { classNames } from "shared/lib/classNames/classNames"
 
 export enum TextTheme {
   Primary = 'primary',
+  Secondary = 'secondary',
   Error = 'error'
 }
 export enum TextAlign {

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import classes from './LoginForm.module.scss'
 import { classNames } from "shared/lib/classNames/classNames"
 import { Button, ButtonTheme } from 'shared/ui/Button'
-import { Input } from 'shared/ui/Input'
+import { Input, InputTheme } from 'shared/ui/Input'
 import { useSelector } from 'react-redux'
 import { memo, useCallback } from 'react'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
@@ -14,6 +14,7 @@ import { getLoginPassword } from '../..//model/selectors/getLoginPassword/getLog
 import { getLoginError } from '../..//model/selectors/getLoginError/getLoginError'
 import { getLoginLoading } from '../..//model/selectors/getLoginLoading/getLoginLoading'
 import { DynamicModuleLoading, ReducersList } from 'shared/lib/components/DynamicModuleLoading/DynamicModuleLoading'
+import { Theme } from 'app/providers/ThemeProvider/lib'
 
 export interface LoginFormProps {
   className?: string
@@ -52,7 +53,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   return (
     <DynamicModuleLoading removeAfterUnmount reducers={initialReducers} >
       <div className={classNames(classes.loginForm, {}, [className])} >
-        <Text title={t('Authorization form')} />
+        <Text title={t('Authorization form')} theme={TextTheme.Secondary} />
         {error && <Text text={t('Incorrect data for Authorization')} theme={TextTheme.Error} />}
         <Input
           className={classes.input}
@@ -60,6 +61,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           placeholder={t('Enter your username')}
           onChange={onChangeUsername}
           value={username}
+          theme={InputTheme.Secondary}
         />
         <Input
           className={classes.input}
@@ -67,8 +69,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           placeholder={t('Enter your password')}
           onChange={onChangePassword}
           value={password}
+          theme={InputTheme.Secondary}
         />
-        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonTheme.Outline} className={classes.loginBtn}>{t('login')}</Button>
+        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonTheme.BackgroundInverted} className={classes.loginBtn}>{t('login')}</Button>
       </div>
     </DynamicModuleLoading>
   )

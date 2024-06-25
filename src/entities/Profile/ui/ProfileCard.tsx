@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import classes from './ProfileCard.module.scss'
 import { classNames } from "shared/lib/classNames/classNames"
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text'
-import { Input } from 'shared/ui/Input'
+import { Input, InputTheme } from 'shared/ui/Input'
 import { Profile } from '../model/types/profile'
 import { Loader } from 'shared/ui/Loader'
 import { SerializedError } from '@reduxjs/toolkit'
@@ -83,6 +83,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           placeholder={t('Your first name')}
           className={classes.input}
           value={data?.first}
+          theme={InputTheme.Primary}
         />
         <Input
           onChange={onChangeLastName}
@@ -90,6 +91,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           placeholder={t('Your last name')}
           className={classes.input}
           value={data?.lastName}
+          theme={InputTheme.Primary}
         />
         <Input
           onChange={onChangeAge}
