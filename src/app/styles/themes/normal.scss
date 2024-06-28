@@ -1,8 +1,15 @@
 .light {
-  --bg-color: f4f7fb;
+  --bg-color: #f4f7fb;
   --inverted-bg-color: #3c5677;
   --primary-color: #3c5677;
   --secondary-color: #f4f7fb;
   --inverted-primary-color: #f4f7fb;
   --inverted-secondary-color: #3c5677;
+
+  // skeleton
+  --skeleton-color: #cdcfd1;
+  --skeleton-shadow: #bec0c4;
+
+  // code
+  --code-bg: #d2d5d6;
 }
