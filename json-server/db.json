@@ -169,7 +169,7 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ],
   "users": [
@@ -177,13 +177,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+       "avatar": "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+       "avatar": "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
     }
   ],
   "profile": {

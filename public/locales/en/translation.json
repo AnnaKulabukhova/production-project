@@ -17,5 +17,8 @@
   "Enter your username": "Enter your username",
   "Enter your password": "Enter your password", 
   "Authorization form": "Authorization form",
-  "Incorrect data for Authorization": "You have entered an incorrect username or password"
+  "Incorrect data for Authorization": "You have entered an incorrect username or password", 
+  "No comments" : "There are no comments",
+
+  "Avatar of user": "Avatar of user"
 }
