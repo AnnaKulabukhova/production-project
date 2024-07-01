@@ -3,7 +3,7 @@ import { CommentCard } from './CommentCard';
 
 
 const meta: Meta<typeof CommentCard> = {
-  title: 'Shared/Comment',
+  title: 'Entities/CommentCard',
   component: CommentCard,
   argTypes: {
     className: { control: 'color' },
@@ -17,5 +17,14 @@ type Story = StoryObj<typeof CommentCard>;
 
 export const Primary: Story = {
   args: {
+    comment: {
+      id: '2',
+      text: "comment",
+      user: {
+        id: '1',
+        username: "VASYA",
+        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      }
+    }
   }
 };

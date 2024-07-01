@@ -3,7 +3,7 @@ import { CommentList } from './CommentList';
 
 
 const meta: Meta<typeof CommentList> = {
-  title: 'Shared/CommentList',
+  title: 'Entities/CommentList',
   component: CommentList,
   argTypes: {
     className: { control: 'color' },
@@ -17,5 +17,48 @@ type Story = StoryObj<typeof CommentList>;
 
 export const Primary: Story = {
   args: {
+    isLoading: false,
+    comments: [{
+      id: '2',
+      text: "comment",
+      user: {
+        id: '1',
+        username: "VASYA",
+        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      }
+    },
+    {
+      id: '2',
+      text: "comment",
+      user: {
+        id: '1',
+        username: "VASYA",
+        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      }
+    }]
+  }
+};
+
+export const isLoading: Story = {
+  args: {
+    isLoading: true,
+    comments: [{
+      id: '2',
+      text: "comment",
+      user: {
+        id: '1',
+        username: "VASYA",
+        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      }
+    },
+    {
+      id: '2',
+      text: "comment",
+      user: {
+        id: '1',
+        username: "VASYA",
+        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      }
+    }]
   }
 };

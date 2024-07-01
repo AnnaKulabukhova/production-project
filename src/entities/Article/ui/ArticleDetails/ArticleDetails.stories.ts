@@ -98,7 +98,6 @@ type Story = StoryObj<typeof ArticleDetails>;
 
 
 export const Primary: Story = {
-
   decorators: [StoreProviderDecorator({ articleDetails: { data: article } })]
 };
 
