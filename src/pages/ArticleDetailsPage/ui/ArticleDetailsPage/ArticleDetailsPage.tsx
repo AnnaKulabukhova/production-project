@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import classes from './ArticleDetailsPage.module.scss'
 import { classNames } from "shared/lib/classNames/classNames"
 import { useTranslation } from 'react-i18next'
@@ -13,6 +13,8 @@ import { getArticleDetailsCommentIsLoading } from '../../model/selectors/comment
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
+import { AddCommentForm } from 'features/AddCommentForm'
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
 
 
 interface ArticleDetailsPageProps {
@@ -23,7 +25,6 @@ const reducers: ReducersList = {
   articleDetailsComment: articleDetailsCommentsReducer
 }
 
-
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation('article')
   const { id } = useParams<{ id: string }>()
@@ -31,9 +32,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const isLoading = useSelector(getArticleDetailsCommentIsLoading)
   const dispatch = useAppDispatch()
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text))
+  }, [])
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
   })
+
 
   if (!id) {
     return (<div className={classNames(classes.articleDetailsPage, {}, [className])} >
@@ -41,13 +47,12 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     </div>)
   }
 
-
-
   return (
     <DynamicModuleLoading removeAfterUnmount reducers={reducers}>
       <div className={classNames(classes.articleDetailsPage, {}, [className])} >
         <ArticleDetails id={id} />
         <Text className={classes.commentTitle} title={t('Comments')} />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />
       </div>
     </DynamicModuleLoading>

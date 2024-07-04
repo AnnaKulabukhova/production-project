@@ -6,11 +6,13 @@ import { Comment } from '../../model/types/comment'
 import { Text } from 'shared/ui/Text/Text'
 import { Avatar } from 'shared/ui/Avatar'
 import { Skeleton } from 'shared/ui/Skeleton'
+import { AppLink } from 'shared/ui/AppLink'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface CommentCardProps {
   className?: string
   isLoading?: boolean
-  comment: Comment
+  comment?: Comment
 }
 
 export const CommentCard = memo(({ className, isLoading, comment }: CommentCardProps) => {
@@ -18,7 +20,7 @@ export const CommentCard = memo(({ className, isLoading, comment }: CommentCardP
 
   if (isLoading) {
     return (
-      <div className={classNames(classes.commentCard, {}, [className])} >
+      <div className={classNames(classes.commentCard, {}, [className, classes.loading])} >
         <div className={classes.header}>
           <Skeleton width={30} height={30} border={'50%'} />
           <Skeleton width={110} height={19} />
@@ -28,12 +30,16 @@ export const CommentCard = memo(({ className, isLoading, comment }: CommentCardP
     )
   }
 
+  if (!comment) {
+    return null
+  }
+
   return (
     <div className={classNames(classes.commentCard, {}, [className])} >
-      <div className={classes.header}>
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={classes.header}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} alt={t('Avatar of user')} />}
         <Text title={comment.user.username} />
-      </div>
+      </AppLink>
       <Text text={comment.text} />
     </div>
   )

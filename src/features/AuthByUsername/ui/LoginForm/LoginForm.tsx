@@ -14,7 +14,6 @@ import { getLoginPassword } from '../..//model/selectors/getLoginPassword/getLog
 import { getLoginError } from '../..//model/selectors/getLoginError/getLoginError'
 import { getLoginLoading } from '../..//model/selectors/getLoginLoading/getLoginLoading'
 import { DynamicModuleLoading, ReducersList } from 'shared/lib/components/DynamicModuleLoading/DynamicModuleLoading'
-import { Theme } from 'app/providers/ThemeProvider/lib'
 
 export interface LoginFormProps {
   className?: string

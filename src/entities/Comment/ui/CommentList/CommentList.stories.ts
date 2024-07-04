@@ -3,7 +3,7 @@ import { CommentList } from './CommentList';
 
 
 const meta: Meta<typeof CommentList> = {
-  title: 'Entities/CommentList',
+  title: 'Entities/Comment/CommentList',
   component: CommentList,
   argTypes: {
     className: { control: 'color' },
@@ -42,23 +42,6 @@ export const Primary: Story = {
 export const isLoading: Story = {
   args: {
     isLoading: true,
-    comments: [{
-      id: '2',
-      text: "comment",
-      user: {
-        id: '1',
-        username: "VASYA",
-        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
-      }
-    },
-    {
-      id: '2',
-      text: "comment",
-      user: {
-        id: '1',
-        username: "VASYA",
-        avatar: "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
-      }
-    }]
+    comments: []
   }
 };

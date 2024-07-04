@@ -18,6 +18,7 @@ import { Avatar } from 'shared/ui/Avatar'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import Calendar from 'shared/assets/icons/calendar.svg'
 import { Icon } from 'shared/ui/Icon'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 interface ArticleDetailsProps {
   className?: string
@@ -49,11 +50,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     }
   }, [])
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
+  useInitialEffect(() => dispatch(fetchArticleById(id)))
 
   let content
 

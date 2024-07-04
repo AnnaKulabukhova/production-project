@@ -19,8 +19,9 @@
   "Enter your username": "Введите логин",
   "Enter your password": "Введите пароль",
   "Authorization form": "Форма авторизации", 
-   "Incorrect data for Authorization": "Вы ввели неверный логин или пароль",
+  "Incorrect data for Authorization": "Вы ввели неверный логин или пароль",
    "No comments" : "Комментарии отсутствуют",
-
-    "Avatar of user": "Аватар пользователя"
+   "Enter the comment text": "Введите текст комментария",
+    "Avatar of user": "Аватар пользователя",
+    "Send": "Отправить"
 }
