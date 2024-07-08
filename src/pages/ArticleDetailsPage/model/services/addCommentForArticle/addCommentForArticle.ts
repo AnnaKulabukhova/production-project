@@ -15,6 +15,8 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
 
     const article = getArticleDetailsData(getState())
 
+    console.log('jfjfj', !useData, !text, !article);
+
     if (!useData || !text || !article) {
       console.log('no data');
       return rejectWithValue('no data')
@@ -22,7 +24,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
 
     try {
       const response = await extra.api.post<Comment>(`/comments`, {
-        articleId: article.id,
+        articleId: article?.id,
         userId: useData?.id,
         text
       })
@@ -31,7 +33,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
         throw new Error()
       }
 
-      dispatch(fetchCommentsByArticleId(article.id))
+      dispatch(fetchCommentsByArticleId(article?.id))
       return response.data
 
 

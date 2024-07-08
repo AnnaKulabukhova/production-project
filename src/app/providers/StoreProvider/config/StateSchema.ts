@@ -1,7 +1,6 @@
 import { EnhancedStore, Reducer, ReducersMapObject, StateFromReducersMapObject, UnknownAction } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
-import { CounterSchema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddCommentForm";
@@ -10,7 +9,6 @@ import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
 import { NavigateOptions, To } from "react-router-dom";
 
 export interface StateSchema {
-  counter: CounterSchema
   user: UserSchema
 
   // Асинхронные редьюсеры

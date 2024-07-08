@@ -19,6 +19,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -173,76 +174,10 @@
       "userId": "2"
     },
     {
-      "article": "1",
-      "userId": "1",
-      "text": "mngmjg",
-      "id": "Om9-jQF"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "vmjfvgj",
-      "id": "Y02axBA"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "k,jhljh",
-      "id": "4qE8aQh"
-    },
-    {
-      "article": "1",
-      "userId": "2",
-      "text": "jgjk",
-      "id": "O8FTTUb"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "hghd",
-      "id": "do2xYZU"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "dfgdeg",
-      "id": "3g-zM2W"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "fgj",
-      "id": "0yVFMvZ"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "5463554",
-      "id": "pZtS4xn"
-    },
-    {
-      "article": "1",
-      "userId": "1",
-      "text": "HJHGJJ",
-      "id": "O1ZveSI"
-    },
-    {
-      "article": "1",
-      "userId": "2",
-      "text": ";;;;;;;;;;",
-      "id": "bzVIFNV"
-    },
-    {
       "articleId": "1",
-      "userId": "1",
-      "text": "gthghjg",
-      "id": "9UaNKXR"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "gggg",
-      "id": "VAyP2dy"
+      "userId": "2",
+      "text": "jjjj",
+      "id": "WbJQv1_"
     }
   ],
   "users": [

@@ -12,6 +12,9 @@ const article: Article = {
   "views": 1022,
   "createdAt": "26.02.2022",
   "type": [ArticleType.IT],
+  user: {
+    id: '1', username: 'Petya', avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg'
+  },
   "blocks": [
     {
       "id": "1",

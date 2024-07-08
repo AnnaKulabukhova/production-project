@@ -1,12 +1,6 @@
-import { memo } from 'react'
-import classes from './ArticlesPage.module.scss'
-import { classNames } from "shared/lib/classNames/classNames"
-import { useTranslation } from 'react-i18next'
-import { Article, ArticleList, ArticlesViews } from 'entities/Article'
-
-interface ArticlesPageProps {
-  className?: string
-}
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleList } from './ArticleList';
+import { Article, ArticlesViews } from 'entities/Article/model/types/article';
 
 const articles = {
   "id": "1",
@@ -46,6 +40,7 @@ const articles = {
     {
       "id": "7",
       "type": "text",
+      "title": "Заголовок этого блока",
       "paragraphs": [
         "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
         "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
@@ -54,20 +49,46 @@ const articles = {
   ]
 } as Article
 
-const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation('article')
-  return (
-    <div className={classNames(classes.articlesPage, {}, [className])} >
-      <ArticleList
-        // isLoading
-        view={ArticlesViews.Small}
-        articles={
-          new Array(16)
-            .fill(0)
-            .map((item, index) => ({ ...articles, id: String(index) }))
-        } />
-    </div>
-  )
-}
+const meta: Meta<typeof ArticleList> = {
+  title: 'Entities/ArticleList',
+  component: ArticleList,
+  argTypes: {
+    className: { control: 'color' },
+  },
+  args: {}
+};
 
-export default memo(ArticlesPage)
+export default meta;
+type Story = StoryObj<typeof ArticleList>;
+
+
+export const ListBig: Story = {
+  args: {
+    isLoading: false,
+    view: ArticlesViews.Big,
+    articles: new Array(3)
+      .fill(0)
+      .map((item, index) => ({ ...articles, id: String(index) }))
+  }
+};
+export const ListSmall: Story = {
+  args: {
+    isLoading: false,
+    view: ArticlesViews.Small,
+    articles: new Array(9)
+      .fill(0)
+      .map((item, index) => ({ ...articles, id: String(index) }))
+  }
+};
+export const LoadingBig: Story = {
+  args: {
+    isLoading: true,
+    view: ArticlesViews.Big
+  }
+};
+export const LoadingSmall: Story = {
+  args: {
+    isLoading: true,
+    view: ArticlesViews.Small
+  }
+};
