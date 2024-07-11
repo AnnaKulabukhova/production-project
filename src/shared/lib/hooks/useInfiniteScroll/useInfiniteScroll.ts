@@ -33,7 +33,6 @@ export const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: useInfin
 
     return () => {
       if (observer && triggerElement) {
-        debugger
         observer.unobserve(triggerElement)
       }
     }

@@ -34,8 +34,7 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
     <div className={classNames(classes.articleList, {}, [className, classes[view]])} >
       {articles.length ? articles.map(renderArticle) : null}
 
-      {isLoading && getSkeletons(view)
-      }
+      {isLoading && getSkeletons(view)}
     </div>
   )
 })

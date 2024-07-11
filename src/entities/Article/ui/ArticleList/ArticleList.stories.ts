@@ -83,12 +83,14 @@ export const ListSmall: Story = {
 export const LoadingBig: Story = {
   args: {
     isLoading: true,
-    view: ArticlesViews.Big
+    view: ArticlesViews.Big,
+    articles: []
   }
 };
 export const LoadingSmall: Story = {
   args: {
     isLoading: true,
-    view: ArticlesViews.Small
+    view: ArticlesViews.Small,
+    articles: []
   }
 };
