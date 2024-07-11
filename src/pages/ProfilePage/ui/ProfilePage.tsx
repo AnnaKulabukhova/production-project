@@ -12,6 +12,7 @@ import { Country } from "entities/Country/model/types/countries"
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { useParams } from 'react-router-dom'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { Page } from 'shared/ui/Page'
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -82,7 +83,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoading reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [className])} >
+      <Page className={classNames('', {}, [className])} >
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map(err => <Text key={err} text={validateErrorTranslates[err]} theme={TextTheme.Error}></Text>)}
         <ProfileCard
@@ -99,7 +100,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoading>
   )
 }
