@@ -37,14 +37,14 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const error = useSelector(getArticleDetailsError)
 
 
-  const renderBlock = useCallback((block: ArticleBlock) => {
+  const renderBlock = useCallback((block: ArticleBlock, index: number) => {
     switch (block.type) {
       case ArticleBlockType.Text:
-        return <ArticleTextBlockComponent key={id} className={classes.block} block={block} />
+        return <ArticleTextBlockComponent key={index} className={classes.block} block={block} />
       case ArticleBlockType.Code:
-        return <ArticleCodeBlockComponent key={id} className={classes.block} block={block} />
+        return <ArticleCodeBlockComponent key={index} className={classes.block} block={block} />
       case ArticleBlockType.Image:
-        return <ArticleImageBlockComponent key={id} block={block} className={classes.block} />
+        return <ArticleImageBlockComponent key={index} block={block} className={classes.block} />
       default:
         return null;
     }
@@ -86,7 +86,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         <Icon Svg={Calendar} />
         <Text text={article?.createdAt} />
       </div>
-      {article?.blocks.map(block => renderBlock(block))}
+      {article?.blocks.map((block, index) => renderBlock(block, index))}
 
     </>
   }

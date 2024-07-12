@@ -1,8 +1,5 @@
 import { Reducer, ReducersMapObject, UnknownAction, combineReducers } from "@reduxjs/toolkit"
 import { ReducerManager, StateSchema, StateSchemaKey } from "./StateSchema"
-import { ReducersList } from "shared/lib/components/DynamicModuleLoading/DynamicModuleLoading"
-
-
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
   const reducers = { ...initialReducers }

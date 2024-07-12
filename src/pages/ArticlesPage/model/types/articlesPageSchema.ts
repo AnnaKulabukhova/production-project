@@ -6,6 +6,8 @@ export interface ArticlesPageSchema extends EntityState<Article, string> {
   isLoading?: boolean;
   error?: string;
 
+  _init: boolean
+
   // Пагинация - подгрузка данных на страницу порциями
   page: number,
   limit?: number
