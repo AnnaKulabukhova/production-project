@@ -1,18 +1,19 @@
-import { Decorator } from "@storybook/react/*"
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider"
-import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";
-import { profileReducer } from "entities/Profile";
-import { addCommentFormReducer } from "features/AddCommentForm/model/slice/addCommentFormSlice";
-import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
-import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsCommentSlice/articleDetailsCommentSlice";
-import { ReducersList } from "shared/lib/components/DynamicModuleLoading/DynamicModuleLoading";
+import type { Decorator } from '@storybook/react/*'
+import { StoreProvider } from '@/app/providers/StoreProvider'
+import type { StateSchema } from '@/app/providers/StoreProvider'
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
+import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice'
+import { profileReducer } from '@/features/EditableProfileCard/model/slice/profileSlice'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices'
+import type { ReducersList } from '@/shared/lib/components/DynamicModuleLoading/DynamicModuleLoading'
+import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
 
 const defaultReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComment: articleDetailsCommentsReducer
+  articleDetailsPage: articleDetailsPageReducer
 }
 
 export const StoreProviderDecorator: (
@@ -23,5 +24,5 @@ export const StoreProviderDecorator: (
     <StoreProvider initialState={state as StateSchema} asyncReducers={{ ...defaultReducers, ...asyncReducers }}>
       <Story />
     </StoreProvider>
-  );
-};
+  )
+}

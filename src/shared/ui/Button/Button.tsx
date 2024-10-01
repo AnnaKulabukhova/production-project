@@ -1,5 +1,7 @@
-import { ButtonHTMLAttributes, FC, ReactNode, memo } from "react"
-import { Mods, classNames } from "shared/lib/classNames/classNames"
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import { memo } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import type { Mods } from '@/shared/lib/classNames/classNames'
 import classes from './Button.module.scss'
 
 export enum ButtonTheme {
@@ -7,6 +9,7 @@ export enum ButtonTheme {
   Clear = 'clear',
   ClearInverted = 'clearInverted',
   Outline = 'outline',
+  OutlineInverted = 'outlineInverted',
   OutlineRed = 'outlineRed',
   Background = 'background',
   BackgroundInverted = 'backgroundInverted',
@@ -19,16 +22,16 @@ export enum ButtonSize {
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string,
-  theme?: ButtonTheme,
+  className?: string
+  theme?: ButtonTheme
   square?: boolean
-  size?: ButtonSize,
+  size?: ButtonSize
   disabled?: boolean
   children: ReactNode
+  fullWight?: boolean
 }
 
-export const Button = memo(({ className, size = ButtonSize.M, theme = ButtonTheme.Outline, children, square, disabled, ...otherProps }: ButtonProps) => {
-
+export const Button = memo(({ className, size = ButtonSize.M, theme = ButtonTheme.Outline, children, square, disabled, fullWight, ...otherProps }: ButtonProps) => {
   const classNameProps = [
     className,
     classes[theme],
@@ -37,8 +40,8 @@ export const Button = memo(({ className, size = ButtonSize.M, theme = ButtonThem
 
   const mods: Mods = {
     [classes.square]: square,
-    [classes.disabled]: disabled
-
+    [classes.disabled]: disabled,
+    [classes.fullWight]: fullWight
   }
 
   return (

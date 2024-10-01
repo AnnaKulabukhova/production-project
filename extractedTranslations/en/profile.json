@@ -1,4 +1,21 @@
 {
+  "An error occurred while uploading the profile": "",
+  "Cancel": "",
+  "Data is not specified": "",
+  "Edit": "",
+  "First and last name are required": "",
+  "Incorrect Age": "",
+  "Incorrect City": "",
+  "Link to the avatar": "",
+  "Profile": "",
+  "Save": "",
   "Selected country": "",
-  "Selected currency": ""
+  "Selected currency": "",
+  "Server error": "",
+  "Try refreshing the page": "",
+  "Your age": "",
+  "Your city": "",
+  "Your first name": "",
+  "Your last name": "",
+  "Your username": ""
 }

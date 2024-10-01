@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -30,9 +64,9 @@
           "title": "Заголовок этого блока",
           "paragraphs": [
             "useEffect — это хук, который можно использовать для замены некоторых методов жизненного цикла классового компонента. UseEffect используется с функциональными компонентами в следующих случаях:",
-          "при визуализации компонента (метод componentDidMount в классовом компоненте);",
-          "при обновлении компонента (метод componentDidUpdated в классовом компоненте);",
-          "при удалении компонента из DOM (метод componentWillUnmount в классовом компоненте)."
+            "при визуализации компонента (метод componentDidMount в классовом компоненте);",
+            "при обновлении компонента (метод componentDidUpdated в классовом компоненте);",
+            "при удалении компонента из DOM (метод componentWillUnmount в классовом компоненте)."
           ]
         },
         {
@@ -90,7 +124,7 @@
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://krymmedia.com/wp-content/uploads/2022/06/Python-Symbol.png",
-      "views": 1022,
+      "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -159,11 +193,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Kotlin news 2019",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 94002,
+      "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
         "IT"
@@ -231,17 +265,16 @@
     },
     {
       "id": "4",
-      "title": "Javascript news 2",
+      "title": "Scala news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://static.cnews.ru/img/book/2024/04/16/2880px-scala-full-color.png",
+      "views": 10222,
+      "createdAt": "24.01.2022",
       "userId": "1",
       "type": [
         "IT"
       ],
       "blocks": [
-       
         {
           "id": "4",
           "type": "code",
@@ -270,7 +303,9 @@
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
-        }]},
+        }
+      ]
+    },
     {
       "id": "6",
       "title": "Kotlin news 2",
@@ -283,13 +318,13 @@
         "IT"
       ],
       "blocks": [
-        
         {
           "id": "4",
           "type": "code",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         }
-      ]},
+      ]
+    },
     {
       "id": "7",
       "title": "Javascript news 3",
@@ -302,7 +337,6 @@
         "IT"
       ],
       "blocks": [
-       
         {
           "id": "4",
           "type": "code",
@@ -312,11 +346,11 @@
     },
     {
       "id": "8",
-      "title": "Python news 3",
+      "title": "Golang news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://krymmedia.com/wp-content/uploads/2022/06/Python-Symbol.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://uproger.com/wp-content/uploads/2021/11/golang-1536x867.png",
+      "views": 10222,
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -331,7 +365,9 @@
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
-        }]},
+        }
+      ]
+    },
     {
       "id": "9",
       "title": "Kotlin news 3",
@@ -344,13 +380,13 @@
         "IT"
       ],
       "blocks": [
-        
         {
           "id": "4",
           "type": "code",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         }
-      ]},
+      ]
+    },
     {
       "id": "10",
       "title": "Javascript news 4",
@@ -363,7 +399,6 @@
         "IT"
       ],
       "blocks": [
-       
         {
           "id": "4",
           "type": "code",
@@ -373,9 +408,9 @@
     },
     {
       "id": "11",
-      "title": "Python news 4",
+      "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://krymmedia.com/wp-content/uploads/2022/06/Python-Symbol.png",
+      "img": "https://andreyex.ru/wp-content/uploads/2018/05/Kak-ustanovit-Java-s-apt-na-Ubuntu-18.04.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
@@ -392,26 +427,28 @@
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
-        }]},
+        }
+      ]
+    },
     {
       "id": "12",
-      "title": "Kotlin news 4",
+      "title": "Ruby news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
+      "views": 102,
+      "createdAt": "21.02.2022",
       "userId": "1",
       "type": [
         "IT"
       ],
       "blocks": [
-        
         {
           "id": "4",
           "type": "code",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         }
-      ]},
+      ]
+    },
     {
       "id": "13",
       "title": "Javascript news 5",
@@ -424,7 +461,6 @@
         "IT"
       ],
       "blocks": [
-       
         {
           "id": "4",
           "type": "code",
@@ -434,10 +470,10 @@
     },
     {
       "id": "14",
-      "title": "Python news 5",
+      "title": "TypeScript news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://krymmedia.com/wp-content/uploads/2022/06/Python-Symbol.png",
-      "views": 1022,
+      "img": "https://repository-images.githubusercontent.com/503767351/c60a81bb-bdca-4a0d-9344-fa9aadfea627",
+      "views": 102222,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -453,26 +489,28 @@
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
-        }]},
+        }
+      ]
+    },
     {
       "id": "15",
-      "title": "Kotlin news 5",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Экономическая статья - ИНФЛЯЦИЯ!",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 10232,
+      "createdAt": "27.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "economics"
       ],
       "blocks": [
-        
         {
           "id": "4",
           "type": "code",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         }
-      ]},
+      ]
+    },
     {
       "id": "16",
       "title": "Javascript news 6",
@@ -485,7 +523,6 @@
         "IT"
       ],
       "blocks": [
-       
         {
           "id": "4",
           "type": "code",
@@ -495,14 +532,14 @@
     },
     {
       "id": "17",
-      "title": "Python news 6",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://krymmedia.com/wp-content/uploads/2022/06/Python-Symbol.png",
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://img.razrisyika.ru/kart/55/1200/217503-biologiya-34.jpg",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "science"
       ],
       "blocks": [
         {
@@ -514,7 +551,9 @@
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.",
             "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:"
           ]
-        }]},
+        }
+      ]
+    },
     {
       "id": "18",
       "title": "Kotlin news 6",
@@ -527,13 +566,13 @@
         "IT"
       ],
       "blocks": [
-        
         {
           "id": "4",
           "type": "code",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         }
-      ]}
+      ]
+    }
   ],
   "comments": [
     {
@@ -547,24 +586,6 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "2"
-    },
-    {
-      "articleId": "3",
-      "userId": "2",
-      "text": "comment 1",
-      "id": "O1OxRap"
-    },
-    {
-      "articleId": "2",
-      "userId": "2",
-      "text": "Привет!",
-      "id": "rPu5WxZ"
     }
   ],
   "users": [
@@ -572,15 +593,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
-      "avatar": "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      "roles": [
+        "admin"
+      ],
+      "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "user"
+      ],
       "avatar": "https://koshka.top/uploads/posts/2021-11/1636826819_12-koshka-top-p-koshki-chernii-kotyara-15.jpg"
+    },
+    {
+      "id": "3",
+      "username": "user",
+      "password": "123",
+      "roles": [
+        "manager"
+      ],
+      "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     }
   ],
   "profile": [
@@ -589,11 +623,11 @@
       "first": "Leanne ",
       "lastName": "Graham",
       "age": 19,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "USD",
+      "country": "Belarus",
       "city": "Moscow",
       "username": "admin",
-      "avatar": "https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg"
+      "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     },
     {
       "id": "2",
@@ -605,6 +639,45 @@
       "city": "Moscow",
       "username": "USER",
       "avatar": "https://koshka.top/uploads/posts/2021-11/1636826819_12-koshka-top-p-koshki-chernii-kotyara-15.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "",
+      "id": "IV6HN-W"
+    },
+    {
+      "articleId": "9",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "!!!",
+      "id": "aMHXB-O"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

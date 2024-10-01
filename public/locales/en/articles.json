@@ -1,4 +1,15 @@
 {
   "Read more": "Read more",
-  "An error occurred while uploading": "An error occurred while uploading"
+  "AnErrorOccurredWhileUploading": "An error occurred while uploading", 
+  "Search": "Search",
+  "Sort by": "Sort by",
+  "By": "By",
+  "Ascending": "Ascending",
+  "Descending": "Descending",
+  "Created": "Created",
+  "Title": "Title",
+  "Views": "Views",
+  "All": "All",
+  "Economics": "Economics",
+  "Science": "Science"
 }

@@ -1,46 +1,59 @@
-import type { Config } from 'jest';
-import path from 'path';
+import type { Config } from 'jest'
+import path from 'path'
 
 const config: Config = {
   clearMocks: true,
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: [
-    "\\\\node_modules\\\\"
+    '\\\\node_modules\\\\'
   ],
   moduleDirectories: [
-    "node_modules",
+    'node_modules',
     'src'
   ],
   moduleFileExtensions: [
-    "js",
-    "mjs",
-    "cjs",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node"
+    'js',
+    'mjs',
+    'cjs',
+    'jsx',
+    'ts',
+    'tsx',
+    'json',
+    'node'
   ],
   testMatch: [
     // "**/__tests__/**/*.[jt]s?(x)",
     // "**/?(*.)+(spec|test).[tj]s?(x)"
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
   // modulePaths: [
   //   '<rootDir>src'
   // ],
-  rootDir: "../../",
+  rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
 
   globals: {
     __IS_DEV__: true,
     __API__: '',
-    __PROJECT__: 'jest',
-  }
+    __PROJECT__: 'jest'
+  },
+
+  // Use this configuration option to add custom reporters to Jest
+
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+      inlineSource: true
+    }]
+  ]
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -63,7 +76,6 @@ const config: Config = {
   // coverageDirectory: undefined,
 
   // An array of regexp pattern strings used to skip coverage collection
-
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -99,15 +111,12 @@ const config: Config = {
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
 
-
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
 
-
   // An array of file extensions your modules use
-
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -127,9 +136,6 @@ const config: Config = {
   // Run tests from one or more projects
   // projects: undefined,
 
-  // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
-
   // Automatically reset mock state before every test
   // resetMocks: false,
 
@@ -143,7 +149,6 @@ const config: Config = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -167,7 +172,6 @@ const config: Config = {
 
   // The test environment that will be used for testing
 
-
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
 
@@ -175,7 +179,6 @@ const config: Config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -211,6 +214,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
 
-export default config;
+export default config

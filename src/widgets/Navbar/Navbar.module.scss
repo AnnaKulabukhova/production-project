@@ -5,10 +5,13 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  color: var(--secondary-color);
 }
 
-.links {
+.links,
+.actions {
   margin-left: auto;
+  color: var(--secondary-color);
 }
 
 .link {
@@ -17,4 +20,9 @@
 
 .link:last-child {
   margin-right: 0;
+}
+
+.appName {
+  width: var(--sidebar-width);
+  margin-left: 15px;
 }

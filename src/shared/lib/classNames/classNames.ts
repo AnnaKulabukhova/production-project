@@ -8,6 +8,5 @@ export const classNames = (cls: string, mods: Mods = {}, additional: Array<strin
       .filter(([_, value]) => Boolean(value))
       .map(([classMod, _]) => classMod)
   ]
-
     .join(' ')
 }

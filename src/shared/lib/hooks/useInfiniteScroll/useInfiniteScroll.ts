@@ -1,34 +1,37 @@
-import { MutableRefObject, useEffect, useRef } from "react"
+import type { MutableRefObject } from 'react'
+import { useEffect } from 'react'
 
 export interface useInfiniteScrollOptions {
   // Вызывается когда пересечен тот или иной элемент
   callback?: () => void
   // Элемент на который будет триггер
-  triggerRef: MutableRefObject<HTMLElement>
+  triggerRef: MutableRefObject<HTMLDivElement | null>
   // обертка внутри которой будет скролл
-  wrapperRef: MutableRefObject<HTMLElement>
+  wrapperRef: MutableRefObject<HTMLElement | null>
 }
 
 export const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: useInfiniteScrollOptions) => {
   useEffect(() => {
-    const wrapperElement = wrapperRef.current
-    const triggerElement = triggerRef.current
+    const wrapperElement = wrapperRef?.current
+    const triggerElement = triggerRef?.current
 
     let observer: IntersectionObserver | null = null
     if (callback) {
-      let options = {
+      const options = {
         root: wrapperElement,
-        rootMargin: "0px",
-        threshold: 1.0,
-      };
+        rootMargin: '0px',
+        threshold: 1.0
+      }
 
       observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
           callback()
         }
-      }, options);
+      }, options)
 
-      observer.observe(triggerElement)
+      if (triggerElement) {
+        observer.observe(triggerElement)
+      }
     }
 
     return () => {

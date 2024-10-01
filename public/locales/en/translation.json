@@ -9,11 +9,12 @@
   "login": "Login",
   "Logout": "Logout",
   "Страница не найдена": "Page not found",
-  "Загрузка": "Loading",
+  "Articles not found": "Articles not found",
+  "Loading": "Loading",
   "Переключить": "Toggle",
-  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
-  "Обновить страницу": "Update page",
-  "Ошибка выброса" : "throw error",
+  "An unexpected error has occurred": "An unexpected error has occurred",
+  "Refresh the page": "Update page",
+  "Ejection error" : "throw error",
   "Enter your username": "Enter your username",
   "Enter your password": "Enter your password", 
   "Authorization form": "Authorization form",
@@ -21,5 +22,9 @@
   "No comments" : "There are no comments",
   "Enter the comment text": "Enter the comment text",
   "Avatar of user": "Avatar of user",
-  "Send": "Send"
+  "Send": "Send",
+  "Edit article with Id": "Edit article with Id",
+  "Create new article": "Create new article",
+  "Admin": "Admin",
+  "Access to the page is prohibited": "Access to the page is prohibited"
 }

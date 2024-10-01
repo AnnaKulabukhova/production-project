@@ -1,12 +1,13 @@
-import { memo, useState } from "react"
+import { memo, useState } from 'react'
 import classes from './Sidebar.module.scss'
-import { classNames } from "shared/lib/classNames/classNames"
-import { ThemeSwitcher } from "shared/ui/ThemeSwitcher"
-import { LangSwitcher } from "shared/ui/LangSwitcher"
-import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button"
-import { SidebarItem } from "../SidebarItem/SidebarItem"
-import { useSelector } from "react-redux"
-import { getSidebarItems } from "widgets/Sidebar/model/selectors/getSidebarItems"
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { VStack } from '@/shared/ui/Stack'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
+import { LangSwitcher } from '@/features/LangSwitcher'
 
 export interface SidebarProps {
   className?: string
@@ -23,8 +24,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
     <menu
       data-testid="sidebar"
-      className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])} >
-
+      className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}
+    >
       <Button
         data-testid="sidebar-toggle"
         onClick={onToggle}
@@ -36,11 +37,12 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         {collapsed ? '>' : '<'}
       </Button>
 
-      <div className={classNames(classes.items)}>
+      <VStack role="navigation" gap="8" className={classNames(classes.items)}>
         {sidebarItemList.map((item) =>
           <SidebarItem key={item.path} item={item} collapsed={collapsed} />
         )}
-      </div>
+      </VStack>
+
       <div className={classes.swithers}>
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />

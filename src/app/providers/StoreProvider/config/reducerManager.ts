@@ -1,5 +1,6 @@
-import { Reducer, ReducersMapObject, UnknownAction, combineReducers } from "@reduxjs/toolkit"
-import { ReducerManager, StateSchema, StateSchemaKey } from "./StateSchema"
+import type { Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit'
+import { combineReducers } from '@reduxjs/toolkit'
+import type { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema'
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
   const reducers = { ...initialReducers }
@@ -7,7 +8,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
   let combinedReducer = combineReducers(reducers)
 
   // Массив хранящий названия редьюсеров для удаления
-  let keysToRemove: Array<StateSchemaKey> = []
+  let keysToRemove: StateSchemaKey[] = []
 
   return {
     getReducerMap: () => reducers,
@@ -17,7 +18,8 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
       if (keysToRemove.length > 0) {
         if (state) {
           state = { ...state }
-          for (let key of keysToRemove) {
+          for (const key of keysToRemove) {
+            // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
             delete state[key]
           }
         }
@@ -26,7 +28,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
       }
 
       // Возвращается редьюсеры без лишних ключей
-      // @ts-ignore
+      // @ts-expect-error It is impossible to fix the error
       return combinedReducer(state, action)
     },
 
@@ -44,11 +46,10 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
       if (!key || !reducers[key]) {
         return
       }
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete reducers[key]
       keysToRemove.push(key)
       combinedReducer = combineReducers(reducers)
     }
   }
 }
-
-

@@ -1,4 +1,4 @@
-import { SerializedError } from "@reduxjs/toolkit"
+import type { SerializedError } from '@reduxjs/toolkit'
 
 export interface LoginSchema {
   username: string

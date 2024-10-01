@@ -1,11 +1,11 @@
-import { Modal } from 'shared/ui/Modal'
+import { Modal } from '@/shared/ui/Modal'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 import { Suspense, memo } from 'react'
-import { Loader } from 'shared/ui/Loader'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { Loader } from '@/shared/ui/Loader'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface LoginModalProps {
-  isOpen?: boolean,
+  isOpen?: boolean
   onClose: () => void
   className?: string
 }

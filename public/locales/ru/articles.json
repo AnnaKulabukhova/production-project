@@ -1,4 +1,16 @@
 {
   "Read more": "Читать далее",
-  "An error occurred while uploading": "Произошла ошибка при загрузке"
+  "AnErrorOccurredWhileUploading": "Произошла ошибка при загрузке",
+  "Search": "Поиск",
+  "Sort by": "Cортировать по",
+  "By": "По",
+  "Ascending": "Возрастанию",
+  "Descending": "Убыванию",
+  "Created": "Дате создания",
+  "Title": "Названию",
+  "Views": "Количеству просмотров",
+  "All": "Все",
+  "Economics": "Экономика",
+  "Science": "Наука",
+  "We recommend it": "Рекомендуем"
 }

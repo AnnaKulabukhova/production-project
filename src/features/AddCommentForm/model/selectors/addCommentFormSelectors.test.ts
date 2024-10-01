@@ -1,4 +1,4 @@
-import type { StateSchema } from 'app/providers/StoreProvider'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import { getAddCommentFormError, getAddCommentFormText } from './addCommentFormSelectors'
 
 describe('addCommentFormSelectors.test', () => {
@@ -13,7 +13,7 @@ describe('addCommentFormSelectors.test', () => {
 
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {}
-    expect(getAddCommentFormText(state as StateSchema)).toEqual(undefined)
+    expect(getAddCommentFormText(state as StateSchema)).toEqual('')
   })
 
   test('should return error', () => {

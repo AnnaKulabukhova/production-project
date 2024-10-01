@@ -1,21 +1,28 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import classes from './Navbar.module.scss'
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { memo, useCallback, useState } from 'react';
-import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import { useTranslation } from 'react-i18next'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { memo, useCallback, useState } from 'react'
+import { LoginModal } from '@/features/AuthByUsername'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from '@/entities/User'
+import { Text } from '@/shared/ui/Text'
+import { AppLink } from '@/shared/ui/AppLink'
+import { AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
+import { HStack } from '@/shared/ui/Stack'
+import { NotificationButton } from '@/features/NotificationButton'
+import { AvatarDropdown } from '@/features/AvatarDropdown'
+import { getRouteArticleCreate } from '@/shared/const/router'
 
 interface NavbarProps {
-  className?: string;
+  className?: string
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false)
   const { t } = useTranslation()
   const authData = useSelector(getUserAuthData)
-  const dispatch = useDispatch()
+
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false)
   }, [])
@@ -24,17 +31,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthModal(true)
   }, [])
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [])
-
   if (authData) {
     return (
       <header className={classNames(classes.navbar, {}, [className ?? ''])}>
-        <Button className={classes.links} onClick={onLogout} theme={ButtonTheme.ClearInverted}>
-          {t('Logout')}
-        </Button>
-
+        <Text
+          className={classes.appName}
+          title='My app'
+        />
+        <AppLink
+          theme={AppLinkTheme.Secondary}
+          to={getRouteArticleCreate()}>{t('Create new article')}</AppLink>
+        <HStack gap='16' className={classes.actions}>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
         <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
       </header>
     )
@@ -42,13 +52,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(classes.navbar, {}, [className])}>
-
       <Button className={classes.links} onClick={onShowModal} theme={ButtonTheme.ClearInverted}>
         {t('login')}
       </Button>
       {isAuthModal &&
         <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
-
     </header>
   )
 })

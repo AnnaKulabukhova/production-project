@@ -32,6 +32,12 @@
   background-color: transparent;
 }
 
+.outlineInverted {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  background-color: transparent;
+}
+
 .outlineRed {
   border: 1px solid var(--red-light);
   color: var(--red-light);
@@ -86,4 +92,8 @@
 
 .disabled {
   opacity: 0.5;
+}
+
+.fullWight {
+  width: 100%;
 }

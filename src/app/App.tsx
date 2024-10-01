@@ -1,12 +1,11 @@
-import { classNames } from "shared/lib/classNames/classNames"
-import { useTheme } from "app/providers/ThemeProvider/lib"
-import { AppRouter } from "./providers/router"
-import { Navbar } from "widgets/Navbar"
-import { Sidebar } from "widgets/Sidebar"
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { AppRouter } from './providers/router'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
 import { Suspense, useEffect } from 'react'
-import { useDispatch, useSelector } from "react-redux"
-import { getUserInit, userActions } from "entities/User"
-
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserInit, userActions } from '@/entities/User'
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
 
 const App = () => {
   const { theme } = useTheme()
@@ -16,7 +15,6 @@ const App = () => {
   useEffect(() => {
     dispatch(userActions.initAuthData())
   }, [dispatch])
-
 
   return (
     <div className={classNames('app', {}, [theme])}>
@@ -31,4 +29,4 @@ const App = () => {
 
   )
 }
-export default App;
+export default App

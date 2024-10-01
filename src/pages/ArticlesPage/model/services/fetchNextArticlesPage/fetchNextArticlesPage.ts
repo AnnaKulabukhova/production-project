@@ -1,8 +1,8 @@
-import { getArticlesPageHasMore, getArticlesPageLoading, getArticlesPageNum } from "../../selectors/articlesPageSelectors"
-import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList"
-import { articlesPageActions } from "../../slices/articlesPageSlice"
-import { createAsyncThunk } from "@reduxjs/toolkit"
-import { ThunkConfig } from "app/providers/StoreProvider";
+import { getArticlesPageHasMore, getArticlesPageLoading, getArticlesPageNum } from '../../selectors/articlesPageSelectors'
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
+import { articlesPageActions } from '../../slices/articlesPageSlice'
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import type { ThunkConfig } from '@/app/providers/StoreProvider'
 
 export const fetchNextArticlesPage = createAsyncThunk<void, void, ThunkConfig<string>>(
   'articlePage/fetchNextArticlesPage',
@@ -14,7 +14,7 @@ export const fetchNextArticlesPage = createAsyncThunk<void, void, ThunkConfig<st
 
     if (hasMore && !isLoading) {
       dispatch(articlesPageActions.setPage(page + 1))
-      dispatch(fetchArticlesList({ page: page + 1 }))
+      dispatch(fetchArticlesList({}))
     }
   }
 )
