@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import type { StateSchema } from '@/app/providers/StoreProvider'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
-import type { TestProps } from '@/shared/types/test'
+import type { TestProps } from '@/shared/types/tests'
 
 interface PageProps extends TestProps {
   className?: string

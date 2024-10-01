@@ -14,11 +14,12 @@ const meta: Meta<typeof Button> = {
 export default meta
 type Story = StoryObj<typeof Button>
 
-export const Primary: Story = {
+export const PrimaryBlue: Story = {
   args: {
     children: 'Text',
     theme: ButtonTheme.Primary
-  }
+  },
+  decorators: [ThemeDecorator(Theme.Blue)]
 }
 
 export const Clear: Story = {
@@ -27,16 +28,11 @@ export const Clear: Story = {
     theme: ButtonTheme.Clear
   }
 }
-export const ClearInverted: Story = {
+
+export const ClearDark: Story = {
   args: {
     children: 'Text',
-    theme: ButtonTheme.ClearInverted
-  }
-}
-export const ClearInvertedDark: Story = {
-  args: {
-    children: 'Text',
-    theme: ButtonTheme.ClearInverted
+    theme: ButtonTheme.Clear
   },
   decorators: [ThemeDecorator(Theme.Dark)]
 }
@@ -114,4 +110,12 @@ export const Disabled: Story = {
     theme: ButtonTheme.Primary,
     disabled: true
   }
+}
+export const FullWightBlue: Story = {
+  args: {
+    children: 'Text',
+    theme: ButtonTheme.Primary,
+    fullWight: true
+  },
+  decorators: [ThemeDecorator(Theme.Blue)]
 }
