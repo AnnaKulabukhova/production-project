@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { NotificationButton } from './NotificationButton'
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator'
-import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator'
-// import { BackgroundDecorator } from '@/shared/config/storybook/BackgroundDecorator'
 
 const parameters = {
   layout: 'fullscreen',
@@ -42,11 +40,26 @@ const meta: Meta<typeof NotificationButton> = {
     className: { control: 'color' }
   },
   args: {},
-  decorators: [StoreProviderDecorator({}), PositionDecorator]
+  decorators: [
+    StoreProviderDecorator({}),
+    (Story) => {
+      return (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'start', height: '100vh' }}>
+          <Story />
+        </div>
+      )
+    }]
 }
 
 export default meta
 type Story = StoryObj<typeof NotificationButton>
 
 export const Light: Story = {
+  decorators: [(Story) => {
+    return (
+      <div style={{ background: '#3c5677' }}>
+        <Story />
+      </div>
+    )
+  }]
 }
