@@ -33,6 +33,7 @@
     "./scripts/refactoring/updateImports.ts", 
     "./scripts/refactoring/createPublicApiForSharedUi.ts", 
     "./eslint.config.mjs", 
+    "./cypress.config.ts", 
     "./src/**/*.ts", 
     "./src/**/*.tsx"
     ],

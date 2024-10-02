@@ -615,6 +615,15 @@
         "manager"
       ],
       "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testUser",
+      "password": "123",
+      "roles": [
+        "manager"
+      ],
+      "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     }
   ],
   "profile": [
