@@ -41,7 +41,7 @@ export const ArticleListItem = memo(({ className, article, view = ArticlesViews.
   return (
     <>
       {view === ArticlesViews.Big
-        ? (<div className={classNames('', {}, [className, classes[view]])}>
+        ? (<div data-testid="ArticleListItem" className={classNames('', {}, [className, classes[view]])}>
           <Card>
             <div className={classes.header}>
               <Avatar className={classes.avatar} size={30} src={article?.user.avatar} />
@@ -67,10 +67,11 @@ export const ArticleListItem = memo(({ className, article, view = ArticlesViews.
             </div>
           </Card>
         </div>)
-        : (<div {...bindHover} className={classNames('', {}, [className, classes[view]])}>
+        : (
           <AppLink
             target={target}
             to={getRouteArticlesDetails(article?.id)}
+            data-testid="ArticleListItem" {...bindHover} className={classNames('', {}, [className, classes[view]])}
           >
             <Card>
               <div className={classes.imageWrapper}>
@@ -87,8 +88,7 @@ export const ArticleListItem = memo(({ className, article, view = ArticlesViews.
               </div>
               <Text text={article?.title} className={classes.title} />
             </Card>
-          </AppLink>
-        </div>)
+          </AppLink>)
       }
     </>
   )

@@ -46,7 +46,10 @@ export const StarRating = memo(({ className, onSelect, size = 30, selectedStars 
           onClick={onClick(star)}
           Svg={starIcon} key={star}
           width={size}
-          height={size} />
+          height={size}
+          data-testid={`StarRating.${star}`}
+          data-selected={currentStarsCount >= star}
+        />
       ))}
     </div>
   )

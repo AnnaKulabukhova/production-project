@@ -27,10 +27,9 @@ describe('Роутинг', () => {
       cy.get(selectByTestId('ProfilePage')).should('exist')
     })
 
-    // it('Переход на страницу со списком статей', () => {
-    //   cy.visit('http://localhost:3000/articles')
-    //   // cy.wait(2000)
-    //   cy.get(selectByTestId('ArticlesPage'), { timeout: 15000 }).should('exist')
-    // })
+    it('Переход на страницу со списком статей', () => {
+      cy.visit('http://localhost:3000/articles')
+      cy.get(selectByTestId('ArticlesPage'), { timeout: 15000 }).should('exist')
+    })
   })
 })
