@@ -1,4 +1,4 @@
-import { selectByTestId } from 'cypress/helpers/selectByTestid'
+import { selectByTestId } from '../../helpers/selectByTestid'
 
 describe('Роутинг', () => {
   describe('Пользователь не авторизован', () => {
