@@ -1,0 +1,28 @@
+{
+  "id": "18",
+  "title": "Kotlin news 6",
+  "subtitle": "Что нового в JS за 2022 год?",
+  "img": "https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png",
+  "views": 1022,
+  "createdAt": "26.02.2022",
+  "userId": "1",
+  "type": [
+    "IT"
+  ],
+  "blocks": [
+    {
+      "id": "4",
+      "type": "code",
+      "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
+    }
+  ],
+  "user": {
+    "id": "1",
+    "username": "admin",
+    "password": "123",
+    "roles": [
+      "admin"
+    ],
+    "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
+  }
+}

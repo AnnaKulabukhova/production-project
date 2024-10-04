@@ -574,8 +574,8 @@
       ]
     },
     {
-      "title": "Javascript news 6",
-      "subtitle": "Что нового в JS за 2022 год?",
+      "title": "Testing Article",
+      "subtitle": "",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
@@ -584,33 +584,7 @@
         " IT"
       ],
       "blocks": [],
-      "id": "T46sCWS"
-    },
-    {
-      "title": "Javascript news 6",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
-      "type": [
-        " IT"
-      ],
-      "blocks": [],
-      "id": "LJuj5ul"
-    },
-    {
-      "title": "Javascript news 6",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
-      "type": [
-        " IT"
-      ],
-      "blocks": [],
-      "id": "ON4usUt"
+      "id": "NOYq3iV"
     },
     {
       "title": "Testing Article",
@@ -623,7 +597,7 @@
         " IT"
       ],
       "blocks": [],
-      "id": "H2LqhFV"
+      "id": "XFeevNK"
     },
     {
       "title": "Testing Article",
@@ -636,7 +610,7 @@
         " IT"
       ],
       "blocks": [],
-      "id": "PCxopcX"
+      "id": "6oI4L3y"
     },
     {
       "title": "Testing Article",
@@ -649,33 +623,7 @@
         " IT"
       ],
       "blocks": [],
-      "id": "IwzeowD"
-    },
-    {
-      "title": "Testing Article",
-      "subtitle": "",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
-      "type": [
-        " IT"
-      ],
-      "blocks": [],
-      "id": "vuXBMhZ"
-    },
-    {
-      "title": "Testing Article",
-      "subtitle": "",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
-      "userId": "1",
-      "type": [
-        " IT"
-      ],
-      "blocks": [],
-      "id": "snfmhlW"
+      "id": "MqUzke8"
     }
   ],
   "comments": [
