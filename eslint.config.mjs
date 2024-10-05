@@ -10,6 +10,7 @@ import jest from 'eslint-plugin-jest'
 import autofix from 'eslint-plugin-autofix'
 import unusedImports from 'eslint-plugin-unused-imports'
 import tsParser from '@typescript-eslint/parser'
+import eslintConfigPrettier from "eslint-config-prettier";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __filename = fileURLToPath(import.meta.url)
@@ -48,11 +49,12 @@ export default [
     },
     rules: {
       // react rules
-      'react/self-closing-comp': ['error', { component: true, html: true }],
-      'react/jsx-indent-props': [2, 2],
+      // 'react/self-closing-comp': ['error', { component: true, html: true }],
+      // 'react/jsx-indent-props': [2, 2],
       'react/jsx-props-no-spreading': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/display-name': 'off',
+      "react/jsx-max-props-per-line": ['error', { "maximum": 3}],
       // import rules
       'import/no-unresolved': 'off',
       'import/no-extraneous-dependencies': 'off',
@@ -93,5 +95,6 @@ export default [
       '@typescript-eslint/unbound-method': 'off',
       'jest/unbound-method': 'error'
     }
-  }
+  },
+  eslintConfigPrettier
 ]

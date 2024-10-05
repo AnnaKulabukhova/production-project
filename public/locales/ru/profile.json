@@ -2,8 +2,8 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "Your first name": "Ваше имя",
-  "Your last name":  "Ваша фамилия",
-  "Try refreshing the page":  "Попробуйте обновить страницу",
+  "Your last name": "Ваша фамилия",
+  "Try refreshing the page": "Попробуйте обновить страницу",
   "An error occurred while uploading the profile": "Произошла ошибка при загрузке профиля",
   "Cancel": "Отменить",
   "Save": "Сохранить",
@@ -18,6 +18,4 @@
   "First and last name are required": "Имя и фамилия обязательны",
   "Incorrect City": "Некорректный город",
   "Data is not specified": "Данные не указаны"
-
 }
-  

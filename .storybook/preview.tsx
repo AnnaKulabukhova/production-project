@@ -1,16 +1,16 @@
-import type { Preview } from '@storybook/react'
-import { ThemeDecorator } from '../src/shared/config/storybook/ThemeDecorator'
-import { Theme } from '../src/shared/const/theme'
-import { RouterDecorator } from '../src/shared/config/storybook/RouterDecorator'
-import { SuspenseDecorator } from '../src/shared/config/storybook/SuspenseDecorator'
+import type { Preview } from '@storybook/react';
+import { ThemeDecorator } from '../src/shared/config/storybook/ThemeDecorator';
+import { Theme } from '../src/shared/const/theme';
+import { RouterDecorator } from '../src/shared/config/storybook/RouterDecorator';
+import { SuspenseDecorator } from '../src/shared/config/storybook/SuspenseDecorator';
 
 const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i
-      }
+        date: /Date$/i,
+      },
     },
     layout: 'fullscreen',
     // backgrounds: {
@@ -32,17 +32,15 @@ const preview: Preview = {
         { name: 'light', class: ['app', Theme.Light], color: 'f4f7fb' },
         { name: 'dark', class: ['app', Theme.Dark], color: '#3c5677' },
         {
-          name: 'blue', class: ['app', Theme.Blue], color: '#24b2bc'
-        }
-      ]
-    }
+          name: 'blue',
+          class: ['app', Theme.Blue],
+          color: '#24b2bc',
+        },
+      ],
+    },
   },
   globals: { theme: Theme.Light, __IS_DEV__: true },
-  decorators: [
-    ThemeDecorator(Theme.Light),
-    RouterDecorator,
-    SuspenseDecorator
-  ]
-}
+  decorators: [ThemeDecorator(Theme.Light), RouterDecorator, SuspenseDecorator],
+};
 
-export default preview
+export default preview;

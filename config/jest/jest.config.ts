@@ -1,30 +1,16 @@
-import type { Config } from 'jest'
-import path from 'path'
+import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
   clearMocks: true,
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '\\\\node_modules\\\\'
-  ],
-  moduleDirectories: [
-    'node_modules',
-    'src'
-  ],
-  moduleFileExtensions: [
-    'js',
-    'mjs',
-    'cjs',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'node'
-  ],
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  moduleDirectories: ['node_modules', 'src'],
+  moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
   testMatch: [
     // "**/__tests__/**/*.[jt]s?(x)",
     // "**/?(*.)+(spec|test).[tj]s?(x)"
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   // modulePaths: [
   //   '<rootDir>src'
@@ -34,26 +20,29 @@ const config: Config = {
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 
   globals: {
     __IS_DEV__: true,
     __API__: '',
-    __PROJECT__: 'jest'
+    __PROJECT__: 'jest',
   },
 
   // Use this configuration option to add custom reporters to Jest
 
   reporters: [
     'default',
-    ['jest-html-reporters', {
-      publicPath: '<rootDir>/reports/unit',
-      filename: 'report.html',
-      openReport: true,
-      inlineSource: true
-    }]
-  ]
+    [
+      'jest-html-reporters',
+      {
+        publicPath: '<rootDir>/reports/unit',
+        filename: 'report.html',
+        openReport: true,
+        inlineSource: true,
+      },
+    ],
+  ],
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -214,6 +203,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-}
+};
 
-export default config
+export default config;

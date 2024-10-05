@@ -1,2 +1,2 @@
-export * from './ErrorBoundary'
-export * from './BugButton'
+export * from './ErrorBoundary';
+export * from './BugButton';

@@ -7,9 +7,7 @@
     "views": 1022,
     "createdAt": "26.02.2022",
     "userId": "1",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "10",
@@ -75,9 +73,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "admin"
-      ],
+      "roles": ["admin"],
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     }
   },
@@ -89,9 +85,7 @@
     "views": 5204,
     "createdAt": "26.02.2022",
     "userId": "1",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -156,9 +150,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "admin"
-      ],
+      "roles": ["admin"],
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     }
   },
@@ -170,9 +162,7 @@
     "views": 94002,
     "createdAt": "26.02.2019",
     "userId": "1",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "1",
@@ -237,9 +227,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "admin"
-      ],
+      "roles": ["admin"],
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     }
   },
@@ -251,9 +239,7 @@
     "views": 10222,
     "createdAt": "24.01.2022",
     "userId": "1",
-    "type": [
-      "IT"
-    ],
+    "type": ["IT"],
     "blocks": [
       {
         "id": "4",
@@ -265,9 +251,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "admin"
-      ],
+      "roles": ["admin"],
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     }
   }

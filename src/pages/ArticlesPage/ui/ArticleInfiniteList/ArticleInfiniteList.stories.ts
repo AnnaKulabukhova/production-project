@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleInfiniteList } from './ArticleInfiniteList'
-import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator'
-import type { Article } from '@/entities/Article'
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleInfiniteList } from './ArticleInfiniteList';
+import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import type { Article } from '@/entities/Article';
 
 const articles = [
   {
@@ -12,37 +12,35 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
 
-    type: [
-      'IT'
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '2',
         type: 'image',
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта'
+        title: 'Рисунок 1 - скриншот сайта',
       },
       {
         id: '3',
         type: 'code',
-        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
       },
 
       {
         id: '8',
         type: 'image',
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта'
+        title: 'Рисунок 1 - скриншот сайта',
       },
       {
         id: '9',
         type: 'text',
         title: 'Заголовок этого блока',
         paragraphs: [
-          'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.'
-        ]
-      }
-    ]
+          'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
+        ],
+      },
+    ],
   },
   {
     id: '2',
@@ -52,29 +50,27 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT'
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '3',
         type: 'code',
-        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
       },
 
       {
         id: '8',
         type: 'image',
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта'
+        title: 'Рисунок 1 - скриншот сайта',
       },
       {
         id: '9',
         type: 'text',
         title: 'Заголовок этого блока',
-        paragraphs: ['fsgf']
-      }
-    ]
+        paragraphs: ['fsgf'],
+      },
+    ],
   },
   {
     id: '3',
@@ -84,9 +80,7 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT'
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '5',
@@ -94,39 +88,37 @@ const articles = [
         title: 'Заголовок этого блока',
         paragraphs: [
           'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
-          'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения'
-        ]
+          'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения',
+        ],
       },
       {
         id: '3',
         type: 'code',
-        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+        code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
       },
       {
         id: '8',
         type: 'image',
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта'
-      }
-
-    ]
-  }
-] as Article[]
+        title: 'Рисунок 1 - скриншот сайта',
+      },
+    ],
+  },
+] as Article[];
 
 const meta: Meta<typeof ArticleInfiniteList> = {
   title: 'Pages/ArticlesPage/ArticleInfiniteList',
   component: ArticleInfiniteList,
   argTypes: {
-    className: { control: 'color' }
+    className: { control: 'color' },
   },
   args: {},
-  decorators: [StoreProviderDecorator({ articlesPage: { entities: { 1: articles[0] } } })]
-}
+  decorators: [StoreProviderDecorator({ articlesPage: { entities: { 1: articles[0] } } })],
+};
 
-export default meta
-type Story = StoryObj<typeof ArticleInfiniteList>
+export default meta;
+type Story = StoryObj<typeof ArticleInfiniteList>;
 
 export const Primary: Story = {
-  args: {
-  }
-}
+  args: {},
+};

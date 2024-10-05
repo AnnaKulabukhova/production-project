@@ -1,4 +1,4 @@
-import type { StateSchema } from '@/app/providers/StoreProvider'
+import type { StateSchema } from '@/app/providers/StoreProvider';
 
-export const getArticleDetailsRecommendationsError = (state: StateSchema) => state.articleDetailsPage?.recommendations.error
-export const getArticleDetailsRecommendationsIsLoading = (state: StateSchema) => state.articleDetailsPage?.recommendations.isLoading
+export const getArticleDetailsRecommendationsError = (state: StateSchema) => state.articleDetailsPage?.recommendations.error;
+export const getArticleDetailsRecommendationsIsLoading = (state: StateSchema) => state.articleDetailsPage?.recommendations.isLoading;

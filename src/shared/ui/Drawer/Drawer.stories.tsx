@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Drawer } from './Drawer'
-import { action } from '@storybook/addon-actions'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Drawer } from './Drawer';
+import { action } from '@storybook/addon-actions';
 
 const children = (
   <ul>
@@ -8,29 +8,29 @@ const children = (
     <li>Element2</li>
     <li>Element3</li>
   </ul>
-)
+);
 const meta: Meta<typeof Drawer> = {
   title: 'Shared/Drawer',
   component: Drawer,
   argTypes: {
-    className: { control: 'color' }
+    className: { control: 'color' },
   },
-  args: {}
-}
+  args: {},
+};
 
-export default meta
-type Story = StoryObj<typeof Drawer>
+export default meta;
+type Story = StoryObj<typeof Drawer>;
 
 export const Open: Story = {
   args: {
     children,
     isOpen: true,
-    onClose: action('Close')
-  }
-}
+    onClose: action('Close'),
+  },
+};
 export const Close: Story = {
   args: {
     children,
-    isOpen: false
-  }
-}
+    isOpen: false,
+  },
+};

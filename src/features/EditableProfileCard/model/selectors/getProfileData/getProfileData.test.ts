@@ -1,7 +1,7 @@
-import { Country } from '@/entities/Country'
-import { getProfileData } from './getProfileData'
-import type { StateSchema } from '@/app/providers/StoreProvider'
-import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country';
+import { getProfileData } from './getProfileData';
+import type { StateSchema } from '@/app/providers/StoreProvider';
+import { Currency } from '@/entities/Currency';
 
 describe('getProfileData', () => {
   test('should return data', () => {
@@ -12,14 +12,14 @@ describe('getProfileData', () => {
       currency: Currency.RUB,
       country: Country.Russia,
       city: 'Moscow',
-      username: 'admin'
-    }
+      username: 'admin',
+    };
 
-    const state: DeepPartial<StateSchema> = { profile: { data } }
-    expect(getProfileData(state as StateSchema)).toEqual(data)
-  })
+    const state: DeepPartial<StateSchema> = { profile: { data } };
+    expect(getProfileData(state as StateSchema)).toEqual(data);
+  });
   test('should work with empty state', () => {
-    const state: DeepPartial<StateSchema> = {}
-    expect(getProfileData(state as StateSchema)).toEqual(undefined)
-  })
-})
+    const state: DeepPartial<StateSchema> = {};
+    expect(getProfileData(state as StateSchema)).toEqual(undefined);
+  });
+});

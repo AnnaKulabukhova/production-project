@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleRecommendationsList } from './ArticleRecommendationsList'
-import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator'
-import type { Article } from '@/entities/Article'
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
+import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import type { Article } from '@/entities/Article';
 
 const article: Article = {
   id: '1',
@@ -12,8 +12,8 @@ const article: Article = {
   title: 'Article',
   type: [],
   user: { id: '1', username: 'user' },
-  views: 456
-}
+  views: 456,
+};
 
 const meta: Meta<typeof ArticleRecommendationsList> = {
   title: 'Features/ArticleRecommendationsList',
@@ -27,22 +27,21 @@ const meta: Meta<typeof ArticleRecommendationsList> = {
         response: [
           { ...article, id: 1 },
           { ...article, id: 2 },
-          { ...article, id: 3 }
-        ]
-      }
-    ]
+          { ...article, id: 3 },
+        ],
+      },
+    ],
   },
   argTypes: {
-    className: { control: 'color' }
+    className: { control: 'color' },
   },
   args: {},
-  decorators: [StoreProviderDecorator({})]
-}
+  decorators: [StoreProviderDecorator({})],
+};
 
-export default meta
-type Story = StoryObj<typeof ArticleRecommendationsList>
+export default meta;
+type Story = StoryObj<typeof ArticleRecommendationsList>;
 
 export const Primary: Story = {
-  args: {
-  }
-}
+  args: {},
+};

@@ -1,35 +1,35 @@
-import { selectByTestId } from '../../helpers/selectByTestid'
+import { selectByTestId } from '../../helpers/selectByTestid';
 
 describe('Роутинг', () => {
   describe('Пользователь не авторизован', () => {
     it('Переход на главную страницу', () => {
-      cy.visit('http://localhost:3000')
-      cy.get(selectByTestId('MainPage')).should('exist')
-    })
+      cy.visit('http://localhost:3000');
+      cy.get(selectByTestId('MainPage')).should('exist');
+    });
 
     it('Переход открывает страницу профиля', () => {
-      cy.visit('http://localhost:3000/profile/1')
-      cy.get(selectByTestId('MainPage')).should('exist')
-    })
+      cy.visit('http://localhost:3000/profile/1');
+      cy.get(selectByTestId('MainPage')).should('exist');
+    });
 
     it('Пользователь открывает несуществующий маршрут', () => {
-      cy.visit('http://localhost:3000/dfhftgjh')
-      cy.get(selectByTestId('NotFoundPage')).should('exist')
-    })
-  })
+      cy.visit('http://localhost:3000/dfhftgjh');
+      cy.get(selectByTestId('NotFoundPage')).should('exist');
+    });
+  });
 
   describe('Пользователь авторизован', () => {
     beforeEach(() => {
-      cy.login()
-    })
+      cy.login();
+    });
     it('Переход открывает страницу профиля', () => {
-      cy.visit('http://localhost:3000/profile/1')
-      cy.get(selectByTestId('ProfilePage')).should('exist')
-    })
+      cy.visit('http://localhost:3000/profile/1');
+      cy.get(selectByTestId('ProfilePage')).should('exist');
+    });
 
     it('Переход на страницу со списком статей', () => {
-      cy.visit('http://localhost:3000/articles')
-      cy.get(selectByTestId('ArticlesPage'), { timeout: 15000 }).should('exist')
-    })
-  })
-})
+      cy.visit('http://localhost:3000/articles');
+      cy.get(selectByTestId('ArticlesPage'), { timeout: 15000 }).should('exist');
+    });
+  });
+});

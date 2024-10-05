@@ -1,62 +1,64 @@
-import { memo, useEffect, useRef, useState } from 'react'
-import type { ReactNode, UIEvent } from 'react'
-import classes from './Page.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getScrollSaveBypath, scrollSaveActions } from '@/features/scrollSave'
-import { useLocation } from 'react-router-dom'
+import { memo, useEffect, useRef, useState } from 'react';
+import type { ReactNode, UIEvent } from 'react';
+import classes from './Page.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getScrollSaveBypath, scrollSaveActions } from '@/features/scrollSave';
+import { useLocation } from 'react-router-dom';
 // import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { useSelector } from 'react-redux'
-import type { StateSchema } from '@/app/providers/StoreProvider'
-import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
-import type { TestProps } from '@/shared/types/tests'
+import { useSelector } from 'react-redux';
+import type { StateSchema } from '@/app/providers/StoreProvider';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import type { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps {
-  className?: string
-  children: ReactNode
-  onScrollEnd?: () => void
+  className?: string;
+  children: ReactNode;
+  onScrollEnd?: () => void;
 }
 
 export const Page = memo((props: PageProps) => {
-  const { className, children, onScrollEnd } = props
-  const [isDataLoaded, setIsDataLoaded] = useState(false)
-  const wrapperRef = useRef<HTMLElement>(null)
-  const triggerRef = useRef<HTMLDivElement>(null)
-  const dispatch = useAppDispatch()
-  const location = useLocation()
-  const scrollPosition = useSelector((state: StateSchema) => getScrollSaveBypath(state, location.pathname))
+  const { className, children, onScrollEnd } = props;
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const wrapperRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const dispatch = useAppDispatch();
+  const location = useLocation();
+  const scrollPosition = useSelector((state: StateSchema) => getScrollSaveBypath(state, location.pathname));
 
-  useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd })
+  useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd });
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    dispatch(scrollSaveActions.setScrollPosition({
-      position: e.currentTarget.scrollTop,
-      path: location.pathname
-    }))
-  }, 500)
+    dispatch(
+      scrollSaveActions.setScrollPosition({
+        position: e.currentTarget.scrollTop,
+        path: location.pathname,
+      }),
+    );
+  }, 500);
 
   useEffect(() => {
-    if (!wrapperRef.current || !isDataLoaded) return
+    if (!wrapperRef.current || !isDataLoaded) return;
     setTimeout(() => {
       if (wrapperRef.current) {
-        wrapperRef.current.scrollTop = scrollPosition
+        wrapperRef.current.scrollTop = scrollPosition;
       }
-    }, 0)
-  }, [isDataLoaded, scrollPosition])
+    }, 0);
+  }, [isDataLoaded, scrollPosition]);
 
   useEffect(() => {
-    if (!wrapperRef.current) return
+    if (!wrapperRef.current) return;
 
     const observer = new MutationObserver(() => {
       if (wrapperRef.current && wrapperRef.current.scrollHeight > scrollPosition) {
-        setIsDataLoaded(true)
-        observer.disconnect()
+        setIsDataLoaded(true);
+        observer.disconnect();
       }
-    })
-    observer.observe(wrapperRef.current, { childList: true, subtree: true })
-    return () => observer.disconnect()
-  }, [scrollPosition])
+    });
+    observer.observe(wrapperRef.current, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [scrollPosition]);
 
   // useInitialEffect(() => {
   //   if (!wrapperRef.current) return;
@@ -85,7 +87,7 @@ export const Page = memo((props: PageProps) => {
   //   }, 2000)
   // })
 
-  console.log('scrollPosition', scrollPosition)
+  console.log('scrollPosition', scrollPosition);
 
   return (
     <>
@@ -99,5 +101,5 @@ export const Page = memo((props: PageProps) => {
         {onScrollEnd ? <div ref={triggerRef} /> : null}
       </main>
     </>
-  )
-})
+  );
+});

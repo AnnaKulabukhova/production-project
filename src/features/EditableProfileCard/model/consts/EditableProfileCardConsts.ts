@@ -3,5 +3,5 @@ export enum ValidateProfileErrors {
   'IncorrectAge' = 'IncorrectAge',
   'IncorrectCity' = 'IncorrectCity',
   'NoData' = 'NoData',
-  'ServerError' = 'ServerError'
+  'ServerError' = 'ServerError',
 }

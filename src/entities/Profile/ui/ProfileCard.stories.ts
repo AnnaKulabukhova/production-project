@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { ProfileCard } from './ProfileCard'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Currency } from '@/entities/Currency'
-import { Country } from '@/entities/Country'
-import AvatarImg from '@/shared/assets/tests/avatarForStorybook.jpg'
-import { Theme } from '@/shared/const/theme'
+import type { Meta, StoryObj } from '@storybook/react';
+import { ProfileCard } from './ProfileCard';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import AvatarImg from '@/shared/assets/tests/avatarForStorybook.jpg';
+import { Theme } from '@/shared/const/theme';
 
 const data = {
   first: 'Leanne',
@@ -14,39 +14,39 @@ const data = {
   country: Country.Russia,
   city: 'Moscow',
   username: 'admin',
-  avatar: AvatarImg
-}
+  avatar: AvatarImg,
+};
 
 const meta: Meta<typeof ProfileCard> = {
   title: 'Entities/ProfileCard',
   component: ProfileCard,
   argTypes: {
-    className: { control: 'color' }
-  }
-}
+    className: { control: 'color' },
+  },
+};
 
-export default meta
-type Story = StoryObj<typeof ProfileCard>
+export default meta;
+type Story = StoryObj<typeof ProfileCard>;
 
 export const Light: Story = {
   args: {
-    data
-  }
-}
+    data,
+  },
+};
 export const Loading: Story = {
   args: {
-    isLoading: true
-  }
-}
+    isLoading: true,
+  },
+};
 export const Error: Story = {
   args: {
-    error: 'Error'
-  }
-}
+    error: 'Error',
+  },
+};
 
 export const Dark: Story = {
   args: {
-    data
+    data,
   },
-  decorators: [ThemeDecorator(Theme.Dark)]
-}
+  decorators: [ThemeDecorator(Theme.Dark)],
+};

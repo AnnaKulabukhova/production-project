@@ -1,14 +1,13 @@
-import { defineConfig } from 'cypress'
+import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-    }
+    setupNodeEvents(on, config) {},
   },
   component: {
     devServer: {
       framework: 'react',
-      bundler: 'webpack'
-    }
-  }
-})
+      bundler: 'webpack',
+    },
+  },
+});

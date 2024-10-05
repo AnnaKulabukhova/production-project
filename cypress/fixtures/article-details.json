@@ -6,9 +6,7 @@
   "views": 1022,
   "createdAt": "26.02.2022",
   "userId": "1",
-  "type": [
-    "IT"
-  ],
+  "type": ["IT"],
   "blocks": [
     {
       "id": "4",
@@ -20,9 +18,7 @@
     "id": "1",
     "username": "admin",
     "password": "123",
-    "roles": [
-      "admin"
-    ],
+    "roles": ["admin"],
     "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
   }
 }

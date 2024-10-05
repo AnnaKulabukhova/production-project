@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
     "outDir": "./build/",
     "noImplicitAny": true,
@@ -16,26 +16,26 @@
     "esModuleInterop": true,
     "isolatedModules": true
   },
-    "ts-node": {
-      "compilerOptions": {
-        "module": "CommonJS",
-        "types": ["node"]
-      }
-    },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "types": ["node"]
+    }
+  },
   "include": [
     "./config/jest/setupTests.ts",
     "./config/jest/jest.config.ts",
     "./config/jest/jestEmptyComponent.tsx",
-    "./.storybook/preview.tsx", 
-    "./.storybook/main.ts", 
-    "./webpack.config.ts", 
-    "./vite.config.ts", 
-    "./scripts/refactoring/updateImports.ts", 
-    "./scripts/refactoring/createPublicApiForSharedUi.ts", 
-    "./eslint.config.mjs", 
-    "./cypress.config.ts", 
-    "./src/**/*.ts", 
+    "./.storybook/preview.tsx",
+    "./.storybook/main.ts",
+    "./webpack.config.ts",
+    "./vite.config.ts",
+    "./scripts/refactoring/updateImports.ts",
+    "./scripts/refactoring/createPublicApiForSharedUi.ts",
+    "./eslint.config.mjs",
+    "./cypress.config.ts",
+    "./src/**/*.ts",
     "./src/**/*.tsx"
-    ],
-    "exclude": [".fttemplates"]
-  }
+  ],
+  "exclude": [".fttemplates"]
+}

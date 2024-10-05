@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Popover } from './Popover'
-import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Popover } from './Popover';
+import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 
 const meta: Meta<typeof Popover> = {
   title: 'Shared/Popover',
   component: Popover,
   argTypes: {
-    className: { control: 'color' }
+    className: { control: 'color' },
   },
   args: {},
-  decorators: [PositionDecorator]
-}
+  decorators: [PositionDecorator],
+};
 
-export default meta
-type Story = StoryObj<typeof Popover>
+export default meta;
+type Story = StoryObj<typeof Popover>;
 
 export const BottomLeft: Story = {
   args: {
@@ -25,9 +25,9 @@ export const BottomLeft: Story = {
         <span> Third content</span>
       </ul>
     ),
-    direction: 'bottom left'
-  }
-}
+    direction: 'bottom left',
+  },
+};
 
 export const BottomRight: Story = {
   args: {
@@ -39,9 +39,9 @@ export const BottomRight: Story = {
         <span> Third content</span>
       </ul>
     ),
-    direction: 'bottom right'
-  }
-}
+    direction: 'bottom right',
+  },
+};
 
 export const TopLeft: Story = {
   args: {
@@ -53,9 +53,9 @@ export const TopLeft: Story = {
         <span> Third content</span>
       </ul>
     ),
-    direction: 'top left'
-  }
-}
+    direction: 'top left',
+  },
+};
 
 export const TopRight: Story = {
   args: {
@@ -67,6 +67,6 @@ export const TopRight: Story = {
         <span> Third content</span>
       </ul>
     ),
-    direction: 'top right'
-  }
-}
+    direction: 'top right',
+  },
+};

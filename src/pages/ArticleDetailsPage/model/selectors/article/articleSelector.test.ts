@@ -1,5 +1,5 @@
-import type { StateSchema } from '@/app/providers/StoreProvider'
-import { getCanEditArticle } from './article'
+import type { StateSchema } from '@/app/providers/StoreProvider';
+import { getCanEditArticle } from './article';
 
 describe('articleDetails.test', () => {
   test('success return id', () => {
@@ -7,52 +7,52 @@ describe('articleDetails.test', () => {
       user: {
         authData: {
           id: '1',
-          username: 'admin'
-        }
+          username: 'admin',
+        },
       },
       articleDetails: {
         data: {
           user: {
             id: '1',
-            username: 'admin'
+            username: 'admin',
           },
           id: '12',
-          title: 'title'
-        }
-      }
-    }
-    expect(getCanEditArticle(state as StateSchema)).toBe(true)
-  })
+          title: 'title',
+        },
+      },
+    };
+    expect(getCanEditArticle(state as StateSchema)).toBe(true);
+  });
   test('unsuccessful return id', () => {
     const state: DeepPartial<StateSchema> = {
       user: {
         authData: {
           id: '1',
-          username: 'admin'
-        }
+          username: 'admin',
+        },
       },
       articleDetails: {
         data: {
           user: {
             id: '2',
-            username: 'admin'
+            username: 'admin',
           },
           id: '12',
-          title: 'title'
-        }
-      }
-    }
-    expect(getCanEditArticle(state as StateSchema)).toBe(false)
-  })
+          title: 'title',
+        },
+      },
+    };
+    expect(getCanEditArticle(state as StateSchema)).toBe(false);
+  });
   test('without user id in article page', () => {
     const state: DeepPartial<StateSchema> = {
       user: {
         authData: {
           id: '1',
-          username: 'admin'
-        }
-      }
-    }
-    expect(getCanEditArticle(state as StateSchema)).toBe(false)
-  })
-})
+          username: 'admin',
+        },
+      },
+    };
+    expect(getCanEditArticle(state as StateSchema)).toBe(false);
+  });
+});

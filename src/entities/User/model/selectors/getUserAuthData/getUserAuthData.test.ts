@@ -1,5 +1,5 @@
-import type { StateSchema } from '@/app/providers/StoreProvider'
-import { getUserAuthData } from './getUserAuthData'
+import type { StateSchema } from '@/app/providers/StoreProvider';
+import { getUserAuthData } from './getUserAuthData';
 
 describe('getUserAuthData.test', () => {
   test('success return data', () => {
@@ -8,22 +8,22 @@ describe('getUserAuthData.test', () => {
         authData: {
           id: '1',
           avatar: '1',
-          username: 'admin'
-        }
-      }
-    }
+          username: 'admin',
+        },
+      },
+    };
     expect(getUserAuthData(state as StateSchema)).toEqual({
       id: '1',
       avatar: '1',
-      username: 'admin'
-    })
-  })
+      username: 'admin',
+    });
+  });
   test('should work with empty authData', () => {
     const state: DeepPartial<StateSchema> = {
       user: {
-        authData: {}
-      }
-    }
-    expect(getUserAuthData(state as StateSchema)).toEqual({})
-  })
-})
+        authData: {},
+      },
+    };
+    expect(getUserAuthData(state as StateSchema)).toEqual({});
+  });
+});

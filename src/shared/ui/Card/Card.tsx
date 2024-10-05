@@ -1,17 +1,17 @@
-import type { HTMLAttributes, ReactNode } from 'react'
-import classes from './Card.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
+import type { HTMLAttributes, ReactNode } from 'react';
+import classes from './Card.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 export enum CardTheme {
   Normal = 'normal',
-  OutLined = 'outlined'
+  OutLined = 'outlined',
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  className?: string
-  children: ReactNode
-  theme?: CardTheme
-  max?: boolean
+  className?: string;
+  children: ReactNode;
+  theme?: CardTheme;
+  max?: boolean;
 }
 
 export const Card = ({ className, max, children, theme = CardTheme.Normal, ...otherProps }: CardProps) => {
@@ -19,5 +19,5 @@ export const Card = ({ className, max, children, theme = CardTheme.Normal, ...ot
     <div className={classNames(classes.card, { [classes.max]: max }, [className, classes[theme]])} {...otherProps}>
       {children}
     </div>
-  )
-}
+  );
+};

@@ -1,9 +1,9 @@
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { fetchNextArticlesPage } from './fetchNextArticlesPage'
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
-import { articlesPageActions } from '../../slices/articlesPageSlice'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { fetchNextArticlesPage } from './fetchNextArticlesPage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { articlesPageActions } from '../../slices/articlesPageSlice';
 
-jest.mock('../fetchArticlesList/fetchArticlesList')
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
 describe('fetchNextArticlesPage', () => {
   test('success', async () => {
@@ -15,15 +15,15 @@ describe('fetchNextArticlesPage', () => {
         ids: [],
         isLoading: false,
         page: 2,
-        limit: 5
-      }
-    })
-    await thunk.callThunk()
+        limit: 5,
+      },
+    });
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(4)
-    expect(thunk.dispatch).toHaveBeenCalledWith(articlesPageActions.setPage(3))
-    expect(fetchArticlesList).toHaveBeenCalledWith({})
-  })
+    expect(thunk.dispatch).toHaveBeenCalledTimes(4);
+    expect(thunk.dispatch).toHaveBeenCalledWith(articlesPageActions.setPage(3));
+    expect(fetchArticlesList).toHaveBeenCalledWith({});
+  });
   test('fetchArticlesList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
@@ -32,14 +32,14 @@ describe('fetchNextArticlesPage', () => {
         ids: [],
         isLoading: false,
         page: 2,
-        limit: 5
-      }
-    })
-    await thunk.callThunk()
+        limit: 5,
+      },
+    });
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
   test('fetchArticlesList loading', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
@@ -48,12 +48,12 @@ describe('fetchNextArticlesPage', () => {
         ids: [],
         isLoading: true,
         page: 2,
-        limit: 5
-      }
-    })
-    await thunk.callThunk()
+        limit: 5,
+      },
+    });
+    await thunk.callThunk();
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
-    expect(fetchArticlesList).not.toHaveBeenCalled()
-  })
-})
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
+    expect(fetchArticlesList).not.toHaveBeenCalled();
+  });
+});

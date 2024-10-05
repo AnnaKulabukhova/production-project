@@ -1,42 +1,42 @@
-import classes from './ArticlesViewSelector.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import ListIcon from '@/shared/assets/icons/list.svg'
-import TiledIcon from '@/shared/assets/icons/tiled.svg'
-import { Button, ButtonTheme } from '@/shared/ui/Button'
-import { Icon } from '@/shared/ui/Icon'
-import { ArticlesViews } from '@/entities/Article'
+import classes from './ArticlesViewSelector.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import ListIcon from '@/shared/assets/icons/list.svg';
+import TiledIcon from '@/shared/assets/icons/tiled.svg';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { ArticlesViews } from '@/entities/Article';
 
 interface ArticlesViewSelectorProps {
-  className?: string
-  view: ArticlesViews
-  onViewClick?: (view: ArticlesViews) => void
+  className?: string;
+  view: ArticlesViews;
+  onViewClick?: (view: ArticlesViews) => void;
 }
 
 const viewTypes = [
   {
     view: ArticlesViews.Small,
-    icon: TiledIcon
+    icon: TiledIcon,
   },
   {
     view: ArticlesViews.Big,
-    icon: ListIcon
-  }
-]
+    icon: ListIcon,
+  },
+];
 
 export const ArticlesViewSelector = ({ className, view, onViewClick }: ArticlesViewSelectorProps) => {
   const onClick = (newView: ArticlesViews) => {
     return () => {
-      onViewClick?.(newView)
-    }
-  }
+      onViewClick?.(newView);
+    };
+  };
 
   return (
-    <div className={classNames('', {}, [className])} >
-      {viewTypes.map(typeView => (
+    <div className={classNames('', {}, [className])}>
+      {viewTypes.map((typeView) => (
         <Button key={typeView.view} theme={ButtonTheme.Clear} onClick={onClick(typeView.view)}>
           <Icon className={classNames('', { [classes.notSelected]: typeView.view !== view }, [])} Svg={typeView.icon} />
         </Button>
       ))}
     </div>
-  )
-}
+  );
+};

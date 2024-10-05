@@ -1,7 +1,7 @@
-import type { Article } from '@/entities/Article'
-import { fetchArticleRecommendations } from '../../services/fetchArticleRecomendations/fetchArticleRecomendations'
-import { articleDetailsPageRecommendationsReducer } from './articleDetailsPageRecommendationsSlice'
-import type { ArticleDetailsPageRecommendationsSchema } from '../../types/ArticleDetailsPageRecommendationsSchema'
+import type { Article } from '@/entities/Article';
+import { fetchArticleRecommendations } from '../../services/fetchArticleRecomendations/fetchArticleRecomendations';
+import { articleDetailsPageRecommendationsReducer } from './articleDetailsPageRecommendationsSlice';
+import type { ArticleDetailsPageRecommendationsSchema } from '../../types/ArticleDetailsPageRecommendationsSchema';
 
 const recommendationArticles: ArticleDetailsPageRecommendationsSchema = {
   entities: {
@@ -14,7 +14,7 @@ const recommendationArticles: ArticleDetailsPageRecommendationsSchema = {
       subtitle: 'subtitle 1',
       title: 'title 1',
       type: [],
-      user: { id: '1', username: 'user' }
+      user: { id: '1', username: 'user' },
     },
     2: {
       views: 5,
@@ -25,11 +25,11 @@ const recommendationArticles: ArticleDetailsPageRecommendationsSchema = {
       subtitle: 'subtitle 2',
       title: 'title 2',
       type: [],
-      user: { id: '21', username: 'user' }
-    }
+      user: { id: '21', username: 'user' },
+    },
   },
-  ids: ['1', '2']
-}
+  ids: ['1', '2'],
+};
 
 const articles: Article[] = [
   {
@@ -41,7 +41,7 @@ const articles: Article[] = [
     subtitle: 'subtitle 1',
     title: 'title 1',
     type: [],
-    user: { id: '1', username: 'user' }
+    user: { id: '1', username: 'user' },
   },
   {
     views: 5,
@@ -52,24 +52,31 @@ const articles: Article[] = [
     subtitle: 'subtitle 2',
     title: 'title 2',
     type: [],
-    user: { id: '21', username: 'user' }
-  }
-]
+    user: { id: '21', username: 'user' },
+  },
+];
 
 describe('articleDetailsPageRecommendationsSlice.test', () => {
   test('pending recommendation articles', () => {
     const state: DeepPartial<ArticleDetailsPageRecommendationsSchema> = {
-      isLoading: false
-    }
-    expect(articleDetailsPageRecommendationsReducer(state as ArticleDetailsPageRecommendationsSchema, fetchArticleRecommendations.pending(''))).toEqual({ isLoading: true })
-  })
+      isLoading: false,
+    };
+    expect(
+      articleDetailsPageRecommendationsReducer(state as ArticleDetailsPageRecommendationsSchema, fetchArticleRecommendations.pending('')),
+    ).toEqual({ isLoading: true });
+  });
 
   test('fulfilled recommendation articles', () => {
     const state: DeepPartial<ArticleDetailsPageRecommendationsSchema> = {
       isLoading: false,
       entities: {},
-      ids: []
-    }
-    expect(articleDetailsPageRecommendationsReducer(state as ArticleDetailsPageRecommendationsSchema, fetchArticleRecommendations.fulfilled(articles, ''))).toEqual({ ...recommendationArticles, isLoading: false })
-  })
-})
+      ids: [],
+    };
+    expect(
+      articleDetailsPageRecommendationsReducer(
+        state as ArticleDetailsPageRecommendationsSchema,
+        fetchArticleRecommendations.fulfilled(articles, ''),
+      ),
+    ).toEqual({ ...recommendationArticles, isLoading: false });
+  });
+});

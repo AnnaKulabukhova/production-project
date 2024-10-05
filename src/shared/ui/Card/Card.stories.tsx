@@ -1,37 +1,37 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
-import { Text } from '../Text'
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/shared/const/theme'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Card } from './Card';
+import { Text } from '../Text';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Card> = {
   title: 'Shared/Card',
   component: Card,
   argTypes: {
-    className: { control: 'color' }
+    className: { control: 'color' },
   },
-  args: {}
-}
+  args: {},
+};
 
-export default meta
-type Story = StoryObj<typeof Card>
+export default meta;
+type Story = StoryObj<typeof Card>;
 
 export const Primary: Story = {
   args: {
-    children: <Text title='title' text='text, text' />
-  }
-}
+    children: <Text title="title" text="text, text" />,
+  },
+};
 
 export const Dark: Story = {
   args: {
-    children: <Text title='title' text='text, text' />
+    children: <Text title="title" text="text, text" />,
   },
-  decorators: [ThemeDecorator(Theme.Dark)]
-}
+  decorators: [ThemeDecorator(Theme.Dark)],
+};
 
 export const Blue: Story = {
   args: {
-    children: <Text title='title' text='text, text' />
+    children: <Text title="title" text="text, text" />,
   },
-  decorators: [ThemeDecorator(Theme.Blue)]
-}
+  decorators: [ThemeDecorator(Theme.Blue)],
+};

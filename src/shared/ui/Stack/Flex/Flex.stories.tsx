@@ -1,17 +1,17 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Flex } from './Flex'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Flex } from './Flex';
 
 const meta: Meta<typeof Flex> = {
   title: 'Shared/Flex',
   component: Flex,
   argTypes: {
-    className: { control: 'color' }
+    className: { control: 'color' },
   },
-  args: {}
-}
+  args: {},
+};
 
-export default meta
-type Story = StoryObj<typeof Flex>
+export default meta;
+type Story = StoryObj<typeof Flex>;
 
 export const Row: Story = {
   args: {
@@ -22,9 +22,9 @@ export const Row: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const RowGap4: Story = {
   args: {
@@ -36,9 +36,9 @@ export const RowGap4: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const RowGap8: Story = {
   args: {
@@ -50,9 +50,9 @@ export const RowGap8: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const RowGap16: Story = {
   args: {
@@ -64,9 +64,9 @@ export const RowGap16: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const RowGap32: Story = {
   args: {
@@ -78,9 +78,9 @@ export const RowGap32: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const Column: Story = {
   args: {
@@ -92,9 +92,9 @@ export const Column: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const ColumnAlignEnd: Story = {
   args: {
@@ -107,9 +107,9 @@ export const ColumnAlignEnd: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const ColumnGap16: Story = {
   args: {
@@ -122,9 +122,9 @@ export const ColumnGap16: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
 
 export const ColumnGap32: Story = {
   args: {
@@ -137,6 +137,6 @@ export const ColumnGap32: Story = {
         <div>first</div>
         <div>first</div>
       </>
-    )
-  }
-}
+    ),
+  },
+};
