@@ -1,7 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
-import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import type { Article } from '@/entities/Article';
+import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+
+const article: Article = {
+  id: '1',
+  blocks: [],
+  createdAt: '',
+  img: '',
+  subtitle: 'fsd',
+  title: 'Article',
+  type: [],
+  user: { id: '1', username: 'user' },
+  views: 456,
+};
 
 const articles = [
   {
@@ -113,13 +125,21 @@ const meta: Meta<typeof ArticlesPage> = {
     className: { control: 'color' },
   },
   args: {},
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles?sort=createAt&order=asc&search=&type=all`,
+        method: 'GET',
+        status: 200,
+        response: article
+      },
+    ],
+  },
   decorators: [StoreProviderDecorator({})],
-  // decorators: [StoreProviderDecorator({ articlesPage: { entities: { 1: articles[0] } } })]
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticlesPage>;
 
 export const Primary: Story = {
-  args: {},
 };

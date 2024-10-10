@@ -7,11 +7,11 @@ import type { ReducersList } from '@/shared/lib/components/DynamicModuleLoading/
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import { useSearchParams } from 'react-router-dom';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 
 interface ArticlesPageProps {
   className?: string;
@@ -35,7 +35,11 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoading reducers={reducers} removeAfterUnmount={false}>
-      <Page data-testid="ArticlesPage" onScrollEnd={LoadNextPart} className={classNames(classes.articlesPage, {}, [className])}>
+      <Page
+        data-testid="ArticlesPage"
+        onScrollEnd={LoadNextPart}
+        className={classNames(classes.articlesPage, {}, [className])}
+      >
         <ArticlesPageFilter className={classes.filters} />
         <ArticleInfiniteList />
       </Page>

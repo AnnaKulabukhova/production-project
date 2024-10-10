@@ -10,11 +10,13 @@ interface ProfilePageProps {
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>();
+  // const isProfileRatingEnabled = getFeaturesFlag('isProfileRatingEnabled')
 
   return (
     <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
       <VStack gap="16" max>
         <EditableProfileCard id={id} />
+        {/* {isProfileRatingEnabled && <ProfileRating />} */}
       </VStack>
     </Page>
   );

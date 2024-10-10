@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
-import type { Article } from '@/entities/Article';
+import { ArticleBlockType, ArticleType } from '@/entities/Article';
 
-const articles = [
-  {
+const articles = {
+  '0': {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -12,29 +12,23 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
 
-    type: ['IT'],
+    type: [ArticleType.Economics],
     blocks: [
       {
-        id: '2',
-        type: 'image',
-        src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
-        title: 'Рисунок 1 - скриншот сайта',
-      },
-      {
         id: '3',
-        type: 'code',
+        type: ArticleBlockType.Code,
         code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
       },
 
       {
         id: '8',
-        type: 'image',
+        type: ArticleBlockType.Image,
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
         title: 'Рисунок 1 - скриншот сайта',
       },
       {
         id: '9',
-        type: 'text',
+        type: ArticleBlockType.Text,
         title: 'Заголовок этого блока',
         paragraphs: [
           'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
@@ -42,7 +36,7 @@ const articles = [
       },
     ],
   },
-  {
+  '1': {
     id: '2',
     title: 'Python news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -50,29 +44,29 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: ['IT'],
+    type: [ArticleType.Economics],
     blocks: [
       {
         id: '3',
-        type: 'code',
+        type: ArticleBlockType.Code,
         code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
       },
 
       {
         id: '8',
-        type: 'image',
+        type: ArticleBlockType.Image,
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
         title: 'Рисунок 1 - скриншот сайта',
       },
       {
         id: '9',
-        type: 'text',
+        type: ArticleBlockType.Text,
         title: 'Заголовок этого блока',
         paragraphs: ['fsgf'],
       },
     ],
   },
-  {
+  '2': {
     id: '3',
     title: 'Kotlin news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -80,11 +74,11 @@ const articles = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: ['IT'],
+    type: [ArticleType.Economics],
     blocks: [
       {
         id: '5',
-        type: 'text',
+        type: ArticleBlockType.Text,
         title: 'Заголовок этого блока',
         paragraphs: [
           'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -93,18 +87,18 @@ const articles = [
       },
       {
         id: '3',
-        type: 'code',
+        type: ArticleBlockType.Code,
         code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
       },
       {
         id: '8',
-        type: 'image',
+        type: ArticleBlockType.Image,
         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
         title: 'Рисунок 1 - скриншот сайта',
       },
     ],
   },
-] as Article[];
+}
 
 const meta: Meta<typeof ArticleInfiniteList> = {
   title: 'Pages/ArticlesPage/ArticleInfiniteList',
@@ -113,7 +107,8 @@ const meta: Meta<typeof ArticleInfiniteList> = {
     className: { control: 'color' },
   },
   args: {},
-  decorators: [StoreProviderDecorator({ articlesPage: { entities: { 1: articles[0] } } })],
+  decorators: [StoreProviderDecorator({ articlesPage: { entities: articles, ids: ['0', '1', ' 2'] } })],
+  // decorators: [StoreProviderDecorator({ articlesPage: { entities: { 1: articles[0] } } })],
 };
 
 export default meta;
@@ -122,3 +117,107 @@ type Story = StoryObj<typeof ArticleInfiniteList>;
 export const Primary: Story = {
   args: {},
 };
+
+
+// const articles = [
+//   {
+//     id: '1',
+//     title: 'Javascript news',
+//     subtitle: 'Что нового в JS за 2022 год?',
+//     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+//     views: 1022,
+//     createdAt: '26.02.2022',
+
+//     type: ['IT'],
+//     blocks: [
+//       {
+//         id: '2',
+//         type: 'image',
+//         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+//         title: 'Рисунок 1 - скриншот сайта',
+//       },
+//       {
+//         id: '3',
+//         type: 'code',
+//         code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+//       },
+
+//       {
+//         id: '8',
+//         type: 'image',
+//         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+//         title: 'Рисунок 1 - скриншот сайта',
+//       },
+//       {
+//         id: '9',
+//         type: 'text',
+//         title: 'Заголовок этого блока',
+//         paragraphs: [
+//           'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     id: '2',
+//     title: 'Python news',
+//     subtitle: 'Что нового в JS за 2022 год?',
+//     img: 'https://krymmedia.com/wp-content/uploads/2022/06/Python-Symbol.png',
+//     views: 1022,
+//     createdAt: '26.02.2022',
+//     userId: '1',
+//     type: ['IT'],
+//     blocks: [
+//       {
+//         id: '3',
+//         type: 'code',
+//         code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+//       },
+
+//       {
+//         id: '8',
+//         type: 'image',
+//         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+//         title: 'Рисунок 1 - скриншот сайта',
+//       },
+//       {
+//         id: '9',
+//         type: 'text',
+//         title: 'Заголовок этого блока',
+//         paragraphs: ['fsgf'],
+//       },
+//     ],
+//   },
+//   {
+//     id: '3',
+//     title: 'Kotlin news',
+//     subtitle: 'Что нового в JS за 2022 год?',
+//     img: 'https://avatao.com/media/2020/08/1_fnbqF0xNVwINs_RkygkX1g.png',
+//     views: 1022,
+//     createdAt: '26.02.2022',
+//     userId: '1',
+//     type: ['IT'],
+//     blocks: [
+//       {
+//         id: '5',
+//         type: 'text',
+//         title: 'Заголовок этого блока',
+//         paragraphs: [
+//           'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
+//           'Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения',
+//         ],
+//       },
+//       {
+//         id: '3',
+//         type: 'code',
+//         code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+//       },
+//       {
+//         id: '8',
+//         type: 'image',
+//         src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+//         title: 'Рисунок 1 - скриншот сайта',
+//       },
+//     ],
+//   },
+// ] as Article[];

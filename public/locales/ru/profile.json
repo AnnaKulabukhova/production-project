@@ -17,5 +17,6 @@
   "Incorrect Age": "Некорректный возраст",
   "First and last name are required": "Имя и фамилия обязательны",
   "Incorrect City": "Некорректный город",
-  "Data is not specified": "Данные не указаны"
+  "Data is not specified": "Данные не указаны",
+  "Review of profile": "Оцените профиль пользователя"
 }

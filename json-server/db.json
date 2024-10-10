@@ -596,6 +596,10 @@
       "roles": [
         "admin"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isProfileRatingEnabled": true
+      },
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     },
     {
@@ -605,15 +609,23 @@
       "roles": [
         "user"
       ],
+        "features": {
+        "isArticleRatingEnabled": false,
+        "isProfileRatingEnabled": false
+      },
       "avatar": "https://koshka.top/uploads/posts/2021-11/1636826819_12-koshka-top-p-koshki-chernii-kotyara-15.jpg"
     },
     {
       "id": "3",
-      "username": "user",
+      "username": "manager",
       "password": "123",
       "roles": [
         "manager"
       ],
+        "features": {
+        "isArticleRatingEnabled": true,
+        "isProfileRatingEnabled": false
+      },
       "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     },
     {
@@ -646,8 +658,19 @@
       "currency": "RUB",
       "country": "Armenia",
       "city": "Moscow",
-      "username": "USER",
+      "username": "user",
       "avatar": "https://koshka.top/uploads/posts/2021-11/1636826819_12-koshka-top-p-koshki-chernii-kotyara-15.jpg"
+    },
+    {
+      "id": "3",
+      "first": "Ervin",
+      "lastName": "Howell",
+      "age": 18,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "Moscow",
+      "username": "manager",
+      "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     },
     {
       "id": "4",
