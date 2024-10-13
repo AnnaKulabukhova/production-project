@@ -600,6 +600,11 @@
         "isArticleRatingEnabled": true,
         "isProfileRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "blue",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": true
+      },
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     },
     {
@@ -609,9 +614,14 @@
       "roles": [
         "user"
       ],
-        "features": {
+      "features": {
         "isArticleRatingEnabled": false,
         "isProfileRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "dark",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": true
       },
       "avatar": "https://koshka.top/uploads/posts/2021-11/1636826819_12-koshka-top-p-koshki-chernii-kotyara-15.jpg"
     },
@@ -622,9 +632,14 @@
       "roles": [
         "manager"
       ],
-        "features": {
+      "features": {
         "isArticleRatingEnabled": true,
         "isProfileRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "blue",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": true
       },
       "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     },
@@ -635,6 +650,15 @@
       "roles": [
         "manager"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isProfileRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "blue",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": true
+      },
       "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     }
   ],

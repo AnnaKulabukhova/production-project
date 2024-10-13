@@ -19,7 +19,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   const profileRatingFeature = toggleFeatures({
     name: 'isProfileRatingEnabled',
-    on: () => <ProfileRating></ProfileRating>,
+    on: () => <ProfileRating />,
     off: () => (
       <Card>
         <Text title={t('The evaluation of the profile will appear soon')} />

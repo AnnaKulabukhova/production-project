@@ -3,13 +3,20 @@ import AppRouter from './AppRouter';
 import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 import { screen } from '@testing-library/react';
 import { UserRole } from '@/entities/User';
+import { setFeaturesFlag } from '@/shared/lib/features';
 
 beforeAll(() => {
   global.ResizeObserver = class {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
+    observe() { }
+    unobserve() { }
+    disconnect() { }
   };
+});
+
+beforeEach(() => {
+  setFeaturesFlag({
+    isProfileRatingEnabled: true,
+  });
 });
 
 describe('AppRouter.test', () => {
@@ -56,6 +63,7 @@ describe('AppRouter.test', () => {
     const page = await screen.findByTestId('ForbiddenPage');
     expect(page).toBeInTheDocument();
   });
+
   test('Access is allowed (the role is present)', async () => {
     componentRender(<AppRouter />, {
       route: getRouteAdminPanel(),
