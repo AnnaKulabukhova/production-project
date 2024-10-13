@@ -603,7 +603,7 @@
       "jsonSettings": {
         "theme": "blue",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": true
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://avatars.mds.yandex.net/i?id=7f28314c1abd46c750100fcebfd092d2_l-7754287-images-thumbs&n=13"
     },
@@ -639,7 +639,8 @@
       "jsonSettings": {
         "theme": "blue",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": true
+        "settingsPageHasBeenOpen": true,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://polinka.top/pics1/uploads/posts/2024-01/1704877097_polinka-top-p-koshka-pushistaya-kartinka-37.jpg"
     },

@@ -28,5 +28,7 @@
   "Edit article with Id": "Редактирование статьи с Id",
   "Create new article": "Создание новой статьи",
   "Admin": "Админ",
-  "Access to the page is prohibited": "Доступ к странице запрещен"
+  "Access to the page is prohibited": "Доступ к странице запрещен",
+  "Welcome to the articles page": "Добро пожаловать на страницу статей",
+  "Here you can search and view articles on various topics": "Здесь вы можете искать и просматривать статьи на различные темы"
 }
