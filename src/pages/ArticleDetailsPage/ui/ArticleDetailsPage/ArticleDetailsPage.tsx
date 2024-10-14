@@ -11,11 +11,11 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
-import { ArticleRating } from '@/features/ArticleRating';
 import { Card } from '@/shared/ui/Card';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@/shared/ui/Text';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -33,15 +33,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return null;
   }
 
-  const articleRatingFeature = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id}></ArticleRating>,
-    off: () => (
-      <Card>
-        <Text title={t('The evaluation of the article will appear soon')} />
-      </Card>
-    )
-  })
+  // const articleRatingFeature = toggleFeatures({
+  //   name: 'isArticleRatingEnabled',
+  //   on: () => <ArticleRating articleId={id}></ArticleRating>,
+  //   off: () => (
+  //     <Card>
+  //       <Text title={t('The evaluation of the article will appear soon')} />
+  //     </Card>
+  //   )
+  // })
 
 
   return (
@@ -50,7 +50,15 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRatingFeature}
+          <ToggleFeatures
+            feature='isArticleRatingEnabled'
+            on={<ArticleRating articleId={id}></ArticleRating>}
+            off={
+              <Card>
+                <Text title={t('The evaluation of the article will appear soon')} />
+              </Card>
+            }
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
