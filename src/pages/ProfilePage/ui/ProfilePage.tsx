@@ -17,9 +17,13 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profile');
   const { id } = useParams<{ id: string }>();
 
+  if (!id) {
+    return null;
+  }
+
   const profileRatingFeature = toggleFeatures({
     name: 'isProfileRatingEnabled',
-    on: () => <ProfileRating />,
+    on: () => <ProfileRating profileId={id} />,
     off: () => (
       <Card>
         <Text title={t('The evaluation of the profile will appear soon')} />

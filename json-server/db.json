@@ -616,7 +616,7 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isProfileRatingEnabled": false
+        "isProfileRatingEnabled": true
       },
       "jsonSettings": {
         "theme": "dark",
@@ -633,8 +633,8 @@
         "manager"
       ],
       "features": {
-        "isArticleRatingEnabled": true,
-        "isProfileRatingEnabled": false
+        "isArticleRatingEnabled": false,
+        "isProfileRatingEnabled": true
       },
       "jsonSettings": {
         "theme": "blue",
@@ -729,16 +729,29 @@
     {
       "id": "1",
       "rate": 4,
-      "feedback": "Хорошая статья",
+      "feedback": "Отличный пользователь",
       "userId": "1",
       "profileId": "1"
     },
     {
       "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "rate": 2,
       "userId": "1",
       "profileId": "2"
+    },
+    {
+      "feedback": "fds",
+      "profileId": "2",
+      "rate": 4,
+      "userId": "2",
+      "id": "gZMLhnT"
+    },
+    {
+      "feedback": "gdhrhj",
+      "profileId": "3",
+      "rate": 5,
+      "userId": "2",
+      "id": "04bMyHS"
     }
   ]
 }
