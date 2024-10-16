@@ -1,17 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import classes from './ProfileCard.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
-import { Input } from '@/shared/ui/Input';
+import { Input } from '@/shared/ui/deprecated/Input';
 import type { Profile } from '../model/types/profile';
-import { Loader } from '@/shared/ui/Loader';
+import { Loader } from '@/shared/ui/deprecated/Loader';
 import type { SerializedError } from '@reduxjs/toolkit';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { CurrencySelect } from '@/entities/Currency';
 import type { Currency } from '@/entities/Currency';
 import { CountrySelect } from '@/entities/Country';
 import type { Country } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 
 interface ProfileCardProps {
   className?: string;

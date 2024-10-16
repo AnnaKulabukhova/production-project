@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import { memo } from 'react'
 import classes from './MainLayout.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 interface MainLayoutProps {
   className?: string

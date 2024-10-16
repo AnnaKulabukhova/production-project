@@ -2,7 +2,7 @@ import { memo } from 'react';
 import classes from './ArticleImageBlockComponent.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import type { ArticleImageBlock } from '../../model/types/article';
-import { Text, TextAlign } from '@/shared/ui/Text/Text';
+import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
 
 interface ArticleImageBlockComponentProps {
   className?: string;

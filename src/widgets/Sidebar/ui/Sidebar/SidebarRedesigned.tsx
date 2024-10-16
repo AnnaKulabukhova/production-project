@@ -2,7 +2,7 @@ import classes from './SidebarRedesigned.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
 import type { SidebarProps } from './Sidebar'
 import type { SidebarItemType } from '../../model/types/sidebar'
-import { AppLogo } from '@/shared/ui/AppLogo'
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo'
 
 export interface SidebarRedesignedProps extends SidebarProps {
   collapsed: boolean,
