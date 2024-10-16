@@ -8,6 +8,8 @@ import { getUserInit, initAuthData } from '@/entities/User';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 const App = () => {
   const { theme } = useTheme();
@@ -23,15 +25,30 @@ const App = () => {
   }
 
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          {init && <AppRouter />}
-        </div>
-      </Suspense>
-    </div>
-  );
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      off={<div className={classNames('app', {}, [theme])}>
+        <Suspense fallback="">
+          <Navbar />
+          <div className="content-page">
+            <Sidebar />
+            <AppRouter />
+          </div>
+        </Suspense>
+      </div>}
+
+      on={<div className={classNames('app_redesigned', {}, [theme])}>
+        <Suspense fallback="">
+          <MainLayout
+            content={<AppRouter />}
+            header={<Navbar />}
+            sidebar={<Sidebar />}
+          // toolbar={<div>sghrjhrjz</div>}
+          />
+        </Suspense>
+      </div>}
+    />
+  )
+
 };
 export default App;

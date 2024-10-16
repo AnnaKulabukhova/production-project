@@ -15,8 +15,12 @@ const meta: Meta<typeof Sidebar> = {
 export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
-export const Light: Story = {
-  decorators: [StoreProviderDecorator({ user: { authData: {} } })],
+export const LightDeprecated: Story = {
+  decorators: [StoreProviderDecorator({ user: { authData: { features: { isAppRedesigned: true } } } })],
+};
+
+export const LightNoAuthNew: Story = {
+  decorators: [StoreProviderDecorator({ user: { authData: { features: { isAppRedesigned: true } } } })],
 };
 
 export const Dark: Story = {
@@ -26,6 +30,10 @@ export const BlueNoAuth: Story = {
   decorators: [ThemeDecorator(Theme.Blue), StoreProviderDecorator({ user: undefined })],
 };
 
-export const LightNoAuth: Story = {
-  decorators: [StoreProviderDecorator({ user: undefined })],
-};
+// export const LightNoAuthDeprecated: Story = {
+//   decorators: [StoreProviderDecorator({ user: undefined })],
+// };
+
+// export const LightNoAuthNew: Story = {
+//   decorators: [StoreProviderDecorator({ user: undefined })],
+// };

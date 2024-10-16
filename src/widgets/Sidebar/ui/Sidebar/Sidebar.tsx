@@ -1,16 +1,19 @@
 import { memo, useState } from 'react';
-import classes from './Sidebar.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from '@/shared/ui/Stack';
-import { ThemeSwitcher } from '@/features/ThemeSwitcher';
-import { LangSwitcher } from '@/features/LangSwitcher';
+import { ToggleFeatures } from '@/shared/lib/features';
+import type { SidebarItemType } from '../../model/types/sidebar';
+import { SidebarRedesigned } from './SidebarRedesigned';
+import { DeprecatedSidebar } from './DeprecatedSidebar';
 
 export interface SidebarProps {
   className?: string;
+}
+
+export interface DeprecatedSidebarProps extends SidebarProps {
+  collapsed: boolean,
+  onToggle: () => void
+  sidebarItemList: SidebarItemType[]
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
@@ -22,28 +25,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   };
 
   return (
-    <menu data-testid="sidebar" className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
-      <Button
-        data-testid="sidebar-toggle"
-        onClick={onToggle}
-        className={classes.collapsedBtn}
-        theme={ButtonTheme.BackgroundInverted}
-        square={true}
-        size={ButtonSize.L}
-      >
-        {collapsed ? '>' : '<'}
-      </Button>
-
-      <VStack role="navigation" gap="8" className={classNames(classes.items)}>
-        {sidebarItemList.map((item) => (
-          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-        ))}
-      </VStack>
-
-      <div className={classes.swithers}>
-        <ThemeSwitcher />
-        <LangSwitcher short={collapsed} />
-      </div>
-    </menu>
-  );
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      off={<DeprecatedSidebar collapsed={collapsed} onToggle={onToggle} className={className} sidebarItemList={sidebarItemList} />}
+      on={<SidebarRedesigned collapsed={collapsed} onToggle={onToggle} className={className} sidebarItemList={sidebarItemList} />}
+    />
+  )
 });

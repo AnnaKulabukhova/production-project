@@ -598,10 +598,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isProfileRatingEnabled": true
+        "isProfileRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "blue",
+        "theme": "dark",
         "isFirstVisit": true,
         "isArticlesPageWasOpened": true
       },
@@ -621,7 +622,8 @@
       "jsonSettings": {
         "theme": "dark",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": true
+        "settingsPageHasBeenOpen": true,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://koshka.top/uploads/posts/2021-11/1636826819_12-koshka-top-p-koshki-chernii-kotyara-15.jpg"
     },

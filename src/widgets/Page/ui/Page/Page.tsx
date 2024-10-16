@@ -11,6 +11,7 @@ import type { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import type { TestProps } from '@/shared/types/tests';
 import { getScrollSaveBypath, scrollSaveActions } from '@/features/scrollSave';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -43,12 +44,18 @@ export const Page = memo((props: PageProps) => {
     }));
   }, 500);
 
+  const pageStyle = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => classes.page,
+    on: () => classes.pageRedesigned
+  })
+
   return (
     <>
       <main
         data-testid={props['data-testid'] ?? 'Page'}
         ref={wrapperRef}
-        className={classNames(classes.page, {}, [className])}
+        className={classNames(pageStyle, {}, [className])}
         onScroll={onScroll}
       >
         {children}

@@ -20,7 +20,7 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
   const onCloseDrawer = useCallback(() => setIsOpen(false), []);
 
   const trigger = (
-    <Button theme={ButtonTheme.Outline}>
+    <Button theme={ButtonTheme.Clear}>
       <Icon Svg={NotificationIcon} inverted />
     </Button>
   );

@@ -13,6 +13,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
   className?: string;
@@ -33,17 +34,30 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(classes.navbar, {}, [className ?? ''])}>
-        <Text className={classes.appName} title="My app" />
-        <AppLink theme={AppLinkTheme.Secondary} to={getRouteArticleCreate()}>
-          {t('Create new article')}
-        </AppLink>
-        <HStack gap="16" className={classes.actions}>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-        <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
-      </header>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        off={<header className={classNames(classes.navbar, {}, [className ?? ''])}>
+          <Text className={classes.appName} title="My app" />
+          <AppLink theme={AppLinkTheme.Secondary} to={getRouteArticleCreate()}>
+            {t('Create new article')}
+          </AppLink>
+          <HStack gap="16" className={classes.actions}>
+            <NotificationButton />
+            <AvatarDropdown />
+          </HStack>
+          <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
+        </header>}
+
+        on={
+          <header className={classNames(classes.navbarRedesigned, {}, [className ?? ''])}>
+            <HStack gap="16" className={classes.actions}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+      />
+
     );
   }
 
