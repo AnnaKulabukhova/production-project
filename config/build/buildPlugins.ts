@@ -35,6 +35,7 @@ export const buildPlugins = ({ paths, isDev, apiUrl, project }: BuildOptions): w
       exclude: /node_modules/,
       failOnError: true
     }),
+
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {

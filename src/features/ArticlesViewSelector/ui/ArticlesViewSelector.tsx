@@ -34,7 +34,12 @@ export const ArticlesViewSelector = ({ className, view, onViewClick }: ArticlesV
     <div className={classNames('', {}, [className])}>
       {viewTypes.map((typeView) => (
         <Button key={typeView.view} theme={ButtonTheme.Clear} onClick={onClick(typeView.view)}>
-          <Icon className={classNames('', { [classes.notSelected]: typeView.view !== view }, [])} Svg={typeView.icon} />
+          <Icon
+            className={classNames('', { [classes.notSelected]: typeView.view !== view }, [])}
+            Svg={typeView.icon}
+            width={24}
+            height={24}
+          />
         </Button>
       ))}
     </div>

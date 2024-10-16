@@ -586,6 +586,12 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ddd",
+      "id": "23MyGwB"
     }
   ],
   "users": [
@@ -620,7 +626,7 @@
         "isProfileRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "dark",
+        "theme": "light",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": true,
         "isArticlesPageWasOpened": true
