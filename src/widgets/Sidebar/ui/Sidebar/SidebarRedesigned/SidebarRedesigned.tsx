@@ -3,7 +3,7 @@ import { classNames } from "@/shared/lib/classNames/classNames"
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo'
 import type { SidebarProps } from '../Sidebar'
 import type { SidebarItemType } from '@/widgets/Sidebar/model/types/sidebar'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { SidebarItem } from '../../SidebarItem/SidebarItem'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LangSwitcher } from '@/features/LangSwitcher'

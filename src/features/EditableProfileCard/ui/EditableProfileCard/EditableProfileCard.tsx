@@ -18,7 +18,7 @@ import { ValidateProfileErrors } from '../../model/consts/EditableProfileCardCon
 import { DynamicModuleLoading } from '@/shared/lib/components/DynamicModuleLoading/DynamicModuleLoading';
 import type { ReducersList } from '@/shared/lib/components/DynamicModuleLoading/DynamicModuleLoading';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 
 interface EditableProfileCardProps {

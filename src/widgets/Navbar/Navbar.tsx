@@ -9,7 +9,7 @@ import { getUserAuthData } from '@/entities/User';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { AppLinkTheme } from '@/shared/ui/deprecated/AppLink/AppLink';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { getRouteArticleCreate } from '@/shared/const/router';

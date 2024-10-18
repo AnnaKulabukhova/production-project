@@ -20,7 +20,7 @@ import EyeIcon from '@/shared/assets/icons/eye.svg';
 import Calendar from '@/shared/assets/icons/calendar.svg';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 
 interface ArticleDetailsProps {

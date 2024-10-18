@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { RatingCard } from '@/entities/Rating'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { useGetProfileRating, useRateProfile } from '../api/ProfileRatingApi'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'

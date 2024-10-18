@@ -3,10 +3,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import type { Mods } from '@/shared/lib/classNames/classNames';
 import type { ReactNode } from 'react';
 
-import { Overlay } from '../Overlay';
+import { Overlay } from '../../redesigned/Overlay';
 import { useModal } from '@/shared/lib/hooks/useModel/useModel';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Portal } from '../Portal';
+import { Portal } from '../../redesigned/Portal';
 
 interface ModalProps {
   className?: string;

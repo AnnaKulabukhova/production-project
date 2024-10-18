@@ -1,0 +1,17 @@
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.item {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: transparent;
+  color: var(--text-redesigned);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}

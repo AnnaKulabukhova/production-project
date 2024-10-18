@@ -32,19 +32,8 @@
   margin-top: 80px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  margin-left: 16px;
-  margin-top: 8px;
-}
-
 .collapsed {
   width: 50px;
-
-  .sidebar {
-    left: 0;
-  }
 
   .items {
     margin-top: 80px;

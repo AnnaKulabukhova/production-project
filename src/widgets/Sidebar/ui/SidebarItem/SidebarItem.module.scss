@@ -24,19 +24,19 @@
 
 .itemRedesigned {
   height: 32px;
-  margin-top: 10px;
   display: flex;
   align-items: center;
   padding: 0 16px;
+  width: 100%;
 }
 
 .linkRedesigned {
   margin-left: 10px;
-  opacity: 1;
 }
 
 .collapsedRedesigned {
   .itemRedesigned {
+    padding: 0 8px;
     margin: 0;
     padding: 0;
   }
