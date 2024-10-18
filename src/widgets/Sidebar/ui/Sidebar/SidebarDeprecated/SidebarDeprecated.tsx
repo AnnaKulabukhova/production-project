@@ -1,21 +1,23 @@
-import classes from './SidebarRedesigned.module.scss'
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button'
+import { VStack } from '@/shared/ui/deprecated/Stack'
+import { SidebarItem } from '../../SidebarItem/SidebarItem'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
+import { LangSwitcher } from '@/features/LangSwitcher'
+import classes from './Sidebar.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
-import type { SidebarProps } from './Sidebar'
-import type { SidebarItemType } from '../../model/types/sidebar'
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo'
+import type { SidebarProps } from '../Sidebar'
+import type { SidebarItemType } from '../../../model/types/sidebar'
 
-export interface SidebarRedesignedProps extends SidebarProps {
+export interface SidebarDeprecatedProps extends SidebarProps {
   collapsed: boolean,
   onToggle: () => void
   sidebarItemList: SidebarItemType[]
 }
 
-export const SidebarRedesigned = ({ className, collapsed, onToggle, sidebarItemList }: SidebarRedesignedProps) => {
-
+export const SidebarDeprecated = ({ collapsed, onToggle, className, sidebarItemList }: SidebarDeprecatedProps) => {
   return (
     <menu data-testid="sidebar" className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
-      <AppLogo className={classes.logo} />
-      {/* <Button
+      <Button
         data-testid="sidebar-toggle"
         onClick={onToggle}
         className={classes.collapsedBtn}
@@ -35,8 +37,7 @@ export const SidebarRedesigned = ({ className, collapsed, onToggle, sidebarItemL
       <div className={classes.swithers}>
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
-      </div> */}
+      </div>
     </menu>
   )
-
 }

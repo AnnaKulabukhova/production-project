@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { ToggleFeatures } from '@/shared/lib/features';
 import type { SidebarItemType } from '../../model/types/sidebar';
-import { SidebarRedesigned } from './SidebarRedesigned';
-import { DeprecatedSidebar } from './DeprecatedSidebar';
+import { SidebarRedesigned } from './SidebarRedesigned/SidebarRedesigned';
+import { SidebarDeprecated } from './SidebarDeprecated/SidebarDeprecated';
+
 
 export interface SidebarProps {
   className?: string;
@@ -27,7 +28,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
     <ToggleFeatures
       feature='isAppRedesigned'
-      off={<DeprecatedSidebar collapsed={collapsed} onToggle={onToggle} className={className} sidebarItemList={sidebarItemList} />}
+      off={<SidebarDeprecated collapsed={collapsed} onToggle={onToggle} className={className} sidebarItemList={sidebarItemList} />}
       on={<SidebarRedesigned collapsed={collapsed} onToggle={onToggle} className={className} sidebarItemList={sidebarItemList} />}
     />
   )
