@@ -7,12 +7,12 @@ export interface useInfiniteScrollOptions {
   // Элемент на который будет триггер
   triggerRef: MutableRefObject<HTMLDivElement | null>;
   // обертка внутри которой будет скролл
-  wrapperRef: MutableRefObject<HTMLElement | null>;
+  wrapperRef?: MutableRefObject<HTMLElement | null>;
 }
 
 export const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: useInfiniteScrollOptions) => {
   useEffect(() => {
-    const wrapperElement = wrapperRef?.current;
+    const wrapperElement = wrapperRef?.current || null;
     const triggerElement = triggerRef?.current;
 
     let observer: IntersectionObserver | null = null;

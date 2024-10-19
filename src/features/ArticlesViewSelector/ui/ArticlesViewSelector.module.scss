@@ -1,3 +1,13 @@
-.notSelected {
-  opacity: 0.6;
+.articleViewSelector {
+  .notSelected {
+    opacity: 0.6;
+  }
+}
+
+.articleViewSelectorRedesigned {
+  border: 1px solid var(--dark-bg-redesigned);
+
+  .notSelected {
+    color: var(--light-bg-redesigned);
+  }
 }

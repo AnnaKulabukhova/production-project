@@ -1,5 +1,4 @@
 import type { ReactElement } from 'react';
-import { memo } from 'react'
 import classes from './MainLayout.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { VStack } from '@/shared/ui/redesigned/Stack';
@@ -12,8 +11,7 @@ interface MainLayoutProps {
   toolbar?: ReactElement
 }
 
-export const MainLayout = memo(({ className, content, header, sidebar, toolbar }: MainLayoutProps) => {
-
+export const MainLayout = ({ className, content, header, sidebar, toolbar }: MainLayoutProps) => {
   return (
     <div className={classNames(classes.mainLayout, {}, [className])} >
       <div className={classes.sidebar}>{sidebar}</div>
@@ -24,4 +22,4 @@ export const MainLayout = memo(({ className, content, header, sidebar, toolbar }
       </VStack>
     </div>
   )
-})
+}

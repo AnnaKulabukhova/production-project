@@ -1,5 +1,5 @@
 import { Listbox as HListBox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react';
-import { Fragment } from 'react';
+import { Fragment, useMemo } from 'react';
 import type { ReactNode } from 'react';
 import classes from './ListBox.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -36,6 +36,11 @@ export const ListBox = <T extends string>({
   readonly,
   direction = 'bottom right',
 }: ListBoxProps<T>) => {
+
+  const selectedItem = useMemo(() => {
+    return items.find(item => item.value === value)
+  }, [items, value])
+
   return (
     <HStack gap="8">
       {label && <span>{`${label} > `}</span>}
@@ -47,14 +52,25 @@ export const ListBox = <T extends string>({
         className={classNames(classes.listbox, {}, [className, classesPopups.popup])}
       >
         <ListboxButton disabled={readonly} className={classes.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button variant='filled' disabled={readonly}>{selectedItem?.content ?? defaultValue}</Button>
         </ListboxButton>
         <ListboxOptions transition className={classNames(classes.options, {}, [mapDirectionClass[direction], classesPopups.menu])}>
           {items?.map((item) => (
-            <ListboxOption disabled={item.disabled} key={item.value} value={item.value} as={Fragment}>
+            <ListboxOption
+              disabled={item.disabled}
+              key={item.value}
+              value={item.value}
+              as={Fragment}
+            >
               {({ focus, selected }) => (
-                <li className={classNames(classes.item, { [classesPopups.active]: focus, [classes.disabled]: item.disabled }, [className])}>
-                  {selected && '>'}
+                <li
+                  className={classNames(classes.item, {
+                    [classesPopups.active]: focus,
+                    [classes.disabled]: item.disabled,
+                    [classes.selected]: selected
+                  }, [className])}
+                >
+                  {selected}
                   {item.content}
                 </li>
               )}

@@ -13,6 +13,10 @@ import { useSearchParams } from 'react-router-dom';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 
 interface ArticlesPageProps {
   className?: string;
@@ -36,15 +40,37 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
 
   return (
     <DynamicModuleLoading reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        data-testid="ArticlesPage"
-        onScrollEnd={LoadNextPart}
-        className={classNames(classes.articlesPage, {}, [className])}
-      >
-        <ArticlesPageFilter className={classes.filters} />
-        <ArticleInfiniteList />
-        <ArticlePageGreeting />
-      </Page>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        off={
+          <Page
+            data-testid="ArticlesPage"
+            onScrollEnd={LoadNextPart}
+            className={classNames(classes.articlesPage, {}, [className])}
+          >
+            <ArticlesPageFilter className={classes.filters} />
+            <ArticleInfiniteList />
+            <ArticlePageGreeting />
+          </Page>
+        }
+        on={
+          <StickyContentLayout
+            content={
+              <Page
+                data-testid="ArticlesPage"
+                onScrollEnd={LoadNextPart}
+                className={classNames(classes.articlesPage, {}, [className])}
+              >
+                <ArticleInfiniteList />
+                <ArticlePageGreeting />
+              </Page>
+            }
+            left={<ViewSelectorContainer />}
+            right={<FiltersContainer />}
+          />
+
+        }
+      />
     </DynamicModuleLoading>
   );
 };
