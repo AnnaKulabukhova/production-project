@@ -19,5 +19,13 @@
   "Incorrect City": "Некорректный город",
   "Data is not specified": "Данные не указаны",
   "Review of profile": "Оцените профиль пользователя",
-  "The evaluation of the profile will appear soon": "Оценка профиля скоро появится"
+  "The evaluation of the profile will appear soon": "Оценка профиля скоро появится",
+  "Name": "Имя",
+  "Lastname": "Фамилия",
+  "Age": "Возраст",
+  "City": "Город",
+  "Username": "Имя пользователя",
+  "The link to the avatar": "Ссылка на аватар",
+  "Currency": "Валюта",
+  "Country": "Страна"
 }

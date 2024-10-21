@@ -36,7 +36,6 @@ export const ListBox = <T extends string>({
   defaultValue,
   label,
   readonly,
-
   direction = 'bottom right',
 }: ListBoxProps<T>) => {
 
@@ -46,7 +45,7 @@ export const ListBox = <T extends string>({
 
   return (
     <HStack gap="8">
-      {label && <span>{`${label} > `}</span>}
+      {label && <span className={classes.label}>{label}</span>}
       <HListBox
         disabled={readonly}
         as={'div'}

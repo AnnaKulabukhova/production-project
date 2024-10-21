@@ -27,11 +27,11 @@
   outline: none;
 }
 
-// .outline {
-//   border: 1px solid var(--primary-color);
-//   color: var(--primary-color);
-//   background-color: transparent;
-// }
+.outline {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
 
 .filled {
   background-color: var(--light-bg-redesigned);

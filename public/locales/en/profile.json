@@ -19,5 +19,13 @@
   "Incorrect City": "Incorrect City",
   "Data is not specified": "Data is not specified",
   "Review of profile": "Review of profile",
-  "The evaluation of the profile will appear soon": "The evaluation of the profile will appear soon"
+  "The evaluation of the profile will appear soon": "The evaluation of the profile will appear soon",
+  "Name": "Name",
+  "Lastname": "Lastname",
+  "Age": "Age",
+  "City": "City",
+  "Username": "Username",
+  "The link to the avatar": "The link to the avatar",
+  "Currency": "Currency",
+  "Country": "Country"
 }

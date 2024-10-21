@@ -1,22 +1,24 @@
 import classes from './SidebarRedesigned.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo'
-import type { SidebarProps } from '../Sidebar'
-import type { SidebarItemType } from '@/widgets/Sidebar/model/types/sidebar'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 import { SidebarItem } from '../../SidebarItem/SidebarItem'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { Icon } from '@/shared/ui/redesigned/Icon'
 import ArrowIcon from '@/shared/assets/icons/arrow-new.svg'
+import type { SidebarProps } from '../Sidebar'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from '@/widgets/Sidebar/model/selectors/getSidebarItems'
 
-export interface SidebarRedesignedProps extends SidebarProps {
-  collapsed: boolean,
-  onToggle: () => void
-  sidebarItemList: SidebarItemType[]
-}
+export const SidebarRedesigned = ({ className }: SidebarProps) => {
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const sidebarItemList = useSelector(getSidebarItems);
 
-export const SidebarRedesigned = ({ className, collapsed, onToggle, sidebarItemList }: SidebarRedesignedProps) => {
+  const onToggle = () => {
+    setCollapsed((value) => !value);
+  };
 
   return (
     <menu data-testid="sidebar" className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>

@@ -6,15 +6,19 @@ import { LangSwitcher } from '@/features/LangSwitcher'
 import classes from './Sidebar.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
 import type { SidebarProps } from '../Sidebar'
-import type { SidebarItemType } from '../../../model/types/sidebar'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { getSidebarItems } from '@/widgets/Sidebar/model/selectors/getSidebarItems'
 
-export interface SidebarDeprecatedProps extends SidebarProps {
-  collapsed: boolean,
-  onToggle: () => void
-  sidebarItemList: SidebarItemType[]
-}
 
-export const SidebarDeprecated = ({ collapsed, onToggle, className, sidebarItemList }: SidebarDeprecatedProps) => {
+export const SidebarDeprecated = ({ className }: SidebarProps) => {
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const sidebarItemList = useSelector(getSidebarItems);
+
+  const onToggle = () => {
+    setCollapsed((value) => !value);
+  };
+
   return (
     <menu data-testid="sidebar" className={classNames(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
       <Button

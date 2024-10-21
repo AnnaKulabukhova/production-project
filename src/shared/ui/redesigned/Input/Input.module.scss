@@ -1,7 +1,6 @@
 .inputWrapper {
   display: flex;
   align-items: center;
-  height: 32px;
   width: 100%;
   padding: 8px 16px;
   border-radius: 48px;
@@ -44,4 +43,16 @@
 
 .readonly {
   opacity: 0.7;
+}
+
+.s {
+  height: 32px;
+}
+
+.m {
+  height: 38px;
+}
+
+.l {
+  height: 44px;
 }

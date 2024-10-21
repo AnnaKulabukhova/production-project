@@ -17,9 +17,14 @@
   min-width: 100%;
   list-style-type: none;
   padding: 10px 20px;
+  color: var(--text-redesigned);
   cursor: pointer;
 }
 
 .selected {
   background-color: var(--light-bg-redesigned);
+}
+
+.label {
+  color: var(--text-redesigned);
 }
