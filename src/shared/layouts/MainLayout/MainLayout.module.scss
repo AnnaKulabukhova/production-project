@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-areas: "sidebar content rightBar";
-  grid-template-columns: min-content 1fr 176px;
+  grid-template-columns: min-content 1fr 100px;
 }
 
 .content {

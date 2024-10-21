@@ -32,8 +32,6 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
           className={classNames('', {}, [className])}
           clickable
           onClick={toggle}
-          width={30}
-          height={28}
         />
       }
     />

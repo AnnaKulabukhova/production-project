@@ -1,9 +1,21 @@
+.addonLeft,
+.addonRight {
+  display: flex;
+}
+
 .button {
   cursor: pointer;
   color: var(--text-redesigned);
-  padding: 6px 10px;
+  padding: 6px 15px;
+  display: flex;
+  align-items: center;
 
   &:hover {
+    color: var(--accent-redesigned);
+  }
+
+  .addonLeft svg,
+  .addonRight svg {
     color: var(--accent-redesigned);
   }
 }
@@ -26,7 +38,6 @@
   border: none;
   outline: none;
   border-radius: 32px;
-  padding: 8px 16px;
 }
 
 .square {
@@ -69,4 +80,9 @@
 
 .fullWight {
   width: 100%;
+}
+
+.withAddonLeft,
+.withAddonRight {
+  padding: 0 16px;
 }

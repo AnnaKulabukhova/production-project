@@ -36,8 +36,6 @@ export const SidebarRedesigned = ({ className, collapsed, onToggle, sidebarItemL
         clickable
         onClick={onToggle}
         className={classes.collapsedBtn}
-        width={12}
-        hanging={7}
       />
     </menu>
   )

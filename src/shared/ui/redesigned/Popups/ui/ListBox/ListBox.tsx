@@ -8,6 +8,8 @@ import { Button } from '../../../Button';
 import type { DropdownDirection } from '@/shared/types/ui';
 import classesPopups from '../../styles/popup.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
+import { Icon } from '../../../Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-new.svg'
 
 interface ListBoxItem<T extends string> {
   content: ReactNode;
@@ -34,6 +36,7 @@ export const ListBox = <T extends string>({
   defaultValue,
   label,
   readonly,
+
   direction = 'bottom right',
 }: ListBoxProps<T>) => {
 
@@ -52,7 +55,13 @@ export const ListBox = <T extends string>({
         className={classNames(classes.listbox, {}, [className, classesPopups.popup])}
       >
         <ListboxButton disabled={readonly} className={classes.trigger}>
-          <Button variant='filled' disabled={readonly}>{selectedItem?.content ?? defaultValue}</Button>
+          <Button
+            addonRight={<Icon Svg={ArrowIcon} />}
+            variant='filled'
+            disabled={readonly}
+          >
+            {selectedItem?.content ?? defaultValue}
+          </Button>
         </ListboxButton>
         <ListboxOptions transition className={classNames(classes.options, {}, [mapDirectionClass[direction], classesPopups.menu])}>
           {items?.map((item) => (

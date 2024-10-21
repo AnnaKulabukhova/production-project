@@ -64,7 +64,7 @@ export const ArticlesViewSelector = ({ className, view, onViewClick }: ArticlesV
       on={
         <Card
           className={classNames(classes.articleViewSelectorRedesigned, {}, [className])}
-          padding='16'
+          padding='8'
           border='42'
         >
           <HStack gap='8'>
@@ -73,8 +73,6 @@ export const ArticlesViewSelector = ({ className, view, onViewClick }: ArticlesV
                 key={typeView.view}
                 className={classNames('', { [classes.notSelected]: typeView.view !== view }, [])}
                 Svg={typeView.icon}
-                width={18}
-                height={18}
                 onClick={onClick(typeView.view)}
                 clickable
               />

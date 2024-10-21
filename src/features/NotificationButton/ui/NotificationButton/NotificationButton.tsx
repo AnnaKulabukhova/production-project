@@ -13,14 +13,12 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';
 
-
 interface NotificationButtonProps {
   className?: string;
 }
 
 export const NotificationButton = memo(({ className }: NotificationButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const onOpenDrawer = useCallback(() => setIsOpen(true), []);
   const onCloseDrawer = useCallback(() => setIsOpen(false), []);
 
@@ -33,7 +31,10 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
         </ButtonDeprecated>
       }
       on={
-        <Icon Svg={NotificationIcon} clickable={false} width={16} height={17} />
+        <Icon
+          Svg={NotificationIcon}
+          clickable={false}
+        />
       }
     />
   );
@@ -44,7 +45,14 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
         <IconDeprecated Svg={NotificationIconDeprecated} inverted />
       </ButtonDeprecated>
       }
-      on={<Icon Svg={NotificationIcon} clickable={true} onClick={onOpenDrawer} width={16} height={17} />}
+      on={
+        <Icon
+          Svg={NotificationIcon}
+          clickable={true}
+          onClick={onOpenDrawer}
+        // width={16} 
+        // height={17} 
+        />}
     />
   );
 

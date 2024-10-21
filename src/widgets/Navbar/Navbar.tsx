@@ -50,7 +50,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
         on={
           <header className={classNames(classes.navbarRedesigned, {}, [className ?? ''])}>
-            <HStack gap="16" className={classes.actions}>
+            <HStack gap="8" className={classes.actions}>
               <NotificationButton />
               <AvatarDropdown />
             </HStack>
