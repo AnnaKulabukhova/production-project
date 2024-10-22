@@ -586,18 +586,6 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "1"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "ddd",
-      "id": "23MyGwB"
-    },
-    {
-      "articleId": "6",
-      "userId": "2",
-      "text": "dfhfgj",
-      "id": "pdw7NhY"
     }
   ],
   "users": [
@@ -609,8 +597,6 @@
         "admin"
       ],
       "features": {
-        "isArticleRatingEnabled": true,
-        "isProfileRatingEnabled": true,
         "isAppRedesigned": true
       },
       "jsonSettings": {
