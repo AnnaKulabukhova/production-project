@@ -13,8 +13,30 @@
 }
 
 .small {
+  .card {
+    width: 240px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+  }
+
   .image {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    min-height: 140px;
+    max-height: 140px;
+    object-fit: cover;
+  }
+
+  .info {
+    padding: 8px;
+    padding-bottom: 16;
+    height: 100%;
+  }
+
+  .footer {
+    height: 100%;
+    justify-content: flex-end;
   }
 }

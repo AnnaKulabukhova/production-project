@@ -75,23 +75,28 @@ export const ArticleListItemRedesigned = ({ className, article, view = ArticlesV
       to={getRouteArticlesDetails(article?.id)}
       data-testid="ArticleListItem"
       {...bindHover}
-      className={classNames('', {}, [className, classes[view]])}
+      className={classNames(classes.ArticleListItem, {}, [className, classes[view]])}
     >
-      <Card>
-        <div className={classes.imageWrapper}>
-          <AppImage
-            fallback={<Skeleton width={200} height={200} />}
-            src={article?.img}
-            alt={article?.title}
-            className={classes.image}
-          />
-          <Text text={article?.createdAt} className={classes.date} />
-        </div>
-        <div className={classes.infoWrapper}>
-          {types}
-          {views}
-        </div>
-        <Text text={article?.title} className={classes.title} />
+      <Card className={classes.card} border='32'>
+        <AppImage
+          fallback={<Skeleton width={200} height={200} />}
+          src={article?.img}
+          alt={article?.title}
+          className={classes.image}
+        />
+        <VStack gap='4' className={classes.info} max>
+          <Text size='l' bold text={article?.title} className={classes.title} />
+          <VStack gap='4' className={classes.footer} max>
+            <HStack justify='between' max>
+              <Text text={article?.createdAt} className={classes.date} />
+              {views}
+            </HStack>
+            <HStack gap='8' max>
+              <Avatar size={32} src={article?.user.avatar} />
+              <Text bold text={article?.user.username} />
+            </HStack>
+          </VStack>
+        </VStack>
       </Card>
     </AppLink>
   )

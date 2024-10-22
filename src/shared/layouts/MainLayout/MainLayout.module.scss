@@ -3,19 +3,19 @@
   display: grid;
   grid-template-areas: "sidebar content rightBar";
   grid-template-columns: min-content 1fr 100px;
+  gap: 32px;
 }
 
 .content {
   grid-area: content;
   max-width: 1200px;
   justify-self: center;
-  padding: 32px;
   width: 100%;
+  padding-top: 32px;
 }
 
 .sidebar {
   grid-area: sidebar;
-  padding: 32px;
   max-width: 284px;
 }
 

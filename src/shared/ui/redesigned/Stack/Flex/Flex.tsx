@@ -8,6 +8,7 @@ export type FlexJustify = 'start' | 'end' | 'center' | 'between';
 export type FlexAlign = 'start' | 'end' | 'center';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '24' | '32';
+export type FlexWrap = 'wrap' | 'nowrap';
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export interface FlexProps extends DivProps {
@@ -19,6 +20,7 @@ export interface FlexProps extends DivProps {
   max?: boolean;
   gap?: FlexGap;
   ref?: Ref<HTMLDivElement>;
+  wrap?: FlexWrap
 }
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -37,6 +39,7 @@ const directionClasses: Record<FlexDirection, string> = {
   row: classes.directionRow,
   column: classes.directionColumn,
 };
+
 const gapClasses: Record<FlexGap, string> = {
   4: classes.gap4,
   8: classes.gap8,
@@ -45,18 +48,34 @@ const gapClasses: Record<FlexGap, string> = {
   32: classes.gap32,
 };
 
-export const Flex = memo(
-  ({ className, children, justify = 'start', align = 'center', direction = 'row', gap, max, ...otherProps }: FlexProps) => {
-    const cls = [className, justifyClasses[justify], alignClasses[align], directionClasses[direction], gap && gapClasses[gap]];
+export const Flex = memo(({
+  className,
+  children,
+  justify = 'start',
+  align = 'center',
+  direction = 'row',
+  gap,
+  max,
+  wrap = 'nowrap',
+  ...otherProps
+}: FlexProps) => {
 
-    const mods: Mods = {
-      [classes.max]: max,
-    };
+  const cls = [
+    className,
+    justifyClasses[justify],
+    alignClasses[align],
+    directionClasses[direction],
+    classes[wrap],
+    gap && gapClasses[gap]
+  ];
 
-    return (
-      <div className={classNames(classes.flex, mods, cls)} {...otherProps}>
-        {children}
-      </div>
-    );
-  },
-);
+  const mods: Mods = {
+    [classes.max]: max,
+  };
+
+  return (
+    <div className={classNames(classes.flex, mods, cls)} {...otherProps}>
+      {children}
+    </div>
+  );
+});

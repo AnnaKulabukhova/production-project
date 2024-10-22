@@ -8,6 +8,8 @@ import { ArticlesViews } from '../../model/consts/articleConsts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListProps {
   className?: string;
@@ -35,9 +37,20 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
   }
 
   return (
-    <div data-testid="ArticleList" className={classNames(classes.articleList, {}, [className, classes[view]])}>
-      {articles.length > 0 ? articles.map(renderArticle) : null}
-      {isLoading && getSkeletons(view)}
-    </div>
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      off={
+        <div data-testid="ArticleList" className={classNames(classes.articleList, {}, [className, classes[view]])}>
+          {articles.length > 0 ? articles.map(renderArticle) : null}
+          {isLoading && getSkeletons(view)}
+        </div>
+      }
+      on={
+        <HStack wrap='wrap' gap='16' data-testid="ArticleList" className={classNames(classes.articleListRedesigned, {}, [])}>
+          {articles.length > 0 ? articles.map(renderArticle) : null}
+          {isLoading && getSkeletons(view)}
+        </HStack>
+      }
+    />
   );
 });
