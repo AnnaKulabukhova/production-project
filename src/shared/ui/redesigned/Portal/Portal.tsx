@@ -3,9 +3,9 @@ import { createPortal } from 'react-dom';
 
 interface PortalProps {
   children: ReactNode;
-  domNode?: HTMLElement;
+  element?: HTMLElement;
 }
 
-export const Portal = ({ children, domNode = document.body }: PortalProps) => {
-  return createPortal(children, domNode);
+export const Portal = ({ children, element = document.body }: PortalProps) => {
+  return createPortal(children, element);
 };

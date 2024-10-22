@@ -3,10 +3,11 @@ import type { ReactNode } from 'react';
 import classes from './Drawer.module.scss';
 import type { Mods } from '@/shared/lib/classNames/classNames';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Portal } from '../../redesigned/Portal';
-import { Overlay } from '../../redesigned/Overlay';
+import { Portal } from '../Portal';
+import { Overlay } from '../Overlay';
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
   className?: string;
@@ -58,9 +59,16 @@ export const DrawerContent = ({ className, children, isOpen, onClose, lazy }: Dr
     [classes.opened]: isOpen,
   };
 
+  const drawerVariant = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => classes.drawerOld,
+    on: () => classes.drawerNew
+  })
+
+
   return (
-    <Portal>
-      <Spring.a.div className={classNames(classes.drawer, mods, [className, theme, 'app_drawer'])}>
+    <Portal element={document.getElementById('app') ?? document.body}>
+      <Spring.a.div className={classNames(classes.drawer, mods, [className, theme, 'app_drawer', drawerVariant])}>
         <Overlay onClick={() => close()} />
         <Spring.a.div style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }} {...bind()} className={classes.sheet}>
           {children}

@@ -1,10 +1,10 @@
 import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Modal } from '@/shared/ui/deprecated/Modal'
+import { Modal } from '@/shared/ui/redesigned/Modal'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { saveJsonSettings, useJsonSettings } from '@/entities/User'
 import { isMobile } from 'react-device-detect'
-import { Drawer } from '@/shared/ui/deprecated/Drawer'
+import { Drawer } from '@/shared/ui/redesigned/Drawer'
 import { Text } from '@/shared/ui/deprecated/Text'
 
 export const ArticlePageGreeting = memo(() => {

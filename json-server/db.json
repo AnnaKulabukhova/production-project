@@ -615,7 +615,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isProfileRatingEnabled": true
+        "isProfileRatingEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "light",
