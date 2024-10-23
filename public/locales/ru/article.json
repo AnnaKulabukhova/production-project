@@ -5,5 +5,9 @@
   "Comments": "Комментарии",
   "onBackToList": "Назад к списку",
   "Edit": "Редактировать",
-  "The evaluation of the article will appear soon": "Оценка статьи скоро появится"
+  "The evaluation of the article will appear soon": "Оценка статьи скоро появится",
+  "{{count}} views_zero": "{{count}} просмотров",
+  "{{count}} views_one": "{{count}} просмотр",
+  "{{count}} views_few": "{{count}} просмотра",
+  "{{count}} views_many": "{{count}} просмотров"
 }

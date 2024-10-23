@@ -6,5 +6,7 @@
   "onBackToList": "on back to list",
   "We recommend it": "We recommend it",
   "Edit": "Edit",
-  "The evaluation of the article will appear soon": "The evaluation of the article will appear soon"
+  "The evaluation of the article will appear soon": "The evaluation of the article will appear soon",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

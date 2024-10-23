@@ -1,5 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 import classes from './Card.module.scss';
+import type { Mods } from '@/shared/lib/classNames/classNames';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 export type CardVariant = 'normal' | 'outlined' | 'light'
@@ -13,6 +14,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   max?: boolean;
   padding?: CardPadding
   border?: CardBorder
+  fullHeight?: boolean
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
@@ -28,12 +30,34 @@ const mapBorderToClass: Record<CardBorder, string> = {
   '42': 'border_42',
 }
 
-export const Card = ({ className, max, children, variant = 'normal', padding = '0', border = '12', ...otherProps }: CardProps) => {
+export const Card = ({
+  className,
+  fullHeight,
+  max,
+  children,
+  variant = 'normal',
+  padding = '0',
+  border = '12',
+  ...otherProps
+}: CardProps) => {
 
   const paddingClass = mapPaddingToClass[padding]
   const borderClass = mapBorderToClass[border]
+
+  const mods: Mods = {
+    [classes.max]: max,
+    [classes.fullHeight]: fullHeight
+  }
+
+  const additional = [
+    className,
+    classes[variant],
+    classes[paddingClass],
+    classes[borderClass]
+  ]
+
   return (
-    <div className={classNames(classes.card, { [classes.max]: max }, [className, classes[variant], classes[paddingClass], classes[borderClass]])} {...otherProps}>
+    <div className={classNames(classes.card, mods, additional)} {...otherProps}>
       {children}
     </div>
   );
