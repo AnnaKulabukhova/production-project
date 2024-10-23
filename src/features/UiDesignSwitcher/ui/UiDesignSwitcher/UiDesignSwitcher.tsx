@@ -1,17 +1,32 @@
 import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { HStack } from '@/shared/ui/redesigned/Stack'
-import { ListBox } from '@/shared/ui/redesigned/Popups'
-import { getFeaturesFlag, updateFeatureFlag } from '@/shared/lib/features'
+import { ListBox as ListboxDeprecated } from '@/shared/ui/deprecated/Popups'
+import { ListBox as ListboxRedesigned } from '@/shared/ui/redesigned/Popups'
+import { getFeaturesFlag, toggleFeatures, updateFeatureFlag } from '@/shared/lib/features'
 import { Text } from '@/shared/ui/redesigned/Text'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton'
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
+
 
 interface UiDesignSwitcherProps {
   className?: string
 }
+
+const Skeleton = toggleFeatures({
+  name: 'isAppRedesigned',
+  off: () => SkeletonDeprecated,
+  on: () => SkeletonRedesigned
+})
+
+const ListBox = toggleFeatures({
+  name: 'isAppRedesigned',
+  off: () => ListboxDeprecated,
+  on: () => ListboxRedesigned
+})
 
 export const UiDesignSwitcher = memo(({ className }: UiDesignSwitcherProps) => {
   const { t } = useTranslation('settings')

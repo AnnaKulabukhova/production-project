@@ -79,7 +79,7 @@ export const ArticleListItemRedesigned = ({ className, article, view = ArticlesV
     >
       <Card className={classes.card} border='32'>
         <AppImage
-          fallback={<Skeleton width={200} height={200} />}
+          fallback={<Skeleton width={'100%'} height={200} />}
           src={article?.img}
           alt={article?.title}
           className={classes.image}
@@ -92,7 +92,7 @@ export const ArticleListItemRedesigned = ({ className, article, view = ArticlesV
               {views}
             </HStack>
             <HStack gap='8' max>
-              <Avatar size={32} src={article?.user.avatar} />
+              <Avatar size={32} src={article?.user.avatar} className={classes.avatar} />
               <Text bold text={article?.user.username} />
             </HStack>
           </VStack>
