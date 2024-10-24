@@ -118,12 +118,14 @@
 }
 
 .articleListItemSkeletonRedesigned {
-  .big {
+  &.big {
     width: 100%;
   }
 
-  .small {
-    width: 240px;
-    height: 350px;
+  &.small {
+    .card {
+      height: 350px;
+      width: 240px;
+    }
   }
 }

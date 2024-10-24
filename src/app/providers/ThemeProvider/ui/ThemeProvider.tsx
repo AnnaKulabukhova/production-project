@@ -18,8 +18,13 @@ const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
     if (!isThemeInit && defaultTheme) {
       setTheme(defaultTheme)
       setIsThemeInit(true)
+
     }
   }, [defaultTheme, isThemeInit])
+
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
 

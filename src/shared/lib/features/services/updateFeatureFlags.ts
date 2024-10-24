@@ -10,7 +10,7 @@ export interface UpdateFeatureFlagOptions {
 }
 
 export const updateFeatureFlag = createAsyncThunk<void, UpdateFeatureFlagOptions, ThunkConfig<string>>(
-  'user/saveJsonSettings',
+  'features/updateFeatureFlags',
   async ({ userId, newFeatures }, thunkAPI) => {
     const { rejectWithValue, dispatch } = thunkAPI;
 
