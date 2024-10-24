@@ -10,10 +10,6 @@
   display: flex;
   align-items: center;
 
-  &:hover {
-    color: var(--accent-redesigned);
-  }
-
   .addonLeft svg,
   .addonRight svg {
     color: var(--accent-redesigned);
@@ -21,16 +17,45 @@
 }
 
 .clear {
+  color: var(--text-redesigned);
   padding: 0;
   border: 0;
   background-color: transparent;
   outline: none;
+
+  &.error {
+    color: var(--cancel-redesigned);
+  }
+
+  &.normal {
+    color: var(--text-redesigned);
+  }
+
+  &.success {
+    color: var(--save-redesigned);
+  }
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
 }
 
 .outline {
   border: 1px solid var(--icon-redesigned);
   border-radius: 34px;
   background-color: transparent;
+
+  &.error {
+    border: 1px solid var(--cancel-redesigned);
+  }
+
+  &.normal {
+    border: 1px solid var(--icon-redesigned);
+  }
+
+  &.success {
+    border: 1px solid var(--save-redesigned);
+  }
 
   &:hover {
     border: 1px solid var(--accent-redesigned);
@@ -42,6 +67,22 @@
   border: none;
   outline: none;
   border-radius: 32px;
+
+  &.error {
+    border: 1px solid var(--cancel-redesigned);
+  }
+
+  &.normal {
+    border: none;
+  }
+
+  &.success {
+    border: 1px solid var(--save-redesigned);
+  }
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
 }
 
 .square {

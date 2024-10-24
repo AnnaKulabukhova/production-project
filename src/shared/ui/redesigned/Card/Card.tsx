@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 export type CardVariant = 'normal' | 'outlined' | 'light'
 export type CardPadding = '0' | '8' | '16' | '24'
-export type CardBorder = '12' | '32' | '42'
+export type CardBorder = '12' | '16' | '32' | '42'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -25,7 +25,8 @@ const mapPaddingToClass: Record<CardPadding, string> = {
 }
 
 const mapBorderToClass: Record<CardBorder, string> = {
-  '12': 'border_12 ',
+  '12': 'border_12',
+  '16': 'border_16',
   '32': 'border_32',
   '42': 'border_42',
 }

@@ -6,7 +6,9 @@ import { useGetProfileRating, useRateProfile } from '../api/ProfileRatingApi'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from '@/entities/User'
 import { useCallback } from 'react'
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface ProfileRatingProps {
   className?: string
@@ -22,6 +24,7 @@ export const ProfileRating = ({ className, profileId }: ProfileRatingProps) => {
   const [rateProfile] = useRateProfile()
 
   const rate = data?.[0]?.rate
+
 
   const handlerRateProfile = useCallback((starCount: number, feedback?: string) => {
     try {
@@ -45,8 +48,14 @@ export const ProfileRating = ({ className, profileId }: ProfileRatingProps) => {
     handlerRateProfile(starCount)
   }, [handlerRateProfile])
 
+  const Skeleton = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => SkeletonDeprecated,
+    on: () => SkeletonRedesigned
+  })
+
   if (isLoading) {
-    return <Skeleton width={'100%'} height={140} />;
+    return <Skeleton width={'100%'} height={140} border='16px' />;
   }
 
   return (

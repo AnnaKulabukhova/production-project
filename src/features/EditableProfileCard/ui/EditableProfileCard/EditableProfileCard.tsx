@@ -18,8 +18,12 @@ import { ValidateProfileErrors } from '../../model/consts/EditableProfileCardCon
 import { DynamicModuleLoading } from '@/shared/lib/components/DynamicModuleLoading/DynamicModuleLoading';
 import type { ReducersList } from '@/shared/lib/components/DynamicModuleLoading/DynamicModuleLoading';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
+import { ProfileRating } from '@/features/ProfileRating';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 interface EditableProfileCardProps {
   className?: string;
@@ -110,13 +114,45 @@ export const EditableProfileCard = memo(({ className, id }: EditableProfileCardP
     [dispatch],
   );
 
+  if (!id) {
+    return null;
+  }
+
+  const withoutProfileRating = (
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      off={
+        <HStack justify='center' max>
+          <TextDeprecated title={t('The evaluation of the profile will appear soon')} />
+        </HStack>
+      }
+      on={
+        <Card max border='16' padding='24'>
+          <HStack justify='center' max>
+            <Text title={t('The evaluation of the profile will appear soon')} />
+          </HStack>
+        </Card>
+      }
+    />
+  )
+
+  const profileRatingFeature = toggleFeatures({
+    name: 'isProfileRatingEnabled',
+    on: () => <ProfileRating profileId={id} />,
+    off: () => withoutProfileRating
+  })
+
   return (
     <DynamicModuleLoading reducers={reducers}>
       <VStack max gap="8" className={classNames('', {}, [className])}>
         <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err: ValidateProfileErrors) => (
-            <Text key={err} text={validateErrorTranslates[err]} theme={TextTheme.Error} data-testid="EditableProfileCard.Error" />
+            <ToggleFeatures key={err}
+              feature='isAppRedesigned'
+              off={<TextDeprecated key={err} text={validateErrorTranslates[err]} theme={TextTheme.Error} data-testid="EditableProfileCard.Error" />}
+              on={<Text key={err} text={validateErrorTranslates[err]} variant='error' data-testid="EditableProfileCard.Error" />}
+            />
           ))}
         <ProfileCard
           readonly={readonly}
@@ -132,6 +168,7 @@ export const EditableProfileCard = memo(({ className, id }: EditableProfileCardP
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
+        {profileRatingFeature}
       </VStack>
     </DynamicModuleLoading>
   );

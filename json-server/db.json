@@ -598,48 +598,6 @@
       "userId": "1",
       "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
       "id": "7gi9Gnk"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "EYKxHaA"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "2Zf0Lcx"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "bHAB7GE"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "IAvQ9rg"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "9ASNno7"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "fD6FRTI"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
-      "id": "Q6UPNvz"
     }
   ],
   "users": [
@@ -671,8 +629,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isProfileRatingEnabled": true,
-        "isAppRedesigned": false
+        "isProfileRatingEnabled": false,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "light",
@@ -690,6 +648,7 @@
         "manager"
       ],
       "features": {
+        "isAppRedesigned": false,
         "isArticleRatingEnabled": false,
         "isProfileRatingEnabled": true
       },
@@ -709,6 +668,7 @@
         "manager"
       ],
       "features": {
+        "isAppRedesigned": false,
         "isArticleRatingEnabled": true,
         "isProfileRatingEnabled": false
       },

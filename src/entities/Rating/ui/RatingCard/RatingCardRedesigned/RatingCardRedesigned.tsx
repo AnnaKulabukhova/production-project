@@ -40,7 +40,7 @@ export const RatingCardRedesigned = (props: RatingCardProps) => {
   }, [onCancel, starsCount]);
 
   return (
-    <Card max padding='24' border='32' data-testid="RatingCard" className={className}>
+    <Card max padding='24' border='16' data-testid="RatingCard" className={className}>
       <VStack align="center" gap="16">
         <Text title={starsCount ? t('Thanks for the assessment') : title} />
         <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />

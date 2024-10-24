@@ -1,7 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import classes from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';
@@ -62,11 +63,24 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(classes.navbar, {}, [className])}>
-      <Button className={classes.links} onClick={onShowModal} theme={ButtonTheme.ClearInverted}>
-        {t('login')}
-      </Button>
-      {isAuthModal && <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
-    </header>
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      off={
+        <header className={classNames(classes.navbar, {}, [className])}>
+          <ButtonDeprecated className={classes.links} onClick={onShowModal} theme={ButtonTheme.ClearInverted}>
+            {t('login')}
+          </ButtonDeprecated>
+          {isAuthModal && <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
+        </header>
+      }
+      on={
+        <header className={classNames(classes.navbarRedesigned, {}, [className])}>
+          <Button onClick={onShowModal} variant={'clear'}>
+            {t('login')}
+          </Button>
+          {isAuthModal && <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />}
+        </header>
+      }
+    />
   );
 });

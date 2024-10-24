@@ -38,7 +38,7 @@ export const ArticleRecommendationsList = memo(({ className }: ArticleRecommenda
   }
 
   return (
-    <VStack data-testid="ArticleRecommendationsList" gap="8" className={classNames('', {}, [className])}>
+    <VStack max data-testid="ArticleRecommendationsList" gap="8" className={classNames('', {}, [className])}>
       <ToggleFeatures
         feature='isAppRedesigned'
         off={<TextDeprecated size={TextSize.SizeL} title={t('We recommend it')} />}

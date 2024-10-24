@@ -46,7 +46,7 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
         </div>
       }
       on={
-        <HStack wrap='wrap' gap='16' data-testid="ArticleList" className={classNames(classes.articleListRedesigned, {}, [])}>
+        <HStack max justify='between' wrap='wrap' gap='16' data-testid="ArticleList" className={classNames(classes.articleListRedesigned, {}, [])}>
           {articles.length > 0 ? articles.map(renderArticle) : null}
           {isLoading && getSkeletons(view)}
         </HStack>
