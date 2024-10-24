@@ -586,6 +586,60 @@
       "text": "some comment 2",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "17",
+      "userId": "1",
+      "text": "jhk",
+      "id": "-5B4i2o"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "7gi9Gnk"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "EYKxHaA"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "2Zf0Lcx"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "bHAB7GE"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "IAvQ9rg"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "9ASNno7"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "fD6FRTI"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt beatae exercitationem earum modi quas mollitia perferendis corporis quibusdam quo quia cupiditate, ipsa tenetur. Aspernatur consectetur ea similique? Impedit, ab exercitationem!",
+      "id": "Q6UPNvz"
     }
   ],
   "users": [
@@ -597,7 +651,9 @@
         "admin"
       ],
       "features": {
-        "isAppRedesigned": true
+        "isAppRedesigned": true,
+        "isArticleRatingEnabled": true,
+        "isProfileRatingEnabled": true
       },
       "jsonSettings": {
         "theme": "blue",
@@ -616,7 +672,7 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isProfileRatingEnabled": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "theme": "light",
@@ -724,6 +780,24 @@
       "rate": 5,
       "feedback": "",
       "id": "IV6HN-W"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "rate": 4,
+      "id": "WSHjdlk"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "rate": 1,
+      "id": "7TjPi8C"
+    },
+    {
+      "articleId": "17",
+      "userId": "1",
+      "rate": 4,
+      "id": "ZkKQXtM"
     }
   ],
   "profile-ratings": [

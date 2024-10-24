@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
 
 export interface ArticleRatingProps {
   className?: string;
@@ -12,6 +14,12 @@ export interface ArticleRatingProps {
 }
 
 const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
+
+  const Skeleton = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => SkeletonDeprecated,
+    on: () => SkeletonRedesigned
+  })
   const { t } = useTranslation();
   const userData = useSelector(getUserAuthData);
 

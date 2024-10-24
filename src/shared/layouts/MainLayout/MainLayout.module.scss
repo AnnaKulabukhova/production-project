@@ -11,12 +11,14 @@
   max-width: 1200px;
   justify-self: center;
   width: 100%;
-  padding-top: 32px;
+  padding: 32px;
+  margin-bottom: 32px;
 }
 
 .sidebar {
   grid-area: sidebar;
   max-width: 284px;
+  padding: 32px;
 }
 
 .rightBar {

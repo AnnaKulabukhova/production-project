@@ -7,3 +7,13 @@
 .input {
   flex-grow: 1;
 }
+
+.inputRedesigned {
+  flex-grow: 1;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: var(--icon-redesigned);
+  }
+}

@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import classes from './ArticleDetails.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoading } from '@/shared/lib/components/DynamicModuleLoading/DynamicModuleLoading';
@@ -8,7 +7,7 @@ import { articleDetailsReducer } from './../../model/slice/articleDetailsSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticleById } from './../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
-import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './../../model/selectors/articleDetails';
+import { getArticleDetailsError, getArticleDetailsIsLoading } from './../../model/selectors/articleDetails';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { ToggleFeatures } from '@/shared/lib/features';

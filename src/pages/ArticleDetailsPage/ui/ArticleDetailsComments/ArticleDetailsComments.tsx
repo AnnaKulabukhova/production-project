@@ -12,7 +12,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 
 interface ArticleDetailsCommentsProps {
@@ -38,8 +40,12 @@ export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCom
   );
 
   return (
-    <VStack max className={classNames('', {}, [className])}>
-      <Text size={TextSize.SizeL} title={t('Comments')} />
+    <VStack gap='16' max className={classNames('', {}, [className])}>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        off={<TextDeprecated size={TextSize.SizeL} title={t('Comments')} />}
+        on={<Text size={'l'} bold title={t('Comments')} />}
+      />
       <Suspense fallback={<Loader />}>
         <AddCommentForm onSendComment={onSendComment} />
       </Suspense>
