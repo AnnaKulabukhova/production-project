@@ -20,6 +20,7 @@ import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 
 export interface LoginFormProps {
   className?: string;
@@ -38,6 +39,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginLoading);
   const error = useSelector(getLoginError);
+  const forceUpdate = useForceUpdate()
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -57,8 +59,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const result = await dispatch(loginByUsername({ username, password }));
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      forceUpdate()
     }
-  }, [onSuccess, dispatch, username, password]);
+  }, [forceUpdate, onSuccess, dispatch, username, password]);
 
   return (
     <DynamicModuleLoading removeAfterUnmount reducers={initialReducers}>

@@ -18,8 +18,10 @@ const App = () => {
   const init = useSelector(getUserInit);
 
   useEffect(() => {
-    dispatch(initAuthData());
-  }, [dispatch]);
+    if (!init) {
+      dispatch(initAuthData());
+    }
+  }, [dispatch, init]);
 
   if (!init) {
     return (

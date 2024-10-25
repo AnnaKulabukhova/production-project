@@ -15,6 +15,10 @@ i18n
       escapeValue: false,
       skipOnVariables: false,
     },
+
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json'
+    }
   });
 
 export default i18n;

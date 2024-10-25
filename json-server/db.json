@@ -609,7 +609,7 @@
         "admin"
       ],
       "features": {
-        "isAppRedesigned": true,
+        "isAppRedesigned": false,
         "isArticleRatingEnabled": true,
         "isProfileRatingEnabled": true
       },

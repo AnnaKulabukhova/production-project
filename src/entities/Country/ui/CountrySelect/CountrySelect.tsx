@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/types/countries';
 import { memo, useCallback } from 'react';
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
@@ -22,8 +21,6 @@ const options = [
 ];
 
 export const CountrySelect = memo(({ value, onChange, readonly, label }: CountrySelectProps) => {
-  const { t } = useTranslation('profile');
-
   const onChangeHandler = useCallback(
     (value: string) => {
       onChange?.(value as Country);
