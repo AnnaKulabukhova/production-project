@@ -3,6 +3,7 @@ import { ThemeDecorator } from '../src/shared/config/storybook/ThemeDecorator';
 import { Theme } from '../src/shared/const/theme';
 import { RouterDecorator } from '../src/shared/config/storybook/RouterDecorator';
 import { SuspenseDecorator } from '../src/shared/config/storybook/SuspenseDecorator';
+import { FeaturesFlagsDecorator } from '@/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -40,7 +41,7 @@ const preview: Preview = {
     },
   },
   globals: { theme: Theme.Light, __IS_DEV__: true },
-  decorators: [ThemeDecorator(Theme.Light), RouterDecorator, SuspenseDecorator],
+  decorators: [ThemeDecorator(Theme.Light), RouterDecorator, SuspenseDecorator, FeaturesFlagsDecorator({})],
 };
 
 export default preview;

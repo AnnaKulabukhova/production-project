@@ -1,9 +1,9 @@
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import AppRouter from './AppRouter';
 import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import { UserRole } from '@/entities/User';
-import { setFeaturesFlag } from '@/shared/lib/features';
+import { act } from 'react';
 
 beforeAll(() => {
   global.ResizeObserver = class {
@@ -13,11 +13,11 @@ beforeAll(() => {
   };
 });
 
-beforeEach(() => {
-  setFeaturesFlag({
-    isProfileRatingEnabled: true,
-  });
-});
+// beforeEach(() => {
+//   setFeaturesFlag({
+//     isProfileRatingEnabled: true,
+//   });
+// });
 
 describe('AppRouter.test', () => {
   // Тест асинхр. т.к. страница подгружается асинхронно
@@ -47,9 +47,12 @@ describe('AppRouter.test', () => {
   });
 
   test('Access to a private page for an authorized user', async () => {
-    componentRender(<AppRouter />, {
-      route: getRouteProfile('1'),
-      initialState: { user: { authData: { id: '1' } } },
+    await act(async () => {
+      componentRender(<AppRouter />, {
+        route: getRouteProfile('1'),
+        initialState: { user: { _init: true, authData: { id: '1' } } },
+      });
+      await waitFor(() => expect(screen.queryByTestId('pageLoader')).not.toBeInTheDocument());
     });
     const page = await screen.findByTestId('ProfilePage');
     expect(page).toBeInTheDocument();

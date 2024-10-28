@@ -5,6 +5,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import AvatarImg from '@/shared/assets/tests/avatarForStorybook.jpg';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const data = {
   first: 'Leanne',
@@ -33,6 +34,13 @@ export const Light: Story = {
     data,
   },
 };
+export const LightRedesigned: Story = {
+  args: {
+    data,
+  },
+  decorators: [NewDesignDecorator]
+};
+
 export const Loading: Story = {
   args: {
     isLoading: true,
@@ -49,4 +57,10 @@ export const Dark: Story = {
     data,
   },
   decorators: [ThemeDecorator(Theme.Dark)],
+};
+export const DarkRedesigned: Story = {
+  args: {
+    data,
+  },
+  decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
 };
