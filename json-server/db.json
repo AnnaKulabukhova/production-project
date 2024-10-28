@@ -609,12 +609,12 @@
         "admin"
       ],
       "features": {
-        "isAppRedesigned": false,
+        "isAppRedesigned": true,
         "isArticleRatingEnabled": true,
         "isProfileRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "blue",
+        "theme": "light",
         "isFirstVisit": true,
         "isArticlesPageWasOpened": true
       },

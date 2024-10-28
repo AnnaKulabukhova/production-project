@@ -23,3 +23,16 @@ export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdminPanel = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
 export const getRouteSettings = () => '/settings';
+
+// Текущий маршрут мапит в названия роутинга
+export const AppRouteByPathPattern: Record<string, AppRoutes> = {
+  [getRouteMain()]: AppRoutes.Main,
+  [getRouteAbout()]: AppRoutes.About,
+  [getRouteProfile(':id')]: AppRoutes.Profile,
+  [getRouteArticles()]: AppRoutes.Articles,
+  [getRouteArticlesDetails(':id')]: AppRoutes.ArticleDetails,
+  [getRouteArticleCreate()]: AppRoutes.ArticleCreate,
+  [getRouteArticleEdit(':id')]: AppRoutes.ArticleEdit,
+  [getRouteAdminPanel()]: AppRoutes.AdminPanel,
+  [getRouteSettings()]: AppRoutes.Settings,
+}
