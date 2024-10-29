@@ -38,7 +38,7 @@ export const ArticleDetailsDeprecated = () => {
       <HStack justify="center" max className={classes.avatarWrapper}>
         <Avatar src={article?.img} size={200} alt={article?.title} className={classes.avatar} />
       </HStack>
-      <VStack gap="4" max data-testId="ArticleDetails.Info">
+      <VStack gap="4" max data-testid="ArticleDetails.Info">
         <Text size={TextSize.SizeL} title={article?.title} text={article?.subtitle} />
         <HStack align="center" gap="8" className={classes.articleInfo}>
           <Icon Svg={EyeIcon} />

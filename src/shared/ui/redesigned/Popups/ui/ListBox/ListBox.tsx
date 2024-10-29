@@ -53,14 +53,13 @@ export const ListBox = <T extends string>({
         onChange={onChange}
         className={classNames(classes.listbox, {}, [className, classesPopups.popup])}
       >
-        <ListboxButton disabled={readonly} className={classes.trigger}>
-          <Button
-            addonRight={<Icon Svg={ArrowIcon} />}
-            variant='filled'
-            disabled={readonly}
-          >
-            {selectedItem?.content ?? defaultValue}
-          </Button>
+        <ListboxButton as={Button}
+          addonRight={<Icon Svg={ArrowIcon} />}
+          variant='filled'
+          disabled={readonly}
+          className={classes.trigger}>
+
+          {selectedItem?.content ?? defaultValue}
         </ListboxButton>
         <ListboxOptions transition className={classNames(classes.options, {}, [mapDirectionClass[direction], classesPopups.menu])}>
           {items?.map((item) => (
@@ -86,6 +85,6 @@ export const ListBox = <T extends string>({
           ))}
         </ListboxOptions>
       </HListBox>
-    </HStack>
+    </HStack >
   );
 };

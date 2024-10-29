@@ -44,6 +44,8 @@ export const StarRating = memo(({ className, onSelect, size = 30, selectedStars 
     on: () => classes.StarRatingRedesigned
   })
 
+
+
   return (
     <div className={classNames(classStar, {}, [className])}>
       {stars.map((star) => {
@@ -64,11 +66,13 @@ export const StarRating = memo(({ className, onSelect, size = 30, selectedStars 
         }
 
         return (
+
           <ToggleFeatures key={star}
             feature='isAppRedesigned'
-            off={<IconDeprecated  {...commonProps} />}
-            on={<IconRedesigned clickable={!isSelected} {...commonProps} />}
+            off={<IconDeprecated {...commonProps} key={star} />}
+            on={<IconRedesigned clickable={!isSelected} {...commonProps} key={star} />}
           />
+
         )
       })}
     </div>
