@@ -8,9 +8,10 @@ import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
   className?: string;
+  loadMore?: () => void
 }
 
-export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps) => {
+export const ArticleInfiniteList = memo(({ className, loadMore }: ArticleInfiniteListProps) => {
   const { t } = useTranslation('articles');
   const error = useSelector(getArticlesPageError);
   const articles = useSelector(getArticlesList.selectAll);
@@ -25,5 +26,5 @@ export const ArticleInfiniteList = memo(({ className }: ArticleInfiniteListProps
     );
   }
 
-  return <ArticleList isLoading={isLoading} view={view} articles={articles} className={className} />;
+  return <ArticleList loadMore={loadMore} isLoading={isLoading} view={view} articles={articles} className={className} />;
 });

@@ -58,10 +58,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             content={
               <Page
                 data-testid="ArticlesPage"
-                onScrollEnd={LoadNextPart}
                 className={classNames(classes.articlesPage, {}, [className])}
               >
-                <ArticleInfiniteList />
+                <ArticleInfiniteList loadMore={LoadNextPart} />
                 <ArticlePageGreeting />
               </Page>
             }

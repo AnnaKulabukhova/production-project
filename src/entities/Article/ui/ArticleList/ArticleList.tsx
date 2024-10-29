@@ -1,5 +1,5 @@
-import type { HTMLAttributeAnchorTarget } from 'react';
-import { memo } from 'react';
+import type { HTMLAttributeAnchorTarget, HTMLAttributes } from 'react';
+import { forwardRef, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import classes from './ArticleList.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -10,6 +10,7 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { HStack } from '@/shared/ui/redesigned/Stack';
+import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 
 interface ArticleListProps {
   className?: string;
@@ -17,13 +18,14 @@ interface ArticleListProps {
   isLoading?: boolean;
   view?: ArticlesViews;
   target?: HTMLAttributeAnchorTarget;
+  loadMore?: () => void
 }
 
 const getSkeletons = (view: ArticlesViews) => {
   return new Array(view === ArticlesViews.Small ? 16 : 3).fill(0).map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
 };
 
-export const ArticleList = memo(({ className, articles, view = ArticlesViews.Small, isLoading, target }: ArticleListProps) => {
+export const ArticleList = memo(({ className, articles, view = ArticlesViews.Small, isLoading, target, loadMore }: ArticleListProps) => {
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => {
@@ -36,6 +38,41 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
     </div>;
   }
 
+  const gridComponentsSmall = {
+    List: forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ style, children, ...props }, ref) => (
+      <div
+        ref={ref}
+        {...props}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: '16px',
+          ...style,
+        }}
+      >
+        {children}
+      </div>
+    )),
+  };
+
+  const gridComponentsBig = {
+    List: forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(({ style, children, ...props }, ref) => (
+      <div
+        ref={ref}
+        {...props}
+        style={{
+          display: "flex",
+          flexDirection: 'column',
+          flexWrap: "wrap",
+          gap: '16px',
+          ...style,
+        }}
+      >
+        {children}
+      </div>
+    )),
+  };
+
   return (
     <ToggleFeatures
       feature='isAppRedesigned'
@@ -47,76 +84,28 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
       }
       on={
         <HStack max justify='between' wrap='wrap' gap='16' data-testid="ArticleList" className={classNames(classes.articleListRedesigned, {}, [])}>
-          {articles.length > 0 ? articles.map(renderArticle) : null}
-          {isLoading && getSkeletons(view)}
+          {view === ArticlesViews.Big ?
+            (<Virtuoso
+              useWindowScroll
+              style={{ width: '100%', height: 'auto', paddingBottom: '16px' }}
+              endReached={loadMore}
+              data={articles}
+              itemContent={(index, article: Article) => renderArticle(article)}
+              components={gridComponentsBig}
+            />
+            ) : (
+              <VirtuosoGrid
+                useWindowScroll
+                style={{ width: '100%', height: '100vh' }}
+                endReached={loadMore}
+                data={articles}
+                components={gridComponentsSmall}
+                itemContent={(index, article: Article) => renderArticle(article)}
+              />
+            )
+          }
         </HStack>
       }
     />
   );
 });
-
-// import type { HTMLAttributeAnchorTarget } from 'react';
-// import { memo } from 'react';
-// import { useTranslation } from 'react-i18next';
-// import classes from './ArticleList.module.scss';
-// import { classNames } from '@/shared/lib/classNames/classNames';
-// import type { Article } from '../../model/types/article';
-// import { ArticlesViews } from '../../model/consts/articleConsts';
-// import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-// import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-// import { Text, TextSize } from '@/shared/ui/deprecated/Text';
-// import { ToggleFeatures } from '@/shared/lib/features';
-// import { HStack } from '@/shared/ui/redesigned/Stack';
-// import { Virtuoso } from 'react-virtuoso';
-
-// interface ArticleListProps {
-//   className?: string;
-//   articles: Article[];
-//   isLoading?: boolean;
-//   view?: ArticlesViews;
-//   target?: HTMLAttributeAnchorTarget;
-// }
-
-// const getSkeletons = (view: ArticlesViews) => {
-//   return new Array(view === ArticlesViews.Small ? 16 : 3).fill(0).map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
-// };
-
-// export const ArticleList = memo(({ className, articles, view = ArticlesViews.Small, isLoading, target }: ArticleListProps) => {
-//   const { t } = useTranslation();
-
-//   const renderArticle = (article: Article) => {
-//     return <ArticleListItem target={target} view={view} article={article} key={article.title} />;
-//   };
-
-//   if (!isLoading && !articles.length) {
-//     <div className={classNames(classes.articleList, {}, [className, classes[view]])}>
-//       <Text size={TextSize.SizeL} title={t('Articles not found')} />
-//     </div>;
-//   }
-
-//   const loadMore = () => {
-
-//   }
-
-//   return (
-//     <ToggleFeatures
-//       feature='isAppRedesigned'
-//       off={
-//         <div data-testid="ArticleList" className={classNames(classes.articleList, {}, [className, classes[view]])}>
-//           {articles.length > 0 ? articles.map(renderArticle) : null}
-//           {isLoading && getSkeletons(view)}
-//         </div>
-//       }
-//       on={
-//         <HStack max justify='between' wrap='wrap' gap='16' data-testid="ArticleList" className={classNames(classes.articleListRedesigned, {}, [])}>
-//           <Virtuoso
-//             endReached={loadMore}
-//             data={articles}
-//             increaseViewportBy={4}
-//             itemContent={(index, article: Article) => <ArticleListItem target={target} view={view} article={article} key={article.title} />}
-//           />
-//         </HStack>
-//       }
-//     />
-//   );
-// });
