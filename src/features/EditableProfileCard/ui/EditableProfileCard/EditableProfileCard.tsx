@@ -150,8 +150,12 @@ export const EditableProfileCard = memo(({ className, id }: EditableProfileCardP
           validateErrors.map((err: ValidateProfileErrors) => (
             <ToggleFeatures key={err}
               feature='isAppRedesigned'
-              off={<TextDeprecated key={err} text={validateErrorTranslates[err]} theme={TextTheme.Error} data-testid="EditableProfileCard.Error" />}
-              on={<Text key={err} text={validateErrorTranslates[err]} variant='error' data-testid="EditableProfileCard.Error" />}
+              off={
+                <TextDeprecated key={err} text={validateErrorTranslates[err]} theme={TextTheme.Error} data-testid="EditableProfileCard.Error" />
+              }
+              on={
+                <Text key={err} text={validateErrorTranslates[err]} variant='error' data-testid="EditableProfileCard.Error" />
+              }
             />
           ))}
         <ProfileCard

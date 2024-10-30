@@ -43,6 +43,5 @@ export const CountrySelect = memo(({ value, onChange, readonly, label }: Country
       off={<ListBoxDeprecated  {...props} />}
       on={<ListBox {...props} />}
     />
-
   );
 });

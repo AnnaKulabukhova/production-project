@@ -4,7 +4,6 @@ import type { Decorator } from "@storybook/react/*";
 
 export const FeaturesFlagsDecorator: (features: FeatureFlagsType) => Decorator = (features) => (Story) => {
   setFeaturesFlag(features)
-
   return (
     <Story />
   );

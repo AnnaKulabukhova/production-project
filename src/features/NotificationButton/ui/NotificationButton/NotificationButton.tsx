@@ -50,8 +50,6 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
           Svg={NotificationIcon}
           clickable={true}
           onClick={onOpenDrawer}
-        // width={16} 
-        // height={17} 
         />}
     />
   );
@@ -72,7 +70,6 @@ export const NotificationButton = memo(({ className }: NotificationButtonProps) 
             </Popover>
           }
         />
-
       </BrowserView>
 
       <MobileView>

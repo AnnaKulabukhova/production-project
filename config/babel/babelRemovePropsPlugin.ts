@@ -1,5 +1,6 @@
 import type { PluginItem } from '@babel/core';
 
+// babel-плагин для удаления data-testid из prod. сборки
 export default function (): PluginItem {
   return {
     visitor: {
