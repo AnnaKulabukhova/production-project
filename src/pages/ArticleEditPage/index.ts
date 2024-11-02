@@ -1,1 +1,1 @@
-export { ArticleEditPageAsync as ArticleEditPage } from './ui/ArticleEditPage/ArticleEditPageAsync.async';
+export { ArticleCreatePageAsync as ArticleCreatePage } from './ui/ArticleCreatePage/ArticleCreatePageAsync.async';

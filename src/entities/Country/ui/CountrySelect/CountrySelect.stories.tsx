@@ -6,6 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof CountrySelect> = {
   title: 'Entities/CountrySelect',
@@ -40,4 +41,28 @@ export const Blue: Story = {
     onChange: action('onChange'),
   },
   decorators: [PositionDecorator, ThemeDecorator(Theme.Blue)],
+};
+
+export const PrimaryRedesigned: Story = {
+  args: {
+    value: Country.Armenia,
+    onChange: action('onChange'),
+  },
+  decorators: [PositionDecorator, NewDesignDecorator],
+};
+
+export const DarkRedesigned: Story = {
+  args: {
+    value: Country.Kazakhstan,
+    onChange: action('onChange'),
+  },
+  decorators: [PositionDecorator, ThemeDecorator(Theme.Dark), NewDesignDecorator],
+};
+
+export const BlueRedesigned: Story = {
+  args: {
+    value: Country.Belarus,
+    onChange: action('onChange'),
+  },
+  decorators: [PositionDecorator, ThemeDecorator(Theme.Blue), NewDesignDecorator],
 };

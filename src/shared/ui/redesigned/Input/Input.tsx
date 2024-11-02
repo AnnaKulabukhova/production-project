@@ -37,7 +37,8 @@ export const Input = memo((props: InputProps) => {
 
   const input = (
     <div className={classNames(classes.inputWrapper, mods, [className, classes[size]])}>
-      <div className={classes.addonLeft}>{addonLeft}</div><input
+      <div className={classes.addonLeft}>{addonLeft}</div>
+      <input
         placeholder={placeholder}
         className={classes.input}
         type={type} value={value}

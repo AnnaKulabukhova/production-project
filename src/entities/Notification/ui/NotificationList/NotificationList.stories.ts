@@ -3,6 +3,7 @@ import { NotificationList } from './NotificationList';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const parameters = {
   mockData: [
@@ -60,6 +61,51 @@ Blue.parameters = parameters;
 export const isLoading: Story = {};
 isLoading.parameters = {
   layout: 'fullscreen',
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: 'GET',
+      status: 200,
+      delay: 3000,
+      response: [
+        {
+          id: '1',
+          title: 'Title',
+          description: 'description description description description description',
+        },
+        {
+          id: '2',
+          title: 'Title 2',
+          description: 'description description description description description',
+        },
+        {
+          id: '3',
+          title: 'Title3',
+          description: 'description description description description description',
+        },
+      ],
+    },
+  ],
+};
+export const LightRedesigned: Story = {
+  decorators: [NewDesignDecorator]
+};
+Light.parameters = parameters;
+
+export const DarkRedesigned: Story = {
+  decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
+};
+Dark.parameters = parameters;
+
+export const BlueRedesigned: Story = {
+  decorators: [ThemeDecorator(Theme.Blue), NewDesignDecorator],
+};
+Blue.parameters = parameters;
+
+export const isLoadingRedesigned: Story = {};
+isLoading.parameters = {
+  layout: 'fullscreen',
+  decorators: [NewDesignDecorator],
   mockData: [
     {
       url: `${__API__}/notifications`,

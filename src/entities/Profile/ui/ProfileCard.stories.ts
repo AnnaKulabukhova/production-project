@@ -34,18 +34,14 @@ export const Light: Story = {
     data,
   },
 };
-export const LightRedesigned: Story = {
-  args: {
-    data,
-  },
-  decorators: [NewDesignDecorator]
-};
+
 
 export const Loading: Story = {
   args: {
     isLoading: true,
   },
 };
+
 export const Error: Story = {
   args: {
     error: 'Error',
@@ -58,9 +54,31 @@ export const Dark: Story = {
   },
   decorators: [ThemeDecorator(Theme.Dark)],
 };
+
+export const LightRedesigned: Story = {
+  args: {
+    data,
+  },
+  decorators: [NewDesignDecorator]
+};
+
 export const DarkRedesigned: Story = {
   args: {
     data,
   },
   decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
+};
+
+export const LoadingRedesigned: Story = {
+  args: {
+    isLoading: true,
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const ErrorRedesigned: Story = {
+  args: {
+    error: 'Error',
+  },
+  decorators: [NewDesignDecorator]
 };

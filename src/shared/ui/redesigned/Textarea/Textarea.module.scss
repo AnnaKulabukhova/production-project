@@ -1,0 +1,29 @@
+.textareaWrapper {
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+
+  //  min-height: 350px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.size_s {
+  font: var(--font-s-redesigned);
+}
+
+.size_m {
+  font: var(--font-m-redesigned);
+}
+
+.size_l {
+  font: var(--font-l-redesigned);
+}

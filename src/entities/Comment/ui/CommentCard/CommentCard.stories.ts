@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CommentCard } from './CommentCard';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import TestIcon from '@/shared/assets/tests/avatarForStorybook.jpg'
 
 const meta: Meta<typeof CommentCard> = {
   title: 'Entities/Comment/CommentCard',
@@ -21,7 +22,7 @@ const normalArgs = {
     user: {
       id: '1',
       username: 'VASYA',
-      avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+      avatar: TestIcon,
     },
   },
 }
@@ -29,11 +30,6 @@ const normalArgs = {
 export const Normal: Story = {
   args: normalArgs
 
-};
-
-export const NormalRedesigned: Story = {
-  args: normalArgs,
-  decorators: [NewDesignDecorator]
 };
 
 export const isLoading: Story = {
@@ -45,8 +41,27 @@ export const isLoading: Story = {
       user: {
         id: '1',
         username: 'VASYA',
-        avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+        avatar: TestIcon,
       },
     },
   },
+};
+export const NormalRedesigned: Story = {
+  args: normalArgs,
+  decorators: [NewDesignDecorator]
+};
+export const isLoadingRedesigned: Story = {
+  args: {
+    isLoading: true,
+    comment: {
+      id: '2',
+      text: 'comment',
+      user: {
+        id: '1',
+        username: 'VASYA',
+        avatar: TestIcon,
+      },
+    },
+  },
+  decorators: [NewDesignDecorator]
 };

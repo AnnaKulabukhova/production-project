@@ -8,13 +8,16 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { Text } from '@/shared/ui/deprecated/Text';
-import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { AppLinkTheme } from '@/shared/ui/deprecated/AppLink/AppLink';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { ToggleFeatures } from '@/shared/lib/features';
+import CreateArticleIcon from '@/shared/assets/icons/create-arrticle-new.svg'
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 interface NavbarProps {
   className?: string;
@@ -39,9 +42,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         feature='isAppRedesigned'
         off={<header className={classNames(classes.navbar, {}, [className ?? ''])}>
           <Text className={classes.appName} title="My app" />
-          <AppLink theme={AppLinkTheme.Secondary} to={getRouteArticleCreate()}>
+          <AppLinkDeprecated theme={AppLinkTheme.Secondary} to={getRouteArticleCreate()}>
             {t('Create new article')}
-          </AppLink>
+          </AppLinkDeprecated>
           <HStack gap="16" className={classes.actions}>
             <NotificationButton />
             <AvatarDropdown />
@@ -52,6 +55,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         on={
           <header className={classNames(classes.navbarRedesigned, {}, [className ?? ''])}>
             <HStack gap="8" className={classes.actions}>
+              <AppLink to={getRouteArticleCreate()}><Icon Svg={CreateArticleIcon} /></AppLink>
               <NotificationButton />
               <AvatarDropdown />
             </HStack>

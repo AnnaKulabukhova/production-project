@@ -5,7 +5,6 @@ export enum AppRoutes {
   Articles = 'articles',
   ArticleDetails = 'article_details',
   ArticleCreate = 'article_create',
-  ArticleEdit = 'article_edit',
   AdminPanel = 'admin_panel',
   Forbidden = 'forbidden',
   Settings = 'settings',
@@ -32,7 +31,6 @@ export const AppRouteByPathPattern: Record<string, AppRoutes> = {
   [getRouteArticles()]: AppRoutes.Articles,
   [getRouteArticlesDetails(':id')]: AppRoutes.ArticleDetails,
   [getRouteArticleCreate()]: AppRoutes.ArticleCreate,
-  [getRouteArticleEdit(':id')]: AppRoutes.ArticleEdit,
   [getRouteAdminPanel()]: AppRoutes.AdminPanel,
   [getRouteSettings()]: AppRoutes.Settings,
 }

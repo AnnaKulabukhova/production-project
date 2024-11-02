@@ -2,7 +2,7 @@ import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
-import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticleCreatePage } from '@/pages/ArticleEditPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
@@ -14,7 +14,6 @@ import {
   getRouteAbout,
   getRouteAdminPanel,
   getRouteArticleCreate,
-  getRouteArticleEdit,
   getRouteArticles,
   getRouteArticlesDetails,
   getRouteForbidden,
@@ -50,12 +49,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.ArticleCreate]: {
     path: getRouteArticleCreate(),
-    element: <ArticleEditPage />,
-    authOnly: true,
-  },
-  [AppRoutes.ArticleEdit]: {
-    path: getRouteArticleEdit(':id'),
-    element: <ArticleEditPage />,
+    element: <ArticleCreatePage />,
     authOnly: true,
   },
   [AppRoutes.AdminPanel]: {

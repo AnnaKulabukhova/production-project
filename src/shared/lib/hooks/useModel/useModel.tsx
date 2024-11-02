@@ -6,6 +6,10 @@ interface UseModalProps {
   isOpen?: boolean;
 }
 
+/**
+ * Переиспользуемый хук для модальных компонентов (drawer/modal)
+ */
+
 export const useModal = ({ animationDelay, onClose, isOpen }: UseModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);

@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof CurrencySelect> = {
   title: 'Entities/CurrencySelect',
@@ -37,4 +38,26 @@ export const Dark: Story = {
     onChange: action('onchange'),
   },
   decorators: [PositionDecorator, ThemeDecorator(Theme.Dark)],
+
+};
+export const PrimaryRedesigned: Story = {
+  args: {
+    value: Currency.EUR,
+    onChange: action('onchange'),
+  },
+  decorators: [PositionDecorator, NewDesignDecorator],
+};
+export const BlueRedesigned: Story = {
+  args: {
+    value: Currency.RUB,
+    onChange: action('onchange'),
+  },
+  decorators: [PositionDecorator, ThemeDecorator(Theme.Blue), NewDesignDecorator],
+};
+export const DarkRedesigned: Story = {
+  args: {
+    value: Currency.USD,
+    onChange: action('onchange'),
+  },
+  decorators: [PositionDecorator, ThemeDecorator(Theme.Dark), NewDesignDecorator],
 };
