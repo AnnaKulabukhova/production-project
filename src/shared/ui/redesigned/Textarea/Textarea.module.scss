@@ -4,12 +4,11 @@
 
 .textarea {
   width: 100%;
-  border: none;
-  background-color: transparent;
-  outline: none;
   resize: none;
-
-  //  min-height: 350px;
+  border: none;
+  outline: none;
+  color: var(--text-redesigned);
+  background-color: transparent;
 }
 
 .bold {

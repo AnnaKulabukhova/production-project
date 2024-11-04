@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import classes from './CreateArticle.module.scss'
 import { classNames } from "@/shared/lib/classNames/classNames"
@@ -26,48 +26,31 @@ const items = [
 ]
 
 export const CreateArticle = memo(({ className }: CreateArticleProps) => {
+  const [title, setTitle] = useState('')
+  const [subtitle, setSubtitle] = useState('')
+  const [tab, setTab] = useState('')
+  const [text, setText] = useState('')
   const { t } = useTranslation('createArticle')
   const userData = useSelector(getUserAuthData)
   const [createArticleMutation] = useCreateArticle();
 
-  const handlerSendArticle = useCallback(
-    () => {
-      // try {
-      //   createArticleMutation({
-      //     title,
-      //     subtitle: subtitle ?? '',
-      //     img,
-      //     views: 0,
-      //     createdAt: String(new Date()),
-      //     userId: userData?.id ?? '',
-      //     type: [],
-      //     blocks: []
-      //   });
-      // } catch (error) {
-      //   console.log(error);
-      // }
-    },
-    [],
-  );
-  // const handlerSendArticle = useCallback(
-  //   (title: string, img: string, subtitle?: string,) => {
-  //     try {
-  //       createArticleMutation({
-  //         title,
-  //         subtitle: subtitle ?? '',
-  //         img,
-  //         views: 0,
-  //         createdAt: String(new Date()),
-  //         userId: userData?.id ?? '',
-  //         type: [],
-  //         blocks: []
-  //       });
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   },
-  //   [createArticleMutation, userData?.id],
-  // );
+
+  const handlerSendArticle = (title: string, img?: string, subtitle?: string,) => () => {
+    try {
+      createArticleMutation({
+        title,
+        subtitle: subtitle ?? '',
+        img,
+        views: 0,
+        createdAt: String(new Date()),
+        userId: userData?.id ?? '',
+        type: [],
+        blocks: []
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <VStack max gap='16' className={classNames(classes.createArticle, {}, [className])} >
@@ -76,9 +59,9 @@ export const CreateArticle = memo(({ className }: CreateArticleProps) => {
         <Text bold text={userData?.username} />
       </HStack>
 
-      <VStack max>
-        <Textarea size='l' bold placeholder={t('Title')} />
-        <Textarea className={classes.textareaContent} placeholder={t('краткое описание')} />
+      <VStack max gap='16'>
+        <Textarea value={title} size='l' bold placeholder={t('Title')} />
+        <Textarea value={subtitle} className={classes.textareaContent} placeholder={t('краткое описание')} />
         <Input type='file' placeholder='Выберете изображение' />
         <HStack>
           <Text text='Выберете тематику статьи' />
@@ -92,10 +75,10 @@ export const CreateArticle = memo(({ className }: CreateArticleProps) => {
             className={classes.dropdown}
           />
 
-          <Textarea height={500} className={classes.textareaContent} placeholder={t('Title')} />
+          <Textarea value={text} minRows={8} className={classes.textareaContent} placeholder={t('Title')} />
         </HStack>
       </VStack>
-      <Button onClick={handlerSendArticle} className={classes.button}>{t('To publish')}</Button>
+      <Button onClick={handlerSendArticle(title, subtitle)} className={classes.button}>{t('To publish')}</Button>
     </VStack>
   )
 })

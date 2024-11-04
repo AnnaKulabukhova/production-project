@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Text> = {
-  title: 'Shared/Text',
+  title: 'Shared/Deprecated/Text',
   component: Text,
   argTypes: {
     className: { control: 'color' },

@@ -32,6 +32,35 @@ const parameters = {
   ],
 };
 
+const parametersForLoading = {
+  layout: 'fullscreen',
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: 'GET',
+      status: 200,
+      delay: 3000,
+      response: [
+        {
+          id: '1',
+          title: 'Title',
+          description: 'description description description description description',
+        },
+        {
+          id: '2',
+          title: 'Title 2',
+          description: 'description description description description description',
+        },
+        {
+          id: '3',
+          title: 'Title3',
+          description: 'description description description description description',
+        },
+      ],
+    },
+  ],
+};
+
 const meta: Meta<typeof NotificationList> = {
   title: 'Entities/Notification/NotificationList',
   component: NotificationList,
@@ -59,76 +88,25 @@ export const Blue: Story = {
 Blue.parameters = parameters;
 
 export const isLoading: Story = {};
-isLoading.parameters = {
-  layout: 'fullscreen',
-  mockData: [
-    {
-      url: `${__API__}/notifications`,
-      method: 'GET',
-      status: 200,
-      delay: 3000,
-      response: [
-        {
-          id: '1',
-          title: 'Title',
-          description: 'description description description description description',
-        },
-        {
-          id: '2',
-          title: 'Title 2',
-          description: 'description description description description description',
-        },
-        {
-          id: '3',
-          title: 'Title3',
-          description: 'description description description description description',
-        },
-      ],
-    },
-  ],
-};
+isLoading.parameters = parametersForLoading
+
 export const LightRedesigned: Story = {
   decorators: [NewDesignDecorator]
 };
-Light.parameters = parameters;
+LightRedesigned.parameters = parameters;
 
 export const DarkRedesigned: Story = {
-  decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Dark)],
 };
-Dark.parameters = parameters;
+DarkRedesigned.parameters = parameters;
 
 export const BlueRedesigned: Story = {
-  decorators: [ThemeDecorator(Theme.Blue), NewDesignDecorator],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Blue),],
 };
-Blue.parameters = parameters;
+BlueRedesigned.parameters = parameters;
 
-export const isLoadingRedesigned: Story = {};
-isLoading.parameters = {
-  layout: 'fullscreen',
+
+export const isLoadingRedesigned: Story = {
   decorators: [NewDesignDecorator],
-  mockData: [
-    {
-      url: `${__API__}/notifications`,
-      method: 'GET',
-      status: 200,
-      delay: 3000,
-      response: [
-        {
-          id: '1',
-          title: 'Title',
-          description: 'description description description description description',
-        },
-        {
-          id: '2',
-          title: 'Title 2',
-          description: 'description description description description description',
-        },
-        {
-          id: '3',
-          title: 'Title3',
-          description: 'description description description description description',
-        },
-      ],
-    },
-  ],
 };
+isLoadingRedesigned.parameters = isLoading.parameters = parametersForLoading

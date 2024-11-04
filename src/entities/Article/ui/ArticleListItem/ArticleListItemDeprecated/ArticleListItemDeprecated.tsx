@@ -22,7 +22,7 @@ export const ArticleListItemDeprecated = ({ className, article, view = ArticlesV
   const { t } = useTranslation('articles');
   const [isHover, bindHover] = useHover();
 
-  const text = article?.blocks.find((textBlock) => textBlock.type === 'text' && !textBlock.title) as ArticleTextBlock;
+  const text = article?.blocks.find((textBlock) => textBlock.type === 'text') as ArticleTextBlock;
   const types = <Text text={article?.type.join(', ')} className={classes.types} />;
   const views = (
     <>
@@ -61,11 +61,11 @@ export const ArticleListItemDeprecated = ({ className, article, view = ArticlesV
         </div>
       ) : (
         <AppLink
+          className={classNames(classes.ArticleListItemSmall, {}, [className, classes[view]])}
           target={target}
           to={getRouteArticlesDetails(article?.id)}
           data-testid="ArticleListItem"
           {...bindHover}
-          className={classNames('', {}, [className, classes[view]])}
         >
           <Card>
             <div className={classes.imageWrapper}>

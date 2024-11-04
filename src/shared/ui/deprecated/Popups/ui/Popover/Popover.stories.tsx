@@ -3,7 +3,7 @@ import { Popover } from './Popover';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 
 const meta: Meta<typeof Popover> = {
-  title: 'Shared/Popover',
+  title: 'Shared/Deprecated/Popups/Popover',
   component: Popover,
   argTypes: {
     className: { control: 'color' },

@@ -52,12 +52,12 @@ export const BlueRedesigned: Story = {
     value: Currency.RUB,
     onChange: action('onchange'),
   },
-  decorators: [PositionDecorator, ThemeDecorator(Theme.Blue), NewDesignDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator, ThemeDecorator(Theme.Blue),],
 };
 export const DarkRedesigned: Story = {
   args: {
     value: Currency.USD,
     onChange: action('onchange'),
   },
-  decorators: [PositionDecorator, ThemeDecorator(Theme.Dark), NewDesignDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator, ThemeDecorator(Theme.Dark),],
 };

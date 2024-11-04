@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticlesViewSelector } from './ArticlesViewSelector';
 
 const meta: Meta<typeof ArticlesViewSelector> = {
-  title: 'Entities/Article/ArticlesViewSelector',
+  title: 'Features/Article/ArticlesViewSelector',
   component: ArticlesViewSelector,
   argTypes: {
     className: { control: 'color' },

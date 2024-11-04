@@ -56,7 +56,7 @@ export const DarkRedesigned: Story = {
     value: Country.Kazakhstan,
     onChange: action('onChange'),
   },
-  decorators: [PositionDecorator, ThemeDecorator(Theme.Dark), NewDesignDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator, ThemeDecorator(Theme.Dark),],
 };
 
 export const BlueRedesigned: Story = {
@@ -64,5 +64,5 @@ export const BlueRedesigned: Story = {
     value: Country.Belarus,
     onChange: action('onChange'),
   },
-  decorators: [PositionDecorator, ThemeDecorator(Theme.Blue), NewDesignDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator, ThemeDecorator(Theme.Blue),],
 };

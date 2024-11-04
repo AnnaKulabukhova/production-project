@@ -3,7 +3,7 @@ import { Avatar } from './Avatar';
 import AvatarImg from '@/shared/assets/tests/avatarForStorybook.jpg';
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Shared/Avatar',
+  title: 'Shared/Deprecated/Avatar',
   component: Avatar,
   argTypes: {
     className: { control: 'color' },

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CommentList } from './CommentList';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import TestIcon from '@/shared/assets/tests/avatarForStorybook.jpg'
 
 const meta: Meta<typeof CommentList> = {
   title: 'Entities/Comment/CommentList',
@@ -24,7 +25,7 @@ export const Primary: Story = {
         user: {
           id: '1',
           username: 'VASYA',
-          avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+          avatar: TestIcon,
         },
       },
       {
@@ -33,7 +34,7 @@ export const Primary: Story = {
         user: {
           id: '1',
           username: 'VASYA',
-          avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+          avatar: TestIcon,
         },
       },
     ],
@@ -64,7 +65,7 @@ export const PrimaryRedesigned: Story = {
         user: {
           id: '1',
           username: 'VASYA',
-          avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+          avatar: TestIcon,
         },
       },
       {
@@ -73,7 +74,7 @@ export const PrimaryRedesigned: Story = {
         user: {
           id: '1',
           username: 'VASYA',
-          avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+          avatar: TestIcon,
         },
       },
     ],

@@ -3,7 +3,7 @@ import { ListBox } from './ListBox';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 
 const meta: Meta<typeof ListBox> = {
-  title: 'Shared/ListBox',
+  title: 'Shared/Deprecated/Popups/ListBox',
   component: ListBox,
   argTypes: {
     className: { control: 'color' },

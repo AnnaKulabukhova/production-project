@@ -66,7 +66,7 @@ export const DarkRedesigned: Story = {
   args: {
     data,
   },
-  decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Dark),],
 };
 
 export const LoadingRedesigned: Story = {

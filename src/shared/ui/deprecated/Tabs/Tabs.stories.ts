@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'Shared/Tabs',
+  title: 'Shared/Deprecated/Tabs',
   component: Tabs,
   argTypes: {
     className: { control: 'color' },

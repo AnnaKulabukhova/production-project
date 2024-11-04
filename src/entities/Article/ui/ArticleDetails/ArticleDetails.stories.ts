@@ -3,19 +3,23 @@ import { ArticleDetails } from './ArticleDetails';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import type { Article } from '@/entities/Article/model/types/article';
 import { ArticleBlockType, ArticleType } from '@/entities/Article/model/consts/articleConsts';
+import AvatarIcon from '@/shared/assets/tests/avatarForStorybook.jpg'
+import ArticleIcon from '@/shared/assets/tests/articleImageTest.png'
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 
 const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: ArticleIcon,
   views: 1022,
   createdAt: '26.02.2022',
   type: [ArticleType.IT],
   user: {
     id: '1',
     username: 'Petya',
-    avatar: 'https://loxotrona.net/backend/uploads/2022/Schools-Krasnodar/AVATAR-S/2.jpg',
+    avatar: AvatarIcon,
   },
   blocks: [
     {
@@ -36,7 +40,7 @@ const article: Article = {
     {
       id: '8',
       type: ArticleBlockType.Image,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: ArticleIcon,
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
@@ -72,4 +76,16 @@ export const Loading: Story = {
 
 export const Error: Story = {
   decorators: [StoreProviderDecorator({ articleDetails: { error: 'error' } })],
+};
+
+export const PrimaryRedesigned: Story = {
+  decorators: [StoreProviderDecorator({ articleDetails: { data: article } }), NewDesignDecorator],
+};
+
+export const LoadingRedesigned: Story = {
+  decorators: [StoreProviderDecorator({ articleDetails: { isLoading: true } }), NewDesignDecorator],
+};
+
+export const ErrorRedesigned: Story = {
+  decorators: [StoreProviderDecorator({ articleDetails: { error: 'error' } }), NewDesignDecorator],
 };

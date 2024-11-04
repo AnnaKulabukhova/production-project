@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import classes from './ProfileCardDeprecated.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Loader } from '@/shared/ui/redesigned/Loader';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { CurrencySelect } from '@/entities/Currency';
 import { CountrySelect } from '@/entities/Country';

@@ -4,9 +4,10 @@ import { action } from '@storybook/addon-actions';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 import { ArticlesTypeTabs } from './ArticlesTypeTabs';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticlesTypeTabs> = {
-  title: 'Entities/Article/ArticlesTypeTabs',
+  title: 'Features/Article/ArticlesTypeTabs',
   component: ArticlesTypeTabs,
   argTypes: {
     className: { control: 'color' },
@@ -36,4 +37,25 @@ export const Blue: Story = {
     onChangeType: action('onChangeType'),
   },
   decorators: [ThemeDecorator(Theme.Blue)],
+};
+export const PrimaryRedesigned: Story = {
+  args: {
+    value: ArticleType.Economics,
+    onChangeType: action('onChangeType'),
+  },
+  decorators: [NewDesignDecorator],
+};
+export const DarkRedesigned: Story = {
+  args: {
+    value: ArticleType.Science,
+    onChangeType: action('onChangeType'),
+  },
+  decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
+};
+export const BlueRedesigned: Story = {
+  args: {
+    value: ArticleType.All,
+    onChangeType: action('onChangeType'),
+  },
+  decorators: [ThemeDecorator(Theme.Blue), NewDesignDecorator],
 };
