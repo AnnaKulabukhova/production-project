@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StarRating } from './StarRating';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof StarRating> = {
   title: 'Shared/StarRating',
@@ -38,4 +39,31 @@ export const Big: Story = {
     selectedStars: 3,
     size: 50,
   },
+};
+export const notSelectedRedesigned: Story = {
+  args: {
+    selectedStars: 0,
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const SelectedRedesigned: Story = {
+  args: {
+    selectedStars: 3,
+  },
+  decorators: [NewDesignDecorator]
+};
+export const SmallRedesigned: Story = {
+  args: {
+    selectedStars: 3,
+    size: 15,
+  },
+  decorators: [NewDesignDecorator]
+};
+export const BigRedesigned: Story = {
+  args: {
+    selectedStars: 3,
+    size: 50,
+  },
+  decorators: [NewDesignDecorator]
 };

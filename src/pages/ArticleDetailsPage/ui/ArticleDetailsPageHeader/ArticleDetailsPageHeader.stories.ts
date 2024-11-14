@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ArticleDetailsPageHeader> = {
   title: 'Pages/ArticleDetailsPage/ArticleDetailsPageHeader',
@@ -8,30 +9,21 @@ const meta: Meta<typeof ArticleDetailsPageHeader> = {
   argTypes: {
     className: { control: 'color' },
   },
-  args: {},
-  decorators: [StoreProviderDecorator({})],
 };
 
 export default meta;
 type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 
-export const canEdit: Story = {
+
+export const Primary: Story = {
   decorators: [
-    StoreProviderDecorator({
-      user: {
-        authData: { id: '1' },
-      },
-      articleDetails: { data: { user: { id: '1' } } },
-    }),
+    StoreProviderDecorator({}),
   ],
 };
-export const CanNotEdit: Story = {
+
+export const PrimaryRedesigned: Story = {
   decorators: [
-    StoreProviderDecorator({
-      user: {
-        authData: { id: '1' },
-      },
-      articleDetails: { data: { user: { id: '2' } } },
-    }),
+    NewDesignDecorator,
+    StoreProviderDecorator({}),
   ],
 };

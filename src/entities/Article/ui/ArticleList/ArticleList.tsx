@@ -1,5 +1,5 @@
 import type { HTMLAttributeAnchorTarget, HTMLAttributes } from 'react';
-import { forwardRef, memo } from 'react';
+import { forwardRef, memo, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import classes from './ArticleList.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -11,6 +11,7 @@ import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { VirtuosoContext } from '@/shared/lib/context/VirtuosoContext';
 
 interface ArticleListProps {
   className?: string;
@@ -19,6 +20,7 @@ interface ArticleListProps {
   view?: ArticlesViews;
   target?: HTMLAttributeAnchorTarget;
   loadMore?: () => void
+  virtualized: boolean
 }
 
 const getSkeletons = (view: ArticlesViews) => {
@@ -27,8 +29,9 @@ const getSkeletons = (view: ArticlesViews) => {
     .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
 };
 
-export const ArticleList = memo(({ className, articles, view = ArticlesViews.Small, isLoading, target, loadMore }: ArticleListProps) => {
+export const ArticleList = memo(({ className, articles, view = ArticlesViews.Small, isLoading, target, loadMore, virtualized }: ArticleListProps) => {
   const { t } = useTranslation();
+  const virtuosoRef = useContext(VirtuosoContext)
 
   const renderArticle = (article: Article) => {
     return <ArticleListItem target={target} view={view} article={article} key={article.title} />;
@@ -75,6 +78,15 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
     )),
   };
 
+  if (!virtualized) {
+    return (
+      <div data-testid="ArticleList" className={classNames(classes.articleList, {}, [className, classes[view]])}>
+        {articles.length > 0 ? articles.map(renderArticle) : null}
+        {isLoading && getSkeletons(view)}
+      </div>
+    )
+  }
+
   return (
     <ToggleFeatures
       feature='isAppRedesigned'
@@ -85,14 +97,17 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
         </div>
       }
       on={
+
         <HStack max justify='between' wrap='wrap' gap='16' data-testid="ArticleList" className={classNames(classes.articleListRedesigned, {}, [])}>
           {view === ArticlesViews.Big ?
             (
               <>
                 <Virtuoso
+                  ref={virtuosoRef}
                   useWindowScroll
                   style={{ width: '100%', paddingBottom: '16px' }}
                   endReached={loadMore}
+                  totalCount={articles.length}
                   data={articles}
                   itemContent={(index, article: Article) => renderArticle(article)}
                   components={gridComponentsBig}
@@ -102,6 +117,7 @@ export const ArticleList = memo(({ className, articles, view = ArticlesViews.Sma
             ) : (
               <>
                 <VirtuosoGrid
+                  ref={virtuosoRef}
                   useWindowScroll
                   style={{ width: '100%' }}
                   endReached={loadMore}

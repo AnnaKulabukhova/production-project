@@ -2,12 +2,12 @@ import { useContext } from 'react';
 import { Theme } from '../../../const/theme';
 import { ThemeContext } from '../../context/ThemeContext';
 
-export interface useThemeResult {
+export interface UseThemeResult {
   toggleTheme: (saveAction?: (theme: Theme) => void) => void;
   theme: Theme;
 }
 
-export const useTheme = (): useThemeResult => {
+export const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleTheme = (saveAction?: (theme: Theme) => void) => {
@@ -34,6 +34,7 @@ export const useTheme = (): useThemeResult => {
 
   return {
     toggleTheme,
-    theme: theme || Theme.Light,
+    theme: theme ?? Theme.Light,
   };
 };
+

@@ -110,11 +110,11 @@ files?.forEach((sourceFile) => {
   // для обхождения всех потомков forEachDescendant в каждом файле
   sourceFile.forEachDescendant(node => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      return replaceToggleFunction(node)
+      replaceToggleFunction(node); return;
     }
 
     if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleComponent(node)) {
-      return replaceComponent(node)
+      replaceComponent(node); 
     }
   })
 });

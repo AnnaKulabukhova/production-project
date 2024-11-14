@@ -11,20 +11,24 @@ import autofix from 'eslint-plugin-autofix'
 import unusedImports from 'eslint-plugin-unused-imports'
 import tsParser from '@typescript-eslint/parser'
 import eslintConfigPrettier from "eslint-config-prettier";
+import { includeIgnoreFile } from '@eslint/compat';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __filename = fileURLToPath(import.meta.url)
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({ baseDirectory: __dirname, recommendedConfig: pluginJs.configs.recommended })
-
+const gitignorePath = path.resolve(__dirname, ".gitignore");
 export default [
+   includeIgnoreFile(gitignorePath),
   {
     languageOptions: {
       globals: globals.browser,
       parser: tsParser,
       parserOptions: {
+         parser: '@typescript-eslint/parser',
         project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
         sourceType: 'module'
       }
     },
@@ -33,9 +37,8 @@ export default [
         version: 'detect'
       }
     },
-    ignores: ['.fttemplates/*']
+    // ignores: ['./.fttemplates/**/*',],
   },
-  //  ...tseslint.configs.recommendedTypeChecked,
   ...compat.extends('standard-with-typescript'),
   pluginReactConfig,
 
@@ -49,8 +52,6 @@ export default [
     },
     rules: {
       // react rules
-      // 'react/self-closing-comp': ['error', { component: true, html: true }],
-      // 'react/jsx-indent-props': [2, 2],
       'react/jsx-props-no-spreading': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/display-name': 'off',
@@ -61,19 +62,14 @@ export default [
       'unused-imports/no-unused-imports': 'error',
       // ts rules
       '@typescript-eslint/no-unused-vars': 'warn',
-      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
       '@typescript-eslint/strict-boolean-expressions': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/prefer-nullish-coalescing': 'off',
-      '@typescript-eslint/consistent-type-assertions': 'off',
-      '@typescript-eslint/no-confusing-void-expression': 'off',
-      '@typescript-eslint/no-floating-promises': 'off',
-      '@typescript-eslint/no-invalid-void-type': 'off',
       '@typescript-eslint/array-type': 'off',
-      '@typescript-eslint/space-before-function-paren': 'off',
-      '@typescript-eslint/prefer-ts-expect-error': 'off',
-      '@typescript-eslint/promise-function-async': 'off',
-      '@typescript-eslint/naming-convention': 'warn',
+      '@typescript-eslint/no-confusing-void-expression': 'off',
+      '@typescript-eslint/no-invalid-void-type': 'off',
+      '@typescript-eslint/no-floating-promises': 'off',
+      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/consistent-type-assertions': 'warn',
       // react hooks rules
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',

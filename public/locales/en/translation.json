@@ -3,16 +3,14 @@
   "About": "About us",
   "Profile": "Profile",
   "Articles": "Articles",
-  "Мой перевод": "my translate",
-  "long": "English",
-  "short": "En",
   "login": "Login",
   "Logout": "Logout",
-    "Settings": "Settings",
-  "Страница не найдена": "Page not found",
+  "Settings": "Settings",
+  "pageNotFound": {
+    "title": "pageNotFound"
+  },
   "Articles not found": "Articles not found",
   "Loading": "Loading",
-  "Переключить": "Toggle",
   "An unexpected error has occurred": "An unexpected error has occurred",
   "Refresh the page": "Update page",
   "Ejection error": "throw error",
@@ -29,5 +27,14 @@
   "Admin": "Admin",
   "Access to the page is prohibited": "Access to the page is prohibited",
   "Welcome to the articles page": "Welcome to the articles page",
-  "Here you can search and view articles on various topics": "Here you can search and view articles on various topics"
+  "Here you can search and view articles on various topics": "Here you can search and view articles on various topics",
+  "Thanks for the assessment": "Thanks for the assessment",
+  "Leave your feedback": "Leave your feedback",
+  "Your feedback": "Your feedback",
+  "Cancel": "Cancel",
+  "Armenia": "Armenia",
+  "Belarus": "Belarus",
+  "Kazakhstan": "Kazakhstan",
+  "Russia": "Russia",
+  "Ukraine": "Ukraine"
 }

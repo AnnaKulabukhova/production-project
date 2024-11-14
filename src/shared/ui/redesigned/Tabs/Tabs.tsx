@@ -20,6 +20,7 @@ interface TabsProps<T extends string> {
 }
 
 export const Tabs = <T extends string>({ className, tabs, value, onTabClick, direction = 'row' }: TabsProps<T>) => {
+
   const clickHandle = useCallback(
     (tab: TabItem<T>) => {
       return () => {

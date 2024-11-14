@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Input> = {
-  title: 'Shared/Deprecated/Input',
+  title: 'Shared/Deprecated/InputDeprecated',
   component: Input,
   argTypes: {
     className: { control: 'color' },

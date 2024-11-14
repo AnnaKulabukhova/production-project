@@ -7,7 +7,9 @@ export const useThrottle = (callback: (...args: any[]) => void, delay: number) =
   return useCallback(
     (...args: any[]) => {
       if (!throttleRef.current) {
-        callback(...args), (throttleRef.current = true);
+        /* eslint-disable @typescript-eslint/no-unsafe-argument */
+        callback(...args);
+        throttleRef.current = true;
 
         setTimeout(() => {
           throttleRef.current = false;

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const comments = {
   0: {
@@ -42,4 +43,16 @@ export const DarkWithoutComments: Story = {
     id: '1',
   },
   decorators: [StoreProviderDecorator({ articleDetailsPage: {} })],
+};
+export const LightWithCommentsRedesigned: Story = {
+  args: {
+    id: '1',
+  },
+  decorators: [NewDesignDecorator, StoreProviderDecorator({ articleDetailsPage: { comments: { ids: ['0', '1', '2'], entities: comments } } })],
+};
+export const DarkWithoutCommentsRedesigned: Story = {
+  args: {
+    id: '1',
+  },
+  decorators: [NewDesignDecorator, StoreProviderDecorator({ articleDetailsPage: {} })],
 };

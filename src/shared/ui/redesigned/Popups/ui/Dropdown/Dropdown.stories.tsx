@@ -2,15 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Dropdown } from './Dropdown';
 import { Button } from '../../../Button';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Shared/DropdownRedesign',
+  title: 'Shared/Popups/DropdownRedesign',
   component: Dropdown,
   argTypes: {
     className: { control: 'color' },
   },
   args: {},
-  decorators: [PositionDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator],
 };
 
 export default meta;

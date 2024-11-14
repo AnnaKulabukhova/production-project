@@ -1,7 +1,8 @@
 {
   "Articles": "Статьи",
   "Article not found": "Статья не найдена",
-  "Download error": "Произошла ошибка при загрузке страницы  ",
+  "Download error": "Произошла ошибка при загрузке страницы",
+   "We recommend it": "Рекомендуем",
   "Comments": "Комментарии",
   "onBackToList": "Назад к списку",
   "Edit": "Редактировать",
@@ -9,5 +10,7 @@
   "{{count}} views_zero": "{{count}} просмотров",
   "{{count}} views_one": "{{count}} просмотр",
   "{{count}} views_few": "{{count}} просмотра",
-  "{{count}} views_many": "{{count}} просмотров"
+  "{{count}} views_many": "{{count}} просмотров",
+  "Review of the article": "Оцените статью",
+  "Leave your feedback about the article": "Оставьте свой отзыв о статье"
 }

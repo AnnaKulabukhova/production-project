@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof AppLink> = {
-  title: 'Shared/Deprecated/AppLink',
+  title: 'Shared/Deprecated/AppLinkDeprecated',
   component: AppLink,
   argTypes: {
     className: { control: 'color' },

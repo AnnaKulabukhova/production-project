@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AppLink } from './AppLink';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof AppLink> = {
-  title: 'Shared/AppLinkRedesign',
+  title: 'Shared/AppLink',
   component: AppLink,
   argTypes: {
     className: { control: 'color' },
   },
   args: { to: '/' },
+  decorators: [NewDesignDecorator]
 };
 
 export default meta;
@@ -22,24 +22,10 @@ export const Primary: Story = {
   },
 };
 
-export const Red: Story = {
+export const Error: Story = {
   args: {
     children: 'text',
     variant: 'red',
   },
-};
-export const PrimaryDark: Story = {
-  args: {
-    children: 'text',
-    variant: 'primary',
-  },
-  decorators: [ThemeDecorator(Theme.Dark)],
 };
 
-export const RedDark: Story = {
-  args: {
-    children: 'text',
-    variant: 'red',
-  },
-  decorators: [ThemeDecorator(Theme.Dark)],
-};

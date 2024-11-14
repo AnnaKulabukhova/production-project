@@ -2,7 +2,7 @@ import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { lazy, Suspense } from 'react';
 import type { ArticleRatingProps } from './ArticleRating';
 
-const ArticleRatingLazy = lazy(() => import('./ArticleRating'));
+const ArticleRatingLazy = lazy(async () => await import('./ArticleRating'));
 
 export const ArticleRatingAsync = (props: ArticleRatingProps) => {
   return (

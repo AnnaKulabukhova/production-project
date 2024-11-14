@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import type { ReactNode } from 'react';
 
 // Вывести типы из библиотек, для правильной работы типизации
+/* eslint-disable @typescript-eslint/consistent-type-imports */
 type SpringType = typeof import('@react-spring/web');
 type GestureType = typeof import('@use-gesture/react');
 
@@ -15,8 +16,8 @@ interface AnimationContextPayload {
 const AnimationContext = createContext<AnimationContextPayload>({});
 
 // асинхронная подгрузка библиотек (импорт со скобками,работает с промисами)
-const getAsyncAnimationModules = () => {
-  return Promise.all([import('@react-spring/web'), import('@use-gesture/react')]);
+const getAsyncAnimationModules = async () => {
+  return await Promise.all([import('@react-spring/web'), import('@use-gesture/react')]);
 };
 
 export const useAnimationLibs = () => {
@@ -30,7 +31,7 @@ export const AnimationProvider = ({ children }: { children: ReactNode }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    getAsyncAnimationModules().then(([Spring, Gesture]) => {
+    void getAsyncAnimationModules().then(([Spring, Gesture]) => {
       SpringRef.current = Spring;
       GestureRef.current = Gesture;
       setIsLoaded(true);

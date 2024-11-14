@@ -1,21 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SettingsPage from './SettingsPage';
-
+import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 
 const meta: Meta<typeof SettingsPage> = {
-  title: 'Shared/SettingsPage',
+  title: 'Pages/SettingsPage',
   component: SettingsPage,
   argTypes: {
     className: { control: 'color' },
   },
-  args: {}
+  args: {},
+  decorators: [StoreProviderDecorator({})]
 };
 
 export default meta;
 type Story = StoryObj<typeof SettingsPage>;
 
 
-export const Primary: Story = {
-  args: {
-  }
-};
+export const Primary: Story = {};

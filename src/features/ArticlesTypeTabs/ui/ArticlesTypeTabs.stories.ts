@@ -50,12 +50,12 @@ export const DarkRedesigned: Story = {
     value: ArticleType.Science,
     onChangeType: action('onChangeType'),
   },
-  decorators: [ThemeDecorator(Theme.Dark), NewDesignDecorator],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Dark),],
 };
 export const BlueRedesigned: Story = {
   args: {
     value: ArticleType.All,
     onChangeType: action('onChangeType'),
   },
-  decorators: [ThemeDecorator(Theme.Blue), NewDesignDecorator],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Blue)],
 };

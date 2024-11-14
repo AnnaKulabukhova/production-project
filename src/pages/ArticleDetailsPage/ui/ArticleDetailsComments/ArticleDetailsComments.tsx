@@ -23,7 +23,7 @@ interface ArticleDetailsCommentsProps {
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: ArticleDetailsCommentsProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const commentsIsLoading = useSelector(getArticleDetailsCommentIsLoading);
   const comments = useSelector(getArticleComments.selectAll);
   const dispatch = useAppDispatch();

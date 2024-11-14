@@ -20,7 +20,7 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
     off: () => SkeletonDeprecated,
     on: () => SkeletonRedesigned
   })
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const userData = useSelector(getUserAuthData);
 
   const { data, isLoading } = useGetArticleRating({ articleId, userId: userData?.id ?? '' });

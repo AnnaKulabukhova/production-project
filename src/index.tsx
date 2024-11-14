@@ -7,6 +7,7 @@ import { createRoot } from 'react-dom/client';
 import '@/app/styles/index.scss';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import { ForceUpdateProvider } from './shared/lib/render/forceUpdate';
+import { VirtuosoProvider } from './app/providers/VirtuosoProvider/VirtuosoProvider';
 
 const container = document.getElementById('root');
 if (!container) {
@@ -20,7 +21,9 @@ root.render(
       <ErrorBoundary>
         <ForceUpdateProvider>
           <ThemeProvider>
-            <App />
+            <VirtuosoProvider>
+              <App />
+            </VirtuosoProvider>
           </ThemeProvider>
         </ForceUpdateProvider>
       </ErrorBoundary>

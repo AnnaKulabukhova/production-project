@@ -28,7 +28,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const error = useSelector(getArticleDetailsError);
 
-  useInitialEffect(() => dispatch(fetchArticleById(id)));
+  useInitialEffect(async () => await dispatch(fetchArticleById(id)));
   let content;
 
   if (isLoading) {

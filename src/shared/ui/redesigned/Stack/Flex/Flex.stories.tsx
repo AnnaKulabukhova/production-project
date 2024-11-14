@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from './Flex';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Flex> = {
   title: 'Shared/Flex',
@@ -139,4 +140,140 @@ export const ColumnGap32: Story = {
       </>
     ),
   },
+};
+export const RowRedesigned: Story = {
+  args: {
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const RowGap4Redesigned: Story = {
+  args: {
+    gap: '4',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const RowGap8Redesigned: Story = {
+  args: {
+    gap: '8',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const RowGap16Redesigned: Story = {
+  args: {
+    gap: '16',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const RowGap32Redesigned: Story = {
+  args: {
+    gap: '32',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const ColumnRedesigned: Story = {
+  args: {
+    direction: 'column',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const ColumnAlignEndRedesigned: Story = {
+  args: {
+    align: 'end',
+    direction: 'column',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const ColumnGap16Redesigned: Story = {
+  args: {
+    gap: '16',
+    direction: 'column',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
+};
+
+export const ColumnGap32Redesigned: Story = {
+  args: {
+    gap: '32',
+    direction: 'column',
+    children: (
+      <>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+        <div>first</div>
+      </>
+    ),
+  },
+  decorators: [NewDesignDecorator]
 };

@@ -1,15 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ListBox } from './ListBox';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof ListBox> = {
-  title: 'Shared/ListBoxRedesign',
+  title: 'Shared/Popups/ListBoxRedesign',
   component: ListBox,
   argTypes: {
     className: { control: 'color' },
   },
   args: {},
-  decorators: [PositionDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator],
 };
 
 export default meta;

@@ -14,7 +14,7 @@ interface ArticleRecommendationsListProps {
 }
 
 export const ArticleRecommendationsList = memo(({ className }: ArticleRecommendationsListProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const { isLoading, data: articles, error } = useArticleRecommendationList(3);
 
   if (isLoading) {
@@ -25,7 +25,7 @@ export const ArticleRecommendationsList = memo(({ className }: ArticleRecommenda
     );
   }
 
-  if (error || !articles) {
+  if (error ?? !articles) {
     return (
       <HStack justify="center">
         <ToggleFeatures
@@ -44,7 +44,7 @@ export const ArticleRecommendationsList = memo(({ className }: ArticleRecommenda
         off={<TextDeprecated size={TextSize.SizeL} title={t('We recommend it')} />}
         on={<Text size={'l'} title={t('We recommend it')} />}
       />
-      <ArticleList target="_blank" articles={articles} />
+      <ArticleList virtualized={false} target="_blank" articles={articles} />
     </VStack>
   );
 });

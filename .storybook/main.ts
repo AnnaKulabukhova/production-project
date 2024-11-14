@@ -42,11 +42,6 @@ const config: StorybookConfig = {
         if (rule.test instanceof RegExp && rule.test.source.includes('svg')) {
           return { ...rule, exclude: /\.svg$/i };
         }
-
-        // if ((rule.test as string).includes('svg')) {
-        //   return { ...rule, exclude: /\.svg$/i }
-        // }
-
         return rule;
       });
     }
@@ -64,10 +59,6 @@ const config: StorybookConfig = {
         },
       ],
     });
-    // config?.module?.rules?.push({
-    //   test: /\.svg$/,
-    //   use: ['@svgr/webpack']
-    // })
 
     config.plugins?.push(
       new DefinePlugin({

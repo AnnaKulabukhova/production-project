@@ -34,7 +34,10 @@
     "./eslint.config.mjs",
     "./cypress.config.ts",
     "./src/**/*.ts",
-    "./src/**/*.tsx"
+    "./src/**/*.tsx",
+    "./src/**/*.stories.ts",
+    "./src/**/*.stories.tsx",
+    "./json-server/index.js"
   ],
-  "exclude": [".fttemplates"]
+  "exclude": ["./.fttemplates/**/*"]
 }

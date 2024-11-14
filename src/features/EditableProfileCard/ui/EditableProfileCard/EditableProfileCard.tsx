@@ -59,14 +59,14 @@ export const EditableProfileCard = memo(({ className, id }: EditableProfileCardP
 
   const onChangeFirstName = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ first: value || '' }));
+      dispatch(profileActions.updateProfile({ first: value ?? '' }));
     },
     [dispatch],
   );
 
   const onChangeLastName = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ lastName: value || '' }));
+      dispatch(profileActions.updateProfile({ lastName: value ?? '' }));
     },
     [dispatch],
   );
@@ -74,28 +74,28 @@ export const EditableProfileCard = memo(({ className, id }: EditableProfileCardP
   const onChangeAge = useCallback(
     (value?: string) => {
       const validateValue = value?.replace(/\D+/gm, '');
-      dispatch(profileActions.updateProfile({ age: Number(validateValue || 0) }));
+      dispatch(profileActions.updateProfile({ age: Number(validateValue ?? 0) }));
     },
     [dispatch],
   );
 
   const onChangeCity = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ city: value || '' }));
+      dispatch(profileActions.updateProfile({ city: value ?? '' }));
     },
     [dispatch],
   );
 
   const onChangeUsername = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ username: value || '' }));
+      dispatch(profileActions.updateProfile({ username: value ?? '' }));
     },
     [dispatch],
   );
 
   const onChangeAvatar = useCallback(
     (value?: string) => {
-      dispatch(profileActions.updateProfile({ avatar: value || '' }));
+      dispatch(profileActions.updateProfile({ avatar: value ?? '' }));
     },
     [dispatch],
   );

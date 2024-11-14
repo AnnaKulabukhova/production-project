@@ -3,6 +3,7 @@ import AdminPanelPage from './AdminPanelPage';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof AdminPanelPage> = {
   title: 'Pages/AdminPanelPage',
@@ -27,4 +28,13 @@ export const Dark: Story = {
 export const Blue: Story = {
   args: {},
   decorators: [ThemeDecorator(Theme.Blue)],
+};
+
+export const LightRedesigned: Story = { decorators: [NewDesignDecorator] };
+
+export const DarkRedesigned: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Dark)],
+};
+export const BlueRedesigned: Story = {
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Blue)],
 };

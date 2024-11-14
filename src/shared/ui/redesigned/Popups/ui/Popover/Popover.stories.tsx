@@ -1,15 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Popover } from './Popover';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Popover> = {
-  title: 'Shared/PopoverRedesign',
+  title: 'Shared/Popups/PopoverRedesign',
   component: Popover,
   argTypes: {
     className: { control: 'color' },
   },
   args: {},
-  decorators: [PositionDecorator],
+  decorators: [PositionDecorator, NewDesignDecorator],
 };
 
 export default meta;

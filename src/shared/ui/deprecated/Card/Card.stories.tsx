@@ -6,7 +6,7 @@ import { Text } from '../Text';
 
 
 const meta: Meta<typeof Card> = {
-  title: 'Shared/Deprecated/Card',
+  title: 'Shared/Deprecated/CardDeprecated',
   component: Card,
   argTypes: {
     className: { control: 'color' },

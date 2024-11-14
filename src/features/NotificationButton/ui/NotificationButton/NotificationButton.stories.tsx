@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NotificationButton } from './NotificationButton';
 import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const parameters = {
   layout: 'fullscreen',
@@ -62,5 +63,10 @@ export const Light: Story = {
         </div>
       );
     },
+  ],
+};
+export const LightRedesigned: Story = {
+  decorators: [
+    NewDesignDecorator
   ],
 };

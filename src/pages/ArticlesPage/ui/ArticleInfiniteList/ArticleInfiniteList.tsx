@@ -26,5 +26,5 @@ export const ArticleInfiniteList = memo(({ className, loadMore }: ArticleInfinit
     );
   }
 
-  return <ArticleList loadMore={loadMore} isLoading={isLoading} view={view} articles={articles} className={className} />;
+  return <ArticleList virtualized loadMore={loadMore} isLoading={isLoading} view={view} articles={articles} className={className} />;
 });

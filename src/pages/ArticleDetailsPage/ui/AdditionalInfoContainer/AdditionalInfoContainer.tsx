@@ -1,7 +1,6 @@
 import { getArticleDetailsData } from '@/entities/Article'
 import { Card } from '@/shared/ui/redesigned/Card'
 import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import classes from './AdditionalInfoContainer.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -11,7 +10,6 @@ interface AdditionalInfoContainerProps {
 }
 
 export const AdditionalInfoContainer = ({ className }: AdditionalInfoContainerProps) => {
-  const { t } = useTranslation()
   const article = useSelector(getArticleDetailsData)
 
   if (!article) {

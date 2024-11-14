@@ -1,23 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from './Text';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Text> = {
-  title: 'Shared/TextRedesign',
+  title: 'Shared/Text',
   component: Text,
   argTypes: {
     className: { control: 'color' },
   },
+  decorators: [NewDesignDecorator]
 };
 
 export default meta;
 type Story = StoryObj<typeof Text>;
 
-export const Primary: Story = {
+export const PrimaryVariant: Story = {
   args: {
     title: 'Title',
     text: ' Text Text Text Text Text ',
+    variant: 'primary'
   },
 };
 export const OnlyTitle: Story = {
@@ -30,34 +31,19 @@ export const OnlyText: Story = {
     text: ' Text Text Text Text Text ',
   },
 };
-export const Error: Story = {
+export const ErrorVaryant: Story = {
   args: {
     title: 'Title',
     text: ' Text Text Text Text Text ',
     variant: 'error',
   },
 };
-
-export const PrimaryDark: Story = {
+export const ErrorAccent: Story = {
   args: {
     title: 'Title',
     text: ' Text Text Text Text Text ',
+    variant: 'accent',
   },
-  decorators: [ThemeDecorator(Theme.Dark)],
-};
-
-export const OnlyTitleDark: Story = {
-  args: {
-    title: 'Title',
-  },
-  decorators: [ThemeDecorator(Theme.Dark)],
-};
-
-export const OnlyTextDark: Story = {
-  args: {
-    text: ' Text Text Text Text Text ',
-  },
-  decorators: [ThemeDecorator(Theme.Dark)],
 };
 
 export const SizeS: Story = {
@@ -79,5 +65,34 @@ export const SizeL: Story = {
     title: 'Title',
     text: ' Text Text Text Text Text ',
     size: 'l',
+  },
+};
+export const AlignLeft: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text Text Text Text Text ',
+    align: 'left'
+  },
+};
+export const AlignRight: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text Text Text Text Text ',
+    align: 'right'
+  },
+};
+export const AlignCenter: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text Text Text Text Text ',
+    align: 'center'
+  },
+};
+
+export const Bold: Story = {
+  args: {
+    title: 'Title',
+    text: 'Text Text Text Text Text ',
+    bold: true
   },
 };

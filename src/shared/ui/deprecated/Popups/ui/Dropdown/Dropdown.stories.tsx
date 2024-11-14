@@ -4,7 +4,7 @@ import { Button } from '../../../Button';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Shared/Deprecated/Popups/Dropdown',
+  title: 'Shared/Deprecated/Popups/DropdownDeprecated',
   component: Dropdown,
   argTypes: {
     className: { control: 'color' },

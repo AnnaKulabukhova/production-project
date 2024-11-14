@@ -2,9 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton } from './Skeleton';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof Skeleton> = {
-  title: 'Shared/SkeletonRedesign',
+  title: 'Shared/Skeleton',
   component: Skeleton,
   argTypes: {
     className: { control: 'color' },
@@ -15,49 +16,51 @@ const meta: Meta<typeof Skeleton> = {
 export default meta;
 type Story = StoryObj<typeof Skeleton>;
 
-export const Primary: Story = {
+export const PrimaryRedesigned: Story = {
   args: {
     height: 100,
     width: '100%',
   },
+  decorators: [NewDesignDecorator],
 };
-export const PrimaryDark: Story = {
+export const DarkRedesigned: Story = {
   args: {
     height: 100,
     width: '100%',
   },
-  decorators: [ThemeDecorator(Theme.Dark)],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Dark)],
 };
-export const PrimaryBlue: Story = {
+export const BlueRedesigned: Story = {
   args: {
     height: 100,
     width: '100%',
   },
-  decorators: [ThemeDecorator(Theme.Blue)],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Blue)],
 };
 
-export const Circle: Story = {
+export const CircleRedesigned: Story = {
   args: {
     border: '50%',
     height: 100,
     width: 100,
   },
+  decorators: [NewDesignDecorator],
 };
 
-export const CircleDark: Story = {
+export const CircleDarkRedesigned: Story = {
   args: {
     border: '50%',
     height: 100,
     width: 100,
   },
-  decorators: [ThemeDecorator(Theme.Dark)],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Dark)],
 };
 
-export const CircleBlue: Story = {
+export const CircleBlueRedesigned: Story = {
   args: {
     border: '50%',
     height: 100,
     width: 100,
   },
-  decorators: [ThemeDecorator(Theme.Blue)],
+  decorators: [NewDesignDecorator, ThemeDecorator(Theme.Blue)],
 };

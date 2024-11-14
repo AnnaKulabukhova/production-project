@@ -15,10 +15,12 @@ export const useDebounce = (callback: (...args: any[]) => void, delay: number) =
   return useCallback(
     (...args: any[]) => {
       if (timer.current) {
+        /* eslint-disable @typescript-eslint/no-unsafe-argument */
         clearTimeout(timer.current);
       }
 
       timer.current = setTimeout(() => {
+        /* eslint-disable @typescript-eslint/no-unsafe-argument */
         callback(...args);
       }, delay);
     },

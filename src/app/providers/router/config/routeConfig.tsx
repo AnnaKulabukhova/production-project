@@ -2,7 +2,7 @@ import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
-import { ArticleCreatePage } from '@/pages/ArticleEditPage';
+import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';

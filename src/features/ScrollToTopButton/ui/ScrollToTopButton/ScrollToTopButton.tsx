@@ -1,17 +1,29 @@
 import { Icon } from '@/shared/ui/redesigned/Icon'
 import { classNames } from "@/shared/lib/classNames/classNames"
 import CircleUpIcon from '@/shared/assets/icons/circle-up.svg'
-import { memo } from 'react'
+import { memo, useContext } from 'react'
+import { VirtuosoContext } from '@/shared/lib/context/VirtuosoContext'
 
 interface ScrollToTopButtonProps {
   className?: string
+  virtualized: boolean
 }
 
-const onClick = () => {
-  window.scrollTo({ top: 100, behavior: 'smooth' })
-}
+export const ScrollToTopButton = memo(({ className, virtualized }: ScrollToTopButtonProps) => {
+  const virtuosoRef = useContext(VirtuosoContext)
 
-export const ScrollToTopButton = memo(({ className }: ScrollToTopButtonProps) => {
+
+  const onClick = () => {
+    if (virtualized && virtuosoRef?.current) {
+      virtuosoRef?.current.scrollToIndex({ index: 0, align: 'start' });
+      console.log(virtuosoRef?.current, 'ScrollToTopButton');
+
+      return false;
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <Icon
       width={32}

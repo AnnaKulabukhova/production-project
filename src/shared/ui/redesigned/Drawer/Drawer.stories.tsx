@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Drawer } from './Drawer';
 import { action } from '@storybook/addon-actions';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const children = (
   <ul>
@@ -33,4 +34,19 @@ export const Close: Story = {
     children,
     isOpen: false,
   },
+};
+export const OpenRedesigned: Story = {
+  args: {
+    children,
+    isOpen: true,
+    onClose: action('Close'),
+  },
+  decorators: [NewDesignDecorator]
+};
+export const CloseRedesigned: Story = {
+  args: {
+    children,
+    isOpen: false,
+  },
+  decorators: [NewDesignDecorator]
 };

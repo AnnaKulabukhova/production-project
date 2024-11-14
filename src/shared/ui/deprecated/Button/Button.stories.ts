@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Button> = {
-  title: 'Shared/Deprecated/Button',
+  title: 'Shared/Deprecated/ButtonDeprecated',
   component: Button,
   argTypes: {
     className: { control: 'color' },

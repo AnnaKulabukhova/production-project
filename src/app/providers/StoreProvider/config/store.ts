@@ -32,7 +32,7 @@ export const createReduxStore = (initialState?: StateSchema, asyncReducers?: Red
         },
       }).concat(rtkApi.middleware),
   });
-  // @ts-ignore
+  // @ts-expect-error It is impossible to fix the error
   store.reducerManager = reducerManager;
 
   return store;

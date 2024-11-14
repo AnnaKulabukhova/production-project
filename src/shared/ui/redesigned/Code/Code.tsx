@@ -14,7 +14,7 @@ interface CodeProps {
 
 export const Code = memo(({ className, text }: CodeProps) => {
   const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(text);
+    void navigator.clipboard.writeText(text);
   }, [text]);
 
   return (

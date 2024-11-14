@@ -4,6 +4,7 @@ import { StoreProviderDecorator } from '@/shared/config/storybook/StoreProviderD
 import { UserRole } from '@/entities/User';
 import { PositionDecorator } from '@/shared/config/storybook/PositionDecorator';
 import AvatarImg from '@/shared/assets/tests/avatarForStorybook.jpg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 const meta: Meta<typeof AvatarDropdown> = {
   title: 'Features/AvatarDropdown',
@@ -32,8 +33,34 @@ export const forAdmin: Story = {
     }),
   ],
 };
+
 export const forUser: Story = {
   decorators: [
+    StoreProviderDecorator({
+      user: { authData: { id: '1', username: 'manager', roles: [UserRole.user], avatar: AvatarImg } },
+    }),
+  ],
+};
+
+export const forAdminRedesigned: Story = {
+  decorators: [
+    NewDesignDecorator,
+    StoreProviderDecorator({
+      user: {
+        authData: {
+          id: '1',
+          username: 'admin',
+          roles: [UserRole.admin],
+          avatar: AvatarImg,
+        },
+      },
+    }),
+  ],
+};
+
+export const forUserRedesigned: Story = {
+  decorators: [
+    NewDesignDecorator,
     StoreProviderDecorator({
       user: { authData: { id: '1', username: 'manager', roles: [UserRole.user], avatar: AvatarImg } },
     }),

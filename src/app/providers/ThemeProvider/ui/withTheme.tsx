@@ -4,9 +4,10 @@ import ThemeProvider from "./ThemeProvider"
 export const withTheme = (Component: React.ComponentType) => {
   return () => {
     const { theme: defaultTheme } = useJsonSettings()
-    return (<ThemeProvider initialTheme={defaultTheme}>
-      <Component />
-    </ThemeProvider>
+    return (
+      <ThemeProvider initialTheme={defaultTheme}>
+        <Component />
+      </ThemeProvider>
     )
   }
 }
